@@ -14,7 +14,7 @@
 			"tilesets": {
 				"1": "tileset.png"
 			},
-		      	"windowskins": {
+		  "windowskins": {
 			  	"1": "window.png"
 			}
 		};
@@ -24,29 +24,28 @@
 				"1": {
 					"graphic": "1"
 				}
-				"tilesets": {
-					"1": {
-						"graphic": "1",
-						"propreties":[[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[5,0],[5,0],[5],[5],[5],[],[],[],[null,15],[null,15],[null,15],[null,15],[null,15],[],[5],[5],[null,15],[0],[null,15],[5],[5],[],[null,15],[null,15],[null,15],[5],[null,15],[null,15],[null,15],[],[null,15],[null,15],[null,15],[null,15],[null,15],[null,15],[null,15],[],[],[],[5],[5],[5],[5],[],[],[],[],[null,15],[],[],[null,15],[],[],[],[],[null,15],[],[],[null,15],[],[],[5],[5],[5],[5],[5],[null,15],[],[null,15],[5],[5],[null,15],[null,15],[null,15],[null,15],[],[null,15],[null,15],[null,15],[],[],[],[null,15],[],[],[null,15],[null,15],[],[],[],[],[],[],[null,15],[null,15],[5],[5,0],[5,0],[5,0],[5,0],[5],[5],[5],[null,15],[null,15],[null,15],[null,15],[null,15],[null,15],[null,15],[null,15],[null,15],[null,15],[null,15],[null,15],[null,15],[null,15],[null,15],[null,15],[null,15],[null,15],[null,15],[],[null,15],[null,15],[null,15],[null,15],[null,15],[null,15],[null,0],[null,0],[null,15],[null,15],[null,15],[null,15],[],[],[],[],[],[],[null,15],[5],[],[],[],[],[],[],[null,15],[null,15],[],[],[],[],[5],[5],[5],[5],[],[],[],[],[5],[5],[5],[5],[5],[5],[null,15],[null,15],[5],[5],[5],[5],[null,15],[null,15],[],[],[],[null,15],[null,15],[],[5],[5],[null,15],[null,15],[null,15],[null,15],[],[],[null,15],[null,15],[],[],[null,15],[null,15],[null,15],[],[null,15],[null,15],[null,15],[null,15],[null,15],[null,15],[null,15],[null,15],[null,15],[null,15],[null,15],[null,15],[null,15],[null,15],[null,15],[null,15],[null,15],[null,15],[null,15],[null,15],[null,15],[null,15],[null,15],[null,15],[null,15],[null,15],[null,15],[null,15],[null,15],[null,15],[null,15],[null,15],[],[],[null,15],[null,15],[null,15],[null,15],[null,15],[null,15],[],[],[null,15],[null,15],[null,15],[null,15],[null,15],[null,15],[],[],[null,15],[null,15],[null,15],[null,15],[null,15],[null,15],[5],[5],[5],[5],[0],[],[null,15],[null,15],[null,15],[null,15],[null,15],[null,15],[5,0],[5,0],[5,0],[5,0],[null,15],[null,15],[null,15],[null,15],[null,15],[null,15],[null,15],[null,15],[null,15],[null,15],[null,15],[null,15],[null,15],[null,15],[null,15],[null,15],[],[],[],[],[],[],[5],[5,0],[],[],[],[],[],[],[null,15],[null,15],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[null,15],[null,15],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[]],
-					}
-				},
-				"map_infos": {		
-					"1": {
-						"tileset_id": "1"
-					},
+			},
+			"tilesets": {
+				"1": {
+					"graphic": "1"
 				}
-			};
+			},
+			"map_infos": {		
+				"1": {
+					"tileset_id": "1"
+				}
+			}
+		};
 
-			RPGJS.defines({
-				canvas: "canvas",
-				autoload: false
-				//scene_path: "../"
-			})
-			.ready(function() {
+		RPGJS.defines({
+			canvas: "canvas",
+			autoload: false
+			//scene_path: "../"
+		}).ready(function() {
 
 				RPGJS.Player.init({
 					actor: 1,
-					start: {x: 10, y: 10, id: 2}
+					start: {x: 10, y: 10, id: 1}
 				});
 
 				RPGJS.Scene.map(function(){
