@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<script src="canvasengine.min.js"></script>
-		<script src="rpgjs-2.0.0.min.js"></script>
+		<script src="canvasengine-latest.all.min.js"></script>
+		<script src="rpgjs-latest.min.js"></script>
+
 		<script>
 
 			RPGJS.Materials = {
@@ -12,6 +13,9 @@
 				},
 				"tilesets": {
 					"1": "tileset.png"
+				},
+				"windowskins": {
+					"1": "window.png"
 				}
 			};
 
@@ -37,15 +41,14 @@
 					"3": {
 						"tileset_id": "1"
 					}
-				}
+				},
 			};
 
 			RPGJS.defines({
 				canvas: "canvas",
 				autoload: false
 				//scene_path: "../"
-			})
-			.ready(function() {
+				}).ready(function() {
 
 				RPGJS.Player.init({
 					actor: 1,
@@ -59,7 +62,6 @@
 						"type": "fixed",
 						"graphic": "2"
 					},[
-					//"MOVE_ROUTE: {'target': 'player','move': [ 'right','right','right']}"
 					"SHOW_TEXT: {'text': 'Hey, Guy!'}"
 					]);
 					e.display();
