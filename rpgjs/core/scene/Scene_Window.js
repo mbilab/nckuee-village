@@ -64,7 +64,7 @@ RPGJS_Canvas.Scene.New({
 			el = this.createElement(35, width);
 			el.y = i * 35;
 			el.attr('index', i);
-			text = RPGJS_Canvas.Text.New(this, array[i]);
+			text = RPGJS_Canvas.Text.new(this, array[i]);
 			text.style({
 				size: "18px",
 				color: "white"
@@ -95,7 +95,7 @@ RPGJS_Canvas.Scene.New({
 	text: function(_text) {
 		var content = this.window.getContent();
 		content.empty();
-		var text = RPGJS_Canvas.Text.New(this, _text);
+		var text = RPGJS_Canvas.Text.new(this, _text);
 			text.style({
 				size: "18px",
 				lineWidth: 400,

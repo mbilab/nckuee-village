@@ -19,7 +19,7 @@
 	        "SHOW_TEXT: {'text': '你要修 普通物理 嗎?'}",
 		"CHOICES: ['是','否']",
 		"CHOICE_0",
-		"CHANGE_SKILLS: {'operation': 'increase', 'skill': 2}",
+		"CHANGE_SKILLS: {'actor': 1,'operation': 'increase', 'skill': 2}",
 	        "SHOW_TEXT: {'text': '習得了 普通物理 !'}",
 		"CHOICE_1",
 		"ENDCHOICES",
