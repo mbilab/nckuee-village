@@ -1,0 +1,30 @@
+[
+    {
+        "id": "3",
+        "x": "13",
+        "y": "15",
+        "name": "EV-3"
+    },
+    [
+        {
+	    "trigger": "action_button",
+	    "type": "fixed",
+	    "graphic": "2",
+            "frequence": "2",
+            "speed": "1",
+            "commands": [
+	    	"IF: 'actor_skill_learned[1,2]'",
+	        "SHOW_TEXT: {'text': '你已經修過 普通物理 了'}",
+		"ELSE",
+	        "SHOW_TEXT: {'text': '你要修 普通物理 嗎?'}",
+		"CHOICES: ['是','否']",
+		"CHOICE_0",
+		"CHANGE_SKILLS: {'operation': 'increase', 'skill': 2}",
+	        "SHOW_TEXT: {'text': '習得了 普通物理 !'}",
+		"CHOICE_1",
+		"ENDCHOICES",
+		"ENDIF"
+            ]
+        }
+    ]
+]

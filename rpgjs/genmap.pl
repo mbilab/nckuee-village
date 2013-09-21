@@ -43,7 +43,7 @@ for(my $i = 1; $i <19 ; $i++){
 }
 =cut
 
-&save_json("MAP-1.json",$ori);
+&save_json("MAP-2.json",$ori);
 sub axis{
 	my $x = shift;
 	my $y = shift;

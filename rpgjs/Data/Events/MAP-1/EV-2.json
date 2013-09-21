@@ -8,13 +8,20 @@
     [
         {
 	    "trigger": "action_button",
-	    "type": "random",
+	    "type": "fixed",
 	    "graphic": "2",
-            "frequence": "0",
-            "speed": "1",
             "commands": [
-	        "SHOW_TEXT: {'text': '你好'}",
-	        "SHOW_TEXT: {'text': '我好想要頭像~~~~~'}"
+	    	"IF: 'actor_skill_learned[1,1]'",
+	        "SHOW_TEXT: {'text': '你已經修過 微積分 了'}",
+		"ELSE",
+	        "SHOW_TEXT: {'text': '你要修 微積分 嗎?'}",
+		"CHOICES: ['是','否']",
+		"CHOICE_0",
+		"CHANGE_SKILLS: {'operation': 'increase', 'skill': 1}",
+	        "SHOW_TEXT: {'text': '習得了 微積分 !'}",
+		"CHOICE_1",
+		"ENDCHOICES",
+		"ENDIF"
             ]
         }
     ]
