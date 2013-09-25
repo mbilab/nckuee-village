@@ -7,7 +7,8 @@
 	      "1": "event1.png",
 	      "2": "event2.png",
 	      "3": "event3.png",
-	      "4": "event4.png"
+	      "4": "event4.png",
+	      "5": "cray.png"
       },
       "tilesets": {
 	      "1": "tileset.png"

@@ -1,0 +1,18 @@
+[
+    {
+        "id": "4",
+        "x": "10",
+        "y": "11",
+        "name": "cray"
+    },
+    [
+        {
+	    "trigger": "action_button",
+	    "type": "approach",
+	    "graphic": "5",
+            "commands": [
+	        "SHOW_TEXT: {'text': '你已經修過 微積分 了'}"
+            ]
+        }
+    ]
+]

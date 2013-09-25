@@ -19,7 +19,7 @@
 	"map_infos": {		
 		"1": {
 			"autotiles_id": "1",
-			"events": ["EV-1","EV-2","EV-3"],
+			"events": ["EV-1","EV-2","EV-3","cray"],
 			"tileset_id": "1"
 		},
 		"2": {
