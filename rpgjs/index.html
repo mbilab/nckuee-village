@@ -5,6 +5,10 @@
 		<script src="rpgjs-2.0.0.min.js"></script>
 
 		<script>
+			var game={};
+			function can_next_semester() { RPGJS.Switches.set(0, game['calc'] && game['phys']); }
+			function is_taked(course) { RPGJS.Switches.set(0, typeof game[course] !== 'undefined'); }
+			function take(course) { game[course] = true; }
 
 			RPGJS.defines({
 				canvas: "canvas"
