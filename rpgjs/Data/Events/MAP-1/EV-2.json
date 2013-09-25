@@ -1,28 +1,28 @@
 [
+  {
+    "id": "2",
+    "x": "18",
+    "y": "11",
+    "name": "EV-2"
+  },
+  [
     {
-        "id": "2",
-        "x": "18",
-        "y": "11",
-        "name": "EV-2"
-    },
-    [
-        {
-	    "trigger": "action_button",
-	    "type": "fixed",
-	    "graphic": "2",
-            "commands": [
-	    	"IF: 'actor_skill_learned[1,1]'",
-	        "SHOW_TEXT: {'text': '你已經修過 微積分 了'}",
-		"ELSE",
-	        "SHOW_TEXT: {'text': '你要修 微積分 嗎?'}",
-		"CHOICES: ['是','否']",
-		"CHOICE_0",
-		"CHANGE_SKILLS: {'actor': 1, 'operation': 'increase', 'skill': 1}",
-	        "SHOW_TEXT: {'text': '習得了 微積分 !'}",
-		"CHOICE_1",
-		"ENDCHOICES",
-		"ENDIF"
-            ]
-        }
-    ]
+      "trigger": "action_button",
+      "type": "fixed",
+      "graphic": "2",
+      "commands": [
+	"IF: 'actor_skill_learned[1,1]'",
+	"SHOW_TEXT: {'text': '你已經修過 微積分 了'}",
+	"ELSE",
+	"SHOW_TEXT: {'text': '你要修 微積分 嗎?'}",
+	"CHOICES: ['是','否']",
+	"CHOICE_0",
+	"CHANGE_SKILLS: {'actor': 1, 'operation': 'increase', 'skill': 1}",
+	"SHOW_TEXT: {'text': '習得了 微積分 !'}",
+	"CHOICE_1",
+	"ENDCHOICES",
+	"ENDIF"
+      ]
+    }
+  ]
 ]
