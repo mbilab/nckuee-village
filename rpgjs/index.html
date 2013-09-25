@@ -6,64 +6,10 @@
 
 		<script>
 
-			RPGJS.Materials = {
-				"autotiles": {
-					"2": "autotile1.png",
-					"3": "autotile2.png"
-				},
-				"characters": {
-					"1": "event1.png",
-					"2": "event2.png"
-				},
-				"tilesets": {
-					"1": "tileset.png"
-				},
-				"windowskins": {
-					"1": "window.png"
-				}
-			};
-
-			RPGJS.Database = {
-				"actors": {
-					"1": {
-						"graphic": "1"
-					}
-				},
-				"autotiles": {
-					"1": {
-						"autotiles": [2,3],
-						"propreties": [[0,0],[0,15]],
-					}
-				},
-				"tilesets": {
-					"1": {
-						"graphic": "1",
-						"propreties":[[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[5,0],[5,0],[5],[5],[5],[],[],[],[null,15],[null,15],[null,15],[null,15],[null,15],[],[5],[5],[null,15],[0],[null,15],[5],[5],[],[null,15],[null,15],[null,15],[5],[null,15],[null,15],[null,15],[],[null,15],[null,15],[null,15],[null,15],[null,15],[null,15],[null,15],[],[],[],[5],[5],[5],[5],[],[],[],[],[null,15],[],[],[null,15],[],[],[],[],[null,15],[],[],[null,15],[],[],[5],[5],[5],[5],[5],[null,15],[],[null,15],[5],[5],[null,15],[null,15],[null,15],[null,15],[],[null,15],[null,15],[null,15],[],[],[],[null,15],[],[],[null,15],[null,15],[],[],[],[],[],[],[null,15],[null,15],[5],[5,0],[5,0],[5,0],[5,0],[5],[5],[5],[null,15],[null,15],[null,15],[null,15],[null,15],[null,15],[null,15],[null,15],[null,15],[null,15],[null,15],[null,15],[null,15],[null,15],[null,15],[null,15],[null,15],[null,15],[null,15],[],[null,15],[null,15],[null,15],[null,15],[null,15],[null,15],[null,0],[null,0],[null,15],[null,15],[null,15],[null,15],[],[],[],[],[],[],[null,15],[5],[],[],[],[],[],[],[null,15],[null,15],[],[],[],[],[5],[5],[5],[5],[],[],[],[],[5],[5],[5],[5],[5],[5],[null,15],[null,15],[5],[5],[5],[5],[null,15],[null,15],[],[],[],[null,15],[null,15],[],[5],[5],[null,15],[null,15],[null,15],[null,15],[],[],[null,15],[null,15],[],[],[null,15],[null,15],[null,15],[],[null,15],[null,15],[null,15],[null,15],[null,15],[null,15],[null,15],[null,15],[null,15],[null,15],[null,15],[null,15],[null,15],[null,15],[null,15],[null,15],[null,15],[null,15],[null,15],[null,15],[null,15],[null,15],[null,15],[null,15],[null,15],[null,15],[null,15],[null,15],[null,15],[null,15],[null,15],[null,15],[],[],[null,15],[null,15],[null,15],[null,15],[null,15],[null,15],[],[],[null,15],[null,15],[null,15],[null,15],[null,15],[null,15],[],[],[null,15],[null,15],[null,15],[null,15],[null,15],[null,15],[5],[5],[5],[5],[0],[],[null,15],[null,15],[null,15],[null,15],[null,15],[null,15],[5,0],[5,0],[5,0],[5,0],[null,15],[null,15],[null,15],[null,15],[null,15],[null,15],[null,15],[null,15],[null,15],[null,15],[null,15],[null,15],[null,15],[null,15],[null,15],[null,15],[],[],[],[],[],[],[5],[5,0],[],[],[],[],[],[],[null,15],[null,15],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[null,15],[null,15],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[]],
-					}
-				},
-				"map_infos": {		
-					"1": {
-						"autotiles_id": "1",
-						"events": ["EV-1","EV-2","EV-3"],
-						"tileset_id": "1"
-					},
-					"2": {
-						"autotiles_id": "1",
-						"tileset_id": "1"
-					},
-					"3": {
-						"autotiles_id": "1",
-						"tileset_id": "1"
-					}
-				},
-			};
-
 			RPGJS.defines({
-				canvas: "canvas",
-				autoload: false
+				canvas: "canvas"
 				//scene_path: "../"
 				}).ready(function() {
-				RPGJS.SelfSwitches.set(1, 1, "A", false);	
 
 				RPGJS.Player.init({
 					actor: 1,
