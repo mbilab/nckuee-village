@@ -1,11 +1,18 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<script src="canvasengine-1.2.7.all.min.js"></script>
-		<script src="rpgjs-2.0.0.min.js"></script>
+		<meta charset="utf-8" />
+		<!--script src="canvasengine-1.2.7.all.min.js"></script>
+		<script src="rpgjs-2.0.0.min.js"></script-->
+		<script src="//canvasengine.net/cdn/dev/canvasengine-latest.all.min.js"></script>
+		<script src="//rpgjs.com/cdn/rpgjs-latest.min.js"></script>
+
+		<script>var game={ev:{}}</script>
+		<script src="ev.js"></script>
+		<script src="map_fall/1.js"></script>
+		<script src="map_fall/2.js"></script>
 
 		<script>
-			var game={};
 			function can_next_semester() { RPGJS.Switches.set(0, game['calc'] && game['phys']); }
 			function is_taked(course) { RPGJS.Switches.set(0, typeof game[course] !== 'undefined'); }
 			function take(course) { game[course] = true; }
@@ -17,10 +24,11 @@
 
 				RPGJS.Player.init({
 					actor: 1,
-					start: {x: 10, y: 10, id: 1}
+					start: { x: 0, y: 1, id: 1 },
 				});
 
 				RPGJS.Scene.map(function(){
+					for ( var i=1; i<=2; ++i ) game.ev[i].init();
 				});
 
 			});
