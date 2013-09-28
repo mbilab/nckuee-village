@@ -19,6 +19,7 @@
 		<script src="ev.js"></script>
 		<script src="map_fall/1.js"></script>
 		<script src="map_fall/2.js"></script>
+		<script src="map_fall/3.js"></script>
 		<script src="map_fall/15.js"></script>
 
 		<script>
@@ -37,10 +38,7 @@
 				});
 
 				RPGJS.Scene.map(function(){
-//					for ( var i=1; i<=2; ++i ) game.ev[i].init();
-					game.ev[1].init();
-					game.ev[2].init();
-					game.ev[15].init();
+					for ( var i in game.ev ) game.ev[i].init();
 				});
 
 			});

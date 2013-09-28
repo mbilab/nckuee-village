@@ -1,17 +1,17 @@
 (function(){
-	var name = '普通物理學（一）';
-	var id = 2;
+	var name = '微積分（一）';
+	var id = 3;
 	game.ev[id] = {
 		can_took: function() { },
 		hp_cost: function() { return 10; },
 		init: function(){
-			var e = RPGJS.Map.createEvent( id, 1, 0 );
+			var e = RPGJS.Map.createEvent( id, 2, 0 );
 			e.addPage({
 				'graphic': 2,
 				'trigger': 'action_button',
 				'type': 'fixed',
 			}, [
-				game.show_text('助人為快樂之本，普物為電機之本。普通物理學之於電機人，就像是陽光、空氣、水之於生物體一般。若此關不過、那你的電機人生只好重頭來過。'),
+				game.show_text('工程數學、控制工程…，電機系的數學也是想當重要的，想要好好過你的電機人生，微積分也是重要的基礎喔～'),
 				game.show_text('你要修 '+name+' 嗎？'),
 				'CHOICES: ["是","否"]',
 				'CHOICE_0',
@@ -19,15 +19,15 @@
 					'IF: "0 == variable[0]"',
 						game.script( 'can_take', id ),
 						'IF: "1 == variable[0]"',
-							game.show_text('請問動者恆動、靜者恆靜，是牛頓第幾定律？'),
-							'CHOICES: ["牛頓第一定律","牛頓第二定律","牛頓第三定律"]',
+							game.show_text('請問 dp/dq 是對什麼微分？'),
+							'CHOICES: ["對 p","對 q","兩者皆不是"]',
 							'CHOICE_0',
 								game.script( 'take', id ),
 								game.show_text('習得了 '+name+' ！\\n消耗 %V[0] 點體力，還剩 %V[1] 點體力。'),
 							'CHOICE_1',
-								game.show_text('孩子呀，看來你的以後會很難過，加油！'),
+								game.show_text('要重修囉～'),
 							'CHOICE_2',
-								game.show_text('孩子呀，看來你的以後會很難過，加油！'),
+								game.show_text('要重修囉～'),
 							'ENDCHOICES',
 						'ELSE',
 							game.show_text('%V[0]'),
