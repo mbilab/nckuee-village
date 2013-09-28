@@ -5,12 +5,14 @@
 		<!--script src="canvasengine-1.2.7.all.min.js"></script>
 		<script src="rpgjs-2.0.0.min.js"></script-->
 		<script src="//canvasengine.net/cdn/dev/canvasengine-latest.all.min.js"></script>
-		<script src="//rpgjs.com/cdn/rpgjs-latest.min.js"></script>
+		<!--script src="//rpgjs.com/cdn/rpgjs-latest.min.js"></script-->
+		<script src="rpgjs-2.0.0.js"></script>
 
-		<script>var game={ev:{}}</script>
+		<script>var game={ev:{},n_took:0,took:[]}</script>
 		<script src="ev.js"></script>
 		<script src="map_fall/1.js"></script>
 		<script src="map_fall/2.js"></script>
+		<script src="map_fall/15.js"></script>
 
 		<script>
 			function can_next_semester() { RPGJS.Switches.set(0, game['calc'] && game['phys']); }
@@ -28,7 +30,10 @@
 				});
 
 				RPGJS.Scene.map(function(){
-					for ( var i=1; i<=2; ++i ) game.ev[i].init();
+//					for ( var i=1; i<=2; ++i ) game.ev[i].init();
+					game.ev[1].init();
+					game.ev[2].init();
+					game.ev[15].init();
 				});
 
 			});
