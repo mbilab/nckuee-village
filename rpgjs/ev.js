@@ -1,11 +1,31 @@
 
-game.show_text = function(t) {
-	return 'SHOW_TEXT: {"text": "'+t.replace(/(.{21})/g,'$1\\n')+'"}';
+game.can_take = function(id) {
+	if ( game.ev[id].can_take && !game.ev[id].can_take() ) return;
+	if ( game.hp >= game.ev[id].hp_cost() ) RPGJS.Variables.data[0] = 1;
+	else RPGJS.Variables.data[0] = '你的體力不夠修這門課囉！';
 }
 
-game.take = function(c) {
+game.is_took = function(id) {
+	RPGJS.Variables.data[0] = ( 'undefined' !== typeof game.took[id] && game.took[id] ) ? 1 : 0;
+}
+
+game.script = function(s) {
+	var args = Array.prototype.slice.call(arguments, 1).join(',');
+	return 'SCRIPT: {"text": "game.'+s+'('+args+')"}';
+}
+
+game.show_text = function(t) {
+	if ( -1 === t.search('\\\\n') ) t = t.replace(/(.{21})/g,'$1\\n');
+	return 'SHOW_TEXT: {"text": "'+t+'"}';
+}
+
+game.take = function(id) {
+	if ( game.ev[id].take && !game.ev[id].take() ) return;
+	game.hp -= game.ev[id].hp_cost();
 	game.n_took++;
-	game.took[c] = true;
+	game.took[id] = true;
+	RPGJS.Variables.data[0] = game.ev[id].hp_cost();
+	RPGJS.Variables.data[1] = game.hp;
 }
 
 // vi:nowrap:sw=4:ts=4
