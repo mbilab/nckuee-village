@@ -6,7 +6,8 @@ game.can_take = function(id) {
 }
 
 game.is_took = function(id) {
-	RPGJS.Variables.data[0] = ( 'undefined' !== typeof game.took[id] && game.took[id] ) ? 1 : 0;
+	if ( 'undefined' === typeof game.took[id] ) RPGJS.Variables.data[0] = 0;
+	else RPGJS.Variables.data[0] = '你已經修過 '+game.ev[id].name+' 了！';
 }
 
 game.script = function(s) {
