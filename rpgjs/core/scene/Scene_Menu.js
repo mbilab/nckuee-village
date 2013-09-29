@@ -75,7 +75,7 @@ RPGJS_Canvas.Scene.New({
 			
 		var box = RPGJS_Canvas.Window.new(this),
 			body = box.getContent();
-		
+
 		for (var i=0 ; i < 4 ; i++) {
 			actor = this.data.actors[i];
 			sprite_b = this.createElement(),
@@ -165,12 +165,14 @@ RPGJS_Canvas.Scene.New({
 		};
 	},
 	num2year: function(n){ 
+	  var r;
 	  switch(n){
-	    case 1:return n+'st';break;
-	    case 2:return n+'nd';break;
-	    case 3:return n+'rd';break;
-	    case 4:return n+'st';break;
+	    case 1:r=n+'st';break;
+	    case 2:r=n+'nd';break;
+	    case 3:r=n+'rd';break;
+	    case 4:r=n+'st';break;
 	  }
+	  return r;
 	},
 	__index: function(stage) {
 		var actor, _canvas = this.getCanvas(),
