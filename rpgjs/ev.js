@@ -22,11 +22,15 @@ game.show_text = function(t) {
 
 game.take = function(id) {
 	if ( game.ev[id].take && !game.ev[id].take() ) return;
-	game.hp -= game.ev[id].hp_cost();
+	var hp_cost = game.ev[id].hp_cost();
+	if ( game.hp < hp_cost ) {
+		RPGJS.Variables.data[0] = '你的體力不夠修這門課囉！';
+		return;
+	}
+	game.hp -= hp_cost;
 	game.n_took++;
 	game.took[id] = true;
-	RPGJS.Variables.data[0] = game.ev[id].hp_cost();
-	RPGJS.Variables.data[1] = game.hp;
+	RPGJS.Variables.data[0] = '習得了 '+game.ev[id].name+' ！\n消耗 '+hp_cost+' 點體力，還剩 '+game.hp+' 點體力。';
 }
 
 // vi:nowrap:sw=4:ts=4
