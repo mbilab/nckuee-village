@@ -1,17 +1,23 @@
 (function(){
-	var map = 1, id = 5, ev = 'game.ev['+map+']['+id+']';
-	var name = '基礎國文';
+	var map = 1, id = 8, ev = 'game.ev['+map+']['+id+']';
+	var name = '電子（一）';
 	game.ev[map][id] = {
+		can_take: function() {
+			if ( game.defined( 'ev', 2, 1, 'took' ) ) return true;
+//			RPGJS.Variables.data[0] = '需要先修 '+game.ev[2][1].name+' ！';
+			RPGJS.Variables.data[0] = '需要先修 普通物理學（二） ！';
+			return false;
+		},
 		hp_cost: function() { return 8; },
 		id: id,
 		init: function(){
-			var e = RPGJS.Map.createEvent( id, 4, 0 );
+			var e = RPGJS.Map.createEvent( id, 7, 0 );
 			e.addPage({
 				'graphic': 2,
 				'trigger': 'action_button',
 				'type': 'fixed',
 			}, [
-				game.show_text('身為工程人員還是要有基本的文學素養！'),
+				game.show_text('在此課程中，會介紹你電子元件的特性及應用，像是 BJT、CMOS…以及使用這些元件兜成的基本電路跟電路特性。目前最常被使用的原件是 CMOS，但在高頻的情形下，BJT 能具有它的優勢。'),
 				game.show_text('你要修 '+name+' 嗎？'),
 				'CHOICES: ["是","否"]',
 				'CHOICE_0',
@@ -35,7 +41,7 @@
 							game.show_text('%V[0]'),
 						'ENDIF',
 					"ELSE",
-						game.show_text('你已經修過 '+name+' 了！'),
+						game.show_text('%V[0]'),
 					"ENDIF",
 				'CHOICE_1',
 				'ENDCHOICES',

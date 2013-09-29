@@ -1,6 +1,7 @@
 (function(){
 	var id = 1;
-	game.ev[id] = {
+	var map = 1;
+	game.ev[map][id] = {
 		init: function(){
 			var e = RPGJS.Map.createEvent( id, 0, 0 );
 			e.addPage({

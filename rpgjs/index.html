@@ -10,7 +10,7 @@
 
 		<script>
 			var game = {
-				ev: {},
+				ev: { 1: {}, 2: {} },
 				hp: 100,
 				maxhp: 100,
 				n_took: 0,
@@ -25,12 +25,13 @@
 		<script src="map_fall/5.js"></script>
 		<script src="map_fall/6.js"></script>
 		<script src="map_fall/7.js"></script>
+		<script src="map_fall/8.js"></script>
 		<script src="map_fall/16.js"></script>
 
 		<script>
 			function can_next_semester() { RPGJS.Switches.set(0, game['calc'] && game['phys']); }
 			function is_taked(course) { RPGJS.Switches.set(0, typeof game[course] !== 'undefined'); }
-			function init_map() { for ( var i in game.ev ) game.ev [i].init(); }
+			function init_map() { for ( var i in game.ev[1] ) game.ev[1][i].init(); }
 			function take(course) { game[course] = true; }
 
 			RPGJS.defines({
