@@ -10,13 +10,13 @@
 
 		<script>
 			var game = {
-				ev: {},
-				year: 1,
+				ev: { 1: {}, 2: {} },
 				hp: 100,
 				maxhp: 100,
 				name: 'Player',
 				n_took: 0,
 				took: [],
+				year: 1
 			};
 		</script>
 		<script src="ev.js"></script>
@@ -27,12 +27,13 @@
 		<script src="map_fall/5.js"></script>
 		<script src="map_fall/6.js"></script>
 		<script src="map_fall/7.js"></script>
+		<script src="map_fall/8.js"></script>
 		<script src="map_fall/16.js"></script>
 
 		<script>
 			function can_next_semester() { RPGJS.Switches.set(0, game['calc'] && game['phys']); }
 			function is_taked(course) { RPGJS.Switches.set(0, typeof game[course] !== 'undefined'); }
-			function init_map() { for ( var i in game.ev ) game.ev [i].init(); }
+			function init_map() { for ( var i in game.ev[1] ) game.ev[1][i].init(); }
 			function take(course) { game[course] = true; }
 
 			RPGJS.defines({

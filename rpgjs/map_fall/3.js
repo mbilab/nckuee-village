@@ -1,9 +1,9 @@
 (function(){
+	var map = 1, id = 3, ev = 'game.ev['+map+']['+id+']';
 	var name = '微積分（一）';
-	var id = 3;
-	game.ev[id] = {
-		can_took: function() { },
+	game.ev[map][id] = {
 		hp_cost: function() { return 10; },
+		id: id,
 		init: function(){
 			var e = RPGJS.Map.createEvent( id, 2, 0 );
 			e.addPage({
@@ -15,14 +15,14 @@
 				game.show_text('你要修 '+name+' 嗎？'),
 				'CHOICES: ["是","否"]',
 				'CHOICE_0',
-					game.script( 'is_took', id ),
+					game.script( 'is_took', ev ),
 					'IF: "0 == variable[0]"',
-						game.script( 'can_take', id ),
+						game.script( 'can_take', ev ),
 						'IF: "1 == variable[0]"',
 							game.show_text('請問 dp/dq 是對什麼微分？'),
 							'CHOICES: ["對 p","對 q","兩者皆不是"]',
 							'CHOICE_0',
-								game.script( 'take', id ),
+								game.script( 'take', ev ),
 								game.show_text('%V[0]'),
 							'CHOICE_1',
 								game.show_text('要重修囉～'),

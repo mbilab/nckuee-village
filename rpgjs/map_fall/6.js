@@ -1,9 +1,9 @@
 (function(){
+	var map = 1, id = 6, ev = 'game.ev['+map+']['+id+']';
 	var name = '大一英文';
-	var id = 6;
-	game.ev[id] = {
-		can_took: function() { },
+	game.ev[map][id] = {
 		hp_cost: function() { return 'undefined' === typeof game.eng_14_15 ? 8 : 0; },
+		id: id,
 		init: function(){
 			var e = RPGJS.Map.createEvent( id, 5, 0 );
 			e.addPage({
@@ -11,16 +11,16 @@
 				'trigger': 'action_button',
 				'type': 'fixed',
 			}, [
-				game.script( 'is_took', id ),
+				game.script( 'is_took', ev ),
 				'IF: "0 == variable[0]"',
 					game.show_text('請問你的學測英文是幾級分？'),
 					'CHOICES: ["14-15 級分","14 級分以下","我還不想修這門課"]',
 					'CHOICE_0',
 						'SCRIPT: {"text": "game.eng_14_15 = 1;"}',
-						game.script( 'take', id ),
+						game.script( 'take', ev ),
 						game.show_text('%V[0]'),
 					'CHOICE_1',
-						game.script( 'take', id ),
+						game.script( 'take', ev ),
 						game.show_text('%V[0]'),
 					'CHOICE_2',
 					'ENDCHOICES',

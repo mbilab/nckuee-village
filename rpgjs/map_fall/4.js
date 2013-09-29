@@ -1,9 +1,9 @@
 (function(){
+	var map = 1, id = 4, ev = 'game.ev['+map+']['+id+']';
 	var name = '計算機概論（一）';
-	var id = 4;
-	game.ev[id] = {
-		can_took: function() { },
+	game.ev[map][id] = {
 		hp_cost: function() { return 20; },
+		id: id,
 		init: function(){
 			var e = RPGJS.Map.createEvent( id, 3, 0 );
 			e.addPage({
@@ -15,9 +15,9 @@
 				game.show_text('你要修 '+name+' 嗎？'),
 				'CHOICES: ["是","否"]',
 				'CHOICE_0',
-					game.script( 'is_took', id ),
+					game.script( 'is_took', ev ),
 					'IF: "0 == variable[0]"',
-						game.script( 'can_take', id ),
+						game.script( 'can_take', ev ),
 						'IF: "1 == variable[0]"',
 							game.show_text('請問在本課程中學會了哪些程式語言？'),
 							'CHOICES: ["JAVA","C 語言","兩者有"]',
@@ -26,7 +26,7 @@
 							'CHOICE_1',
 								game.show_text('要重修囉～'),
 							'CHOICE_2',
-								game.script( 'take', id ),
+								game.script( 'take', ev ),
 								game.show_text('%V[0]'),
 							'ENDCHOICES',
 						'ELSE',

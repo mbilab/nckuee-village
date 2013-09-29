@@ -1,9 +1,9 @@
 (function(){
+	var map = 1, id = 2, ev = 'game.ev['+map+']['+id+']';
 	var name = '普通物理學（一）';
-	var id = 2;
-	game.ev[id] = {
-		can_took: function() { },
+	game.ev[map][id] = {
 		hp_cost: function() { return 10; },
+		id: id,
 		init: function(){
 			var e = RPGJS.Map.createEvent( id, 1, 0 );
 			e.addPage({
@@ -15,14 +15,14 @@
 				game.show_text('你要修 '+name+' 嗎？'),
 				'CHOICES: ["是","否"]',
 				'CHOICE_0',
-					game.script( 'is_took', id ),
+					game.script( 'is_took', ev ),
 					'IF: "0 == variable[0]"',
-						game.script( 'can_take', id ),
+						game.script( 'can_take', ev ),
 						'IF: "1 == variable[0]"',
 							game.show_text('請問動者恆動、靜者恆靜，是牛頓第幾定律？'),
 							'CHOICES: ["牛頓第一定律","牛頓第二定律","牛頓第三定律"]',
 							'CHOICE_0',
-								game.script( 'take', id ),
+								game.script( 'take', ev ),
 								game.show_text('%V[0]'),
 							'CHOICE_1',
 								game.show_text('孩子呀，看來你的以後會很難過，加油！'),

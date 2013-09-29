@@ -1,13 +1,21 @@
 
-game.can_take = function(id) {
-	if ( game.ev[id].can_take && !game.ev[id].can_take() ) return;
-	if ( game.hp >= game.ev[id].hp_cost() ) RPGJS.Variables.data[0] = 1;
+game.can_take = function(ev) {
+	if ( ev.can_take && !ev.can_take() ) return;
+	if ( game.hp >= ev.hp_cost() ) RPGJS.Variables.data[0] = 1;
 	else RPGJS.Variables.data[0] = '你的體力不夠修這門課囉！';
 }
 
-game.is_took = function(id) {
-	if ( 'undefined' === typeof game.took[id] ) RPGJS.Variables.data[0] = 0;
-	else RPGJS.Variables.data[0] = '你已經修過 '+game.ev[id].name+' 了！';
+game.defined = function() {
+	for ( var i = 0, o = game; i < arguments.length; i++ ) {
+		if ( !o.hasOwnProperty(arguments[i]) ) return false;
+		o = o[arguments[i]];
+	}
+	return true;
+}
+
+game.is_took = function(ev) {
+	if ( ev.took ) RPGJS.Variables.data[0] = '你已經修過 '+ev.name+' 了！';
+	else RPGJS.Variables.data[0] = 0;
 }
 
 game.script = function(s) {
@@ -20,17 +28,17 @@ game.show_text = function(t) {
 	return 'SHOW_TEXT: {"text": "'+t+'"}';
 }
 
-game.take = function(id) {
-	if ( game.ev[id].take && !game.ev[id].take() ) return;
-	var hp_cost = game.ev[id].hp_cost();
+game.take = function(ev) {
+	if ( ev.take && !ev.take() ) return;
+	var hp_cost = ev.hp_cost();
 	if ( game.hp < hp_cost ) {
 		RPGJS.Variables.data[0] = '你的體力不夠修這門課囉！';
 		return;
 	}
+	ev.took = true;
 	game.hp -= hp_cost;
 	game.n_took++;
-	game.took[id] = true;
-	RPGJS.Variables.data[0] = '習得了 '+game.ev[id].name+' ！\n消耗 '+hp_cost+' 點體力，還剩 '+game.hp+' 點體力。';
+	RPGJS.Variables.data[0] = '習得了 '+ev.name+' ！\n消耗 '+hp_cost+' 點體力，還剩 '+game.hp+' 點體力。';
 }
 
 // vi:nowrap:sw=4:ts=4

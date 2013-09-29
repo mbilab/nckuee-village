@@ -1,9 +1,9 @@
 (function(){
+	var map = 1, id = 16, ev = 'game.ev['+map+']['+id+']';
 	var name = '電工廠實習';
-	var id = 16;
-	game.ev[id] = {
-		can_took: function() { },
+	game.ev[map][id] = {
 		hp_cost: function() { return 10; },
+		id: id,
 		init: function(){
 			var e = RPGJS.Map.createEvent( id, 15, 0 );
 			e.addPage({
@@ -16,18 +16,14 @@
 				game.show_text('你要修 '+name+' 嗎？'),
 				'CHOICES: ["是","否"]',
 				'CHOICE_0',
-					game.script( 'is_took', id ),
+					game.script( 'is_took', ev ),
 					'IF: "0 == variable[0]"',
-						game.script( 'can_take', id ),
+						game.script( 'can_take', ev ),
 						'IF: "1 == variable[0]"',
-							game.script( 'take', id ),
-							game.show_text('習得了 '+name+' ！\\n消耗 %V[0] 點體力，還剩 %V[1] 點體力。'),
-						'ELSE',
-							game.show_text('%V[0]'),
+							game.script( 'take', ev ),
 						'ENDIF',
-					"ELSE",
-						game.show_text('%V[0]'),
 					"ENDIF",
+					game.show_text('%V[0]'),
 				'CHOICE_1',
 				'ENDCHOICES',
 			]);
