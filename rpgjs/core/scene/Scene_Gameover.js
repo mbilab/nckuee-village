@@ -3,7 +3,7 @@ RPGJS_Canvas.Scene.New({
 	
 	materials: {
 		images: {
-			background: "../materials/Graphics/Gameovers/gameover.jpg"
+			background: "Graphics/Gameovers/gameover.jpg"
 		}
 	},
 	

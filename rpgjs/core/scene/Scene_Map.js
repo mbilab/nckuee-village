@@ -31,7 +31,7 @@ RPGJS_Canvas.Scene.New({
 	data: {},
 	/*materials: {
 		images: {
-			//"window": "../materials/Graphics/Windowskins/window.png"
+			//"window": "Graphics/Windowskins/window.png"
 		}
 	},*/
 	ready: function(stage, el, params) {

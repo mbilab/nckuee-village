@@ -2,9 +2,9 @@ RPGJS_Canvas.Scene.New({
 	name: "Scene_Title",
 	materials: {
 		images: {
-			background: "../materials/Graphics/Titles/picture11.jpg",
-			cursor_on: "../materials/Graphics/Pictures/Mn_Sel.png",
-			cursor_off: "../materials/Graphics/Pictures/Mn_Sel_Off.png"
+			background: "Graphics/Titles/picture11.jpg",
+			cursor_on: "Graphics/Pictures/Mn_Sel.png",
+			cursor_off: "Graphics/Pictures/Mn_Sel_Off.png"
 			// background: "Graphics/Titles/picture11.jpg",
 			// cursor_on: "Graphics/Pictures/Mn_Sel.png",
 			// cursor_off: "Graphics/Pictures/Mn_Sel_Off.png"
@@ -104,7 +104,7 @@ RPGJS_Canvas.Scene.New({
 			RPGJS.scene.call("Scene_Map");
 		}
 		else {
-			RPGJS.scene.call("Scene_Map").load();
+			RPGJS.scene.call("Scene_Map").load(init_map);
 		}
 	},
 	load_game: function() {

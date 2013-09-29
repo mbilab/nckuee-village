@@ -2,15 +2,15 @@ RPGJS_Canvas.Scene.New({
 	name: "Scene_Menu",
 	materials: {
 		images: {
-			background: "../materials/Graphics/Pictures/Layer00.png",
-			button: "../materials/Graphics/Pictures/Sprite_Button.png",
-			party: "../materials/Graphics/Pictures/Sprite_Status.png",
-			hp: "../materials/Graphics/Pictures/HP.png",
-			sp: "../materials/Graphics/Pictures/SP.png",
+			background: "Graphics/Pictures/Layer00.png",
+			button: "Graphics/Pictures/Sprite_Button.png",
+			party: "Graphics/Pictures/Sprite_Status.png",
+			hp: "Graphics/Pictures/HP.png",
+			sp: "Graphics/Pictures/SP.png",
 			/*face: "Graphics/Faces/Aluxes.png",
 			battler: "Graphics/Battlers/Aluxes.png",*/
-			gold: "../materials/Graphics/Icons/gold.png",
-			icon: "../materials/Graphics/Icons/time.png"
+			gold: "Graphics/Icons/gold.png",
+			icon: "Graphics/Icons/time.png"
 		}
 	},
 	
