@@ -23,7 +23,7 @@
 							'CHOICES: ["諸葛亮","項羽","劉備","趙雲"]',
 							'CHOICE_0',
 								game.script( 'take', id ),
-								game.show_text('習得了 '+name+' ！\\n消耗 %V[0] 點體力，還剩 %V[1] 點體力。'),
+								game.show_text('%V[0]'),
 							'CHOICE_1',
 								game.show_text('＜項羽＞同學…不是我喔…'),
 							'CHOICE_2',
@@ -42,6 +42,7 @@
 			]);
 			e.display();
 		},
+		name: name,
 		take: null, // set this function and to override, return false to prevent default
 	};
 })();

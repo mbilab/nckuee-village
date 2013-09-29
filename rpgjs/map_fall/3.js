@@ -23,7 +23,7 @@
 							'CHOICES: ["對 p","對 q","兩者皆不是"]',
 							'CHOICE_0',
 								game.script( 'take', id ),
-								game.show_text('習得了 '+name+' ！\\n消耗 %V[0] 點體力，還剩 %V[1] 點體力。'),
+								game.show_text('%V[0]'),
 							'CHOICE_1',
 								game.show_text('要重修囉～'),
 							'CHOICE_2',
@@ -40,6 +40,7 @@
 			]);
 			e.display();
 		},
+		name: name,
 		take: null, // set this function and to override, return false to prevent default
 	};
 })();
