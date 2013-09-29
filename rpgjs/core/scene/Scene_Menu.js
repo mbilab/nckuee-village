@@ -33,7 +33,6 @@ RPGJS_Canvas.Scene.New({
 			actors: global.game_actors.get(),
 			player: global.game_player
 		};
-		
 		var background = this.createElement();
 		background.drawImage("background");
 		stage.append(background);
@@ -46,18 +45,22 @@ RPGJS_Canvas.Scene.New({
 	
 		var el_empty = this.createElement(), 
 			el = this.createElement(),
-			val = Math.floor(actor.getCurrentParam(type));
+			//val = Math.floor(actor.getCurrentParam(type));
+			val = game[type];
+
 			
 		el_empty.strokeStyle = "black";
 		el_empty.strokeRect(0, 0, 112, 18);
-		el.drawImage(param, 1, 1, (actor.getParamPoint(param) * 100 / val) + "%");
+		//el.drawImage(param, 1, 1, (actor.getParamPoint(param) * 100 / val) + "%");
+		el.drawImage(param, 1, 1, (game[param] * 100 / val) + "%");
 		el_empty.opacity = 0.8;
 		el_empty.x = 150;
 		el_empty.append(el);
 		this.drawText(param.toUpperCase(), el_empty, 10, -2, {
 			size: "20px"
 		});
-		this.drawText(Math.floor(actor.getParamPoint(param)) + " / " + val, el_empty, 120, 2, {
+		//this.drawText(Math.floor(actor.getParamPoint(param)) + " / " + val, el_empty, 120, 2, {
+		this.drawText(Math.floor(game[param]) + " / " + val, el_empty, 120, 2, {
 			size: "10px"
 		});
 		return el_empty;
@@ -89,8 +92,8 @@ RPGJS_Canvas.Scene.New({
 			
 			hp_bar = this.displayBar(actor, "maxhp", "hp");
 			hp_bar.y = 35;
-			sp_bar = this.displayBar(actor, "maxsp", "sp");
-			sp_bar.y = 60;
+			//sp_bar = this.displayBar(actor, "maxsp", "sp");
+			//sp_bar.y = 60;
 			
 			sprite_b.attr('id', actor._id);
 			
@@ -111,7 +114,7 @@ RPGJS_Canvas.Scene.New({
 			sprite_b.append(face);*/
 			
 			sprite_b.append(hp_bar);
-			sprite_b.append(sp_bar);
+			//sprite_b.append(sp_bar);
 			
 			
 			sprite_b.propagationOpacity = false;
@@ -995,11 +998,11 @@ RPGJS_Canvas.Scene.New({
 		
 		hp_bar = this.displayBar(data_actor, "maxhp", "hp");
 		hp_bar.y = 65;
-		sp_bar = this.displayBar(data_actor, "maxsp", "sp");
-		sp_bar.y = 90;
+		//sp_bar = this.displayBar(data_actor, "maxsp", "sp");
+		//sp_bar.y = 90;
 		
 		hp_bar.x = 20;
-		sp_bar.x = 20;
+		//sp_bar.x = 20;
 		
 		body.fillStyle = "#44456C";
 		body.fillRect(0, 0, 500, 480);
@@ -1009,7 +1012,7 @@ RPGJS_Canvas.Scene.New({
 		body.propagationOpacity = false;
 		
 		body.append(hp_bar);
-		body.append(sp_bar);
+		//body.append(sp_bar);
 		
 		stage.append(body);
 		stage.append(battler);
