@@ -299,6 +299,7 @@ Class.create("RPGJS", {
         },
         get: function (c, d, b, a) {
             var f = {}, e;
+	    console.log([c,d]);
             if (!global.materials[c]) {
                 if (RPGJS.params.ignoreLoadError) {
                     return false
@@ -1030,7 +1031,7 @@ Class.create("Interpreter", {
     cmdShowPicture: function (b) {
         var a = this;
         b = this._valuePicture(b);
-        b.filename = RPGJS.Path.get("pictures", b.filename, false, true);
+        b.filename = RPGJS.Path.get("pictures", b.id, false, true);
         global.game_map.callScene("pictures", ["add", [b.id, b,
             function () {
                 a.nextCommand()

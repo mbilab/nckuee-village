@@ -10,6 +10,11 @@
 	      "4": "event4.png",
 	      "5": "cray.png"
       },
+      "pictures": {
+	      "5_1": "5_1.jpg",
+	      "5_2": "5_2.jpg",
+	      "5_3": "5_3.jpg"
+      },
       "tilesets": {
 	      "1": "tileset.png"
       },
