@@ -299,7 +299,6 @@ Class.create("RPGJS", {
         },
         get: function (c, d, b, a) {
             var f = {}, e;
-	    console.log([c,d]);
             if (!global.materials[c]) {
                 if (RPGJS.params.ignoreLoadError) {
                     return false

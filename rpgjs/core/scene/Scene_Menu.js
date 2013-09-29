@@ -507,7 +507,6 @@ RPGJS_Canvas.Scene.New({
 			  		var prop = {name:game.ev[map][id].name,consumable:0};
 					item = this._displayItem(prop, i);
 
-					size_h += item.y;
 					content.append(item);
 					array_items.push(item);
 			  		i++;
