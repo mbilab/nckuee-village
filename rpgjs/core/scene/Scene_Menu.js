@@ -33,6 +33,7 @@ RPGJS_Canvas.Scene.New({
 			actors: global.game_actors.get(),
 			player: global.game_player
 		};
+
 		var background = this.createElement();
 		background.drawImage("background");
 		stage.append(background);
@@ -119,11 +120,14 @@ RPGJS_Canvas.Scene.New({
 			
 			sprite_b.propagationOpacity = false;
 			
-			this.drawText("LV " + actor.currentLevel, sprite_b, 270, 10, {
+			//this.drawText("LV " + actor.currentLevel, sprite_b, 270, 10, {
+			
+			this.drawText(this.num2year(game.year)+" year", sprite_b, 230, 10, {
 				size: "20px"
 			});
 			
-			this.drawText(actor.name, sprite_b, 150, 10);
+			//this.drawText(actor.name, sprite_b, 150, 10);
+			this.drawText(game.name, sprite_b, 150, 10);
 			
 			body.append(sprite_b);
 			
@@ -160,7 +164,14 @@ RPGJS_Canvas.Scene.New({
 			width: width_actor
 		};
 	},
-	
+	num2year: function(n){ 
+	  switch(n){
+	    case 1:return n+'st';break;
+	    case 2:return n+'nd';break;
+	    case 3:return n+'rd';break;
+	    case 4:return n+'st';break;
+	  }
+	},
 	__index: function(stage) {
 		var actor, _canvas = this.getCanvas(),
 			obj_actor,
@@ -391,11 +402,12 @@ RPGJS_Canvas.Scene.New({
 		icon.y = 40;
 		
 		help.append(icon);
-		
+		if(data && 'description' in data){	
 		this.drawText(data.description, help, 10, 120, {
 			size: "22px",
 			lineWidth: 100
 		});
+		}
 	},
 	
 	/**
@@ -488,6 +500,17 @@ RPGJS_Canvas.Scene.New({
 		function displaySkills() {
 			var item, nb, prop, array_items = [], s;
 			content.empty();
+			var i = 0;
+			for (var id in game.took){
+			  	var prop = {name:game.ev[id].name,consumable:0};
+				item = this._displayItem(prop, i);
+
+				size_h += item.y;
+				content.append(item);
+				array_items.push(item);
+			  	i++;
+			}
+			/*
 			for (var i=0 ; i < skills.skills.length ; i++) {
 					prop = skills.data[skills.skills[i]];
 
@@ -502,7 +525,7 @@ RPGJS_Canvas.Scene.New({
 					array_items.push(item);
 
 
-			}
+			}*/
 			return array_items;
 		}
 		
@@ -609,6 +632,7 @@ RPGJS_Canvas.Scene.New({
 		});
 		
 		this._esc(function() {
+			box.cursor.remove();
 			self.transitionExit([{
 				el: help,
 				to: {x: _canvas.width}
