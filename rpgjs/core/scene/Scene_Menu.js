@@ -440,7 +440,7 @@ RPGJS_Canvas.Scene.New({
 		item.set.width = 280;
 		item.set.height = 40;
 		if (prop.consumable != undefined && +prop.consumable == 0) {
-			item.set.opacity = 0.4;
+			//item.set.opacity = 0.4;
 		}
 		return item.set;
 	},
@@ -501,14 +501,17 @@ RPGJS_Canvas.Scene.New({
 			var item, nb, prop, array_items = [], s;
 			content.empty();
 			var i = 0;
-			for (var id in game.took){
-			  	var prop = {name:game.ev[id].name,consumable:0};
-				item = this._displayItem(prop, i);
+			for (var map in game.ev){
+				for (var id in game.ev[map]){
+				  	if(!game.ev[map][id].took) continue;
+			  		var prop = {name:game.ev[map][id].name,consumable:0};
+					item = this._displayItem(prop, i);
 
-				size_h += item.y;
-				content.append(item);
-				array_items.push(item);
-			  	i++;
+					size_h += item.y;
+					content.append(item);
+					array_items.push(item);
+			  		i++;
+				}
 			}
 			/*
 			for (var i=0 ; i < skills.skills.length ; i++) {
