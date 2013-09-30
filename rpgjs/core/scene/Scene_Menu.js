@@ -774,10 +774,12 @@ RPGJS_Canvas.Scene.New({
 		function displayInfo(change) {
 			var currentItem, changeItem, val;
 			info.empty();
-			this.drawText(data_actor.name, info, 20, 10, {
+			//this.drawText(data_actor.name, info, 20, 10, {
+			this.drawText(game.name, info, 20, 10, {
 				size: "30px"
 			});
-			this.drawText("LV : " + data_actor.currentLevel, info, 20, 45);
+			//this.drawText("LV : " + data_actor.currentLevel, info, 20, 45);
+			this.drawText(this.num2year(game.year)+" year", info, 20, 45);
 			CE.each(["atk", "pdef", "mdef"], function(i, type) {
 				self.drawText(type.toUpperCase() + " :   " + data_actor.getParamPoint(type), info, 20, 35 * i + 75);
 			});
@@ -980,15 +982,18 @@ RPGJS_Canvas.Scene.New({
 			
 		var data_actor = global.game_actors.getById(actor_id);
 
-		this.drawText(data_actor.name, body, 20, 20, {
+		//this.drawText(data_actor.name, body, 20, 20, {
+		this.drawText(game.name, body, 20, 20, {
 			size: "30px"
 		});
 		
-		this.drawText(data_actor.className, body, 300, 20, {
+		//this.drawText(data_actor.className, body, 300, 20, {
+		this.drawText('College Student', body, 300, 20, {
 			size: "30px"
 		});
 		
-		this.drawText("LV : " + data_actor.currentLevel, body, 300, 65, {
+		//this.drawText("LV : " + data_actor.currentLevel, body, 300, 65, {
+		this.drawText(this.num2year(game.year)+ " year", body, 300, 65, {
 			size: "18px"
 		});
 		this.drawText("EXP : " + data_actor.currentExp, body, 300, 95, {
@@ -997,7 +1002,7 @@ RPGJS_Canvas.Scene.New({
 		this.drawText("NEXT : " + data_actor.nextExp(), body, 300, 125, {
 			size: "18px"
 		});
-		
+
 		var pts = data_actor.getAllParamsPoint(), pos = 1;
 		
 		for (var type in pts) {
