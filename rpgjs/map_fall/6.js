@@ -5,9 +5,9 @@
 		hp_cost: function() { return 'undefined' === typeof game.eng_14_15 ? 8 : 0; },
 		id: id,
 		init: function(){
-			var e = RPGJS.Map.createEvent( id, 5, 0 );
+			var e = RPGJS.Map.createEvent( id, 5, 1 );
 			e.addPage({
-				'graphic': 2,
+				'graphic': 7,
 				'trigger': 'action_button',
 				'type': 'fixed',
 			}, [

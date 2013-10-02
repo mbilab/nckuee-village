@@ -3,7 +3,7 @@
 	var map = 1;
 	game.ev[map][id] = {
 		init: function(){
-			var e = RPGJS.Map.createEvent( id, 0, 0 );
+			var e = RPGJS.Map.createEvent( id, 0, 1 );
 			e.addPage({
 				'graphic': 2,
 				'trigger': 'action_button',

@@ -5,9 +5,9 @@
 		hp_cost: function() { return game.ev[map][id].hp_cost_; },
 		id: id,
 		init: function(){
-			var e = RPGJS.Map.createEvent( id, 6, 0 );
+			var e = RPGJS.Map.createEvent( id, 6, 1 );
 			e.addPage({
-				'graphic': 2,
+				'graphic': 8,
 				'trigger': 'action_button',
 				'type': 'fixed',
 			}, [

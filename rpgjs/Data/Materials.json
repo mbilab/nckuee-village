@@ -1,25 +1,32 @@
 {
-      "autotiles": {
-	      "2": "autotile1.png",
-	      "3": "autotile2.png"
-      },
-      "characters": {
-	      "1": "event1.png",
-	      "2": "event2.png",
-	      "3": "event3.png",
-	      "4": "event4.png",
-	      "5": "cray.png"
-      },
-      "pictures": {
-	      "5_1": "5_1.jpg",
-	      "5_2": "5_2.jpg",
-	      "5_3": "5_3.jpg",
-	      "5_4": "5_4.jpg"
-      },
-      "tilesets": {
-	      "1": "tileset.png"
-      },
-      "windowskins": {
-	      "1": "window.png"
-      }
+  "autotiles": {
+    "2": "autotile1.png",
+    "3": "autotile2.png"
+  },
+  "characters": {
+    "1": "event1.png",
+    "2": "event2.png",
+    "3": "event4.png",
+    "4": "xpchar3.png",
+    "5": "002-Fighter02c.png",
+    "6": "007-Fighter07_dress.png",
+    "7": "016-Thief01_suit.png",
+    "8": "019-Thief04b.png",
+    "9": "020-Hunter01_suit.png",
+    "10": "023-Gunner01_suit.png",
+    "11": "025-Cleric01b.png",
+    "12": "029-Cleric05_dress.png"
+  },
+  "pictures": {
+    "5_1": "5_1.jpg",
+    "5_2": "5_2.jpg",
+    "5_3": "5_3.jpg",
+    "5_4": "5_4.jpg"
+  },
+  "tilesets": {
+    "1": "tileset.png"
+  },
+  "windowskins": {
+    "1": "window.png"
+  }
 }
