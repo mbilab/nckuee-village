@@ -21,6 +21,21 @@ game.is_took = function(ev) {
 	else RPGJS.Variables.data[0] = 0;
 }
 
+game.set_type_move = function(e,t) {
+	switch(t){
+		case 'random':
+			e.moveRandom();	
+			break;
+		case 'approach':
+			e.approachPlayer();
+			break;
+	}
+}
+
+game.remove_type_move = function(e) {
+	e.removeTypeMove('random');	
+}
+
 game.script = function(s) {
 	var args = Array.prototype.slice.call(arguments, 1).join(',');
 	return 'SCRIPT: {"text": "game.'+s+'('+args+')"}';
@@ -30,7 +45,6 @@ game.show_text = function(t) {
 	if ( -1 === t.search('\\\\n') ) t = t.replace(/(.{21})/g,'$1\\n');
 	return 'SHOW_TEXT: {"text": "'+t+'"}';
 }
-
 game.take = function(ev) {
 	if ( ev.take && !ev.take() ) return;
 	var hp_cost = ev.hp_cost();

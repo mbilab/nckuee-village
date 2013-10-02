@@ -2123,9 +2123,11 @@ Class.create("Game_Character", {
         switch (this.type) {
         case "random":
             this.moveRandom();
+	   // this.typeMove.push(this.type);
             break;
         case "approach":
             this.approachPlayer();
+	    //this.typeMove.push(this.type);
             break
         }
     },
@@ -2149,7 +2151,7 @@ Class.create("Game_Character", {
     removeTypeMove: function (b) {
         for (var a = 0; a < this.typeMove.length; a++) {
             if (this.typeMove[a] == b) {
-                this.removeTypeMove[b] = true;
+                this.removeMove[b] = true;
                 delete this.typeMove[a]
             }
         }
@@ -2168,10 +2170,11 @@ Class.create("Game_Character", {
     approachPlayer: function () {
         var a = this;
         b();
+	this.typeMove.push('approach');
 
         function b() {
-            if (a.removeTypeMove.approach) {
-                a.removeTypeMove.approach = false;
+            if (a.removeMove.approach) {
+                a.removeMove.approach = false;
                 return
             }
             if (!global.game_map.getEvent(a.id)) {
@@ -2438,11 +2441,12 @@ Class.create("Game_Character", {
             clearTimeout(this._tick)
         }
         b();
+	this.typeMove.push('random');
 
         function b() {
             var e;
-            if (a.removeTypeMove.random) {
-                a.removeTypeMove.random = false;
+            if (a.removeMove.random) {
+                a.removeMove.random = false;
                 return
             }
             if (!global.game_map.getEvent(a.id)) {

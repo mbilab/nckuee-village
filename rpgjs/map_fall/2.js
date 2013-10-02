@@ -5,14 +5,15 @@
 		hp_cost: function() { return 10; },
 		id: id,
 		init: function(){
-			var e = RPGJS.Map.createEvent( id, 1, 1 );
-			e.addPage({
+			this.e = RPGJS.Map.createEvent( id, 1, 1 );
+			this.e.addPage({
 				'frequence': game.ev.frequence,
 				'graphic': 3,
    		   		'speed': game.ev.speed,
 				'trigger': 'action_button',
 				'type': game.ev.type,
 			}, [
+				game.script('remove_type_move', ev+'.e'),
 				game.show_text('助人為快樂之本，普物為電機之本。普通物理學之於電機人，就像是陽光、空氣、水之於生物體一般。若此關不過、那你的電機人生只好重頭來過。'),
 				game.show_text('你要修 '+name+' 嗎？'),
 				'CHOICES: ["是","否"]',
@@ -39,8 +40,9 @@
 					"ENDIF",
 				'CHOICE_1',
 				'ENDCHOICES',
+				game.script('set_type_move', ev+'.e','&quote;'+game.ev.type+'&quote;'),
 			]);
-			e.display();
+			this.e.display();
 		},
 		name: name,
 		take: null, // set this function and to override, return false to prevent default

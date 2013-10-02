@@ -5,14 +5,15 @@
 		hp_cost: function() { return game.ev[map][id].hp_cost_; },
 		id: id,
 		init: function(){
-			var e = RPGJS.Map.createEvent( id, 6, 1 );
-			e.addPage({
+			this. = RPGJS.Map.createEvent( id, 6, 1 );
+			this.e.addPage({
 				'frequence': game.ev.frequence,
 				'graphic': 8,
    		   		'speed': game.ev.speed,
 				'trigger': 'action_button',
 				'type': game.ev.type,
 			}, [
+				game.script('set_type_move', ev+'.e','&quote;'+game.ev.type+'&quote;'),
 				game.script( 'is_took', ev ),
 				'IF: "0 == variable[0]"',
 					game.show_text('多動多健康，你想要修習怎麼樣的課呢？'),
@@ -46,8 +47,9 @@
 				"ELSE",
 					game.show_text('你已經修過 '+name+' 了！'),
 				"ENDIF",
+				game.script('set_type_move', ev+'.e','&quote;'+game.ev.type+'&quote;'),
 			]);
-			e.display();
+			this.e.display();
 		},
 		name: name,
 		take: null, // set this function and to override, return false to prevent default
