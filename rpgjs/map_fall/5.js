@@ -7,9 +7,11 @@
 		init: function(){
 			var e = RPGJS.Map.createEvent( id, 4, 1 );
 			e.addPage({
+				'frequence': game.ev.frequence,
 				'graphic': 6,
+   		   		'speed': game.ev.speed,
 				'trigger': 'action_button',
-				'type': 'fixed',
+				'type': game.ev.type,
 			}, [
 				game.show_text('身為工程人員還是要有基本的文學素養！'),
 				game.show_text('你要修 '+name+' 嗎？'),

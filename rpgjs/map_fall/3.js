@@ -7,9 +7,11 @@
 		init: function(){
 			var e = RPGJS.Map.createEvent( id, 2, 1 );
 			e.addPage({
+				'frequence': game.ev.frequence,
 				'graphic': 4,
+   		   		'speed': game.ev.speed,
 				'trigger': 'action_button',
-				'type': 'fixed',
+				'type': game.ev.type,
 			}, [
 				game.show_text('工程數學、控制工程…，電機系的數學也是想當重要的，想要好好過你的電機人生，微積分也是重要的基礎喔～'),
 				game.show_text('你要修 '+name+' 嗎？'),

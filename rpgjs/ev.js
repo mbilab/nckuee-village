@@ -1,3 +1,6 @@
+game.ev.frequence = 2;
+game.ev.speed = 1;
+game.ev.type = 'random';
 
 game.can_take = function(ev) {
 	if ( ev.can_take && !ev.can_take() ) return;

@@ -7,9 +7,11 @@
 		init: function(){
 			var e = RPGJS.Map.createEvent( id, 6, 1 );
 			e.addPage({
+				'frequence': game.ev.frequence,
 				'graphic': 8,
+   		   		'speed': game.ev.speed,
 				'trigger': 'action_button',
-				'type': 'fixed',
+				'type': game.ev.type,
 			}, [
 				game.script( 'is_took', ev ),
 				'IF: "0 == variable[0]"',
