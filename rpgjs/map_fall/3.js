@@ -13,7 +13,7 @@
 				'trigger': 'action_button',
 				'type': game.ev.type,
 			}, [
-				game.script('remove_type_move', ev+'.e'),
+				game.script('remove_type_move', ev+'.e','&quote;'+game.ev.type+'&quote;'),
 				game.show_text('工程數學、控制工程…，電機系的數學也是想當重要的，想要好好過你的電機人生，微積分也是重要的基礎喔～'),
 				game.show_text('你要修 '+name+' 嗎？'),
 				'CHOICES: ["是","否"]',

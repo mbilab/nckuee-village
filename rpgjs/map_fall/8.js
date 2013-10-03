@@ -19,7 +19,7 @@
 				'trigger': 'action_button',
 				'type': game.ev.type,
 			}, [
-				game.script('remove_type_move', ev+'.e'),
+				game.script('remove_type_move', ev+'.e','&quote;'+game.ev.type+'&quote;'),
 				game.show_text('在此課程中，會介紹你電子元件的特性及應用，像是 BJT、CMOS…以及使用這些元件兜成的基本電路跟電路特性。目前最常被使用的原件是 CMOS，但在高頻的情形下，BJT 能具有它的優勢。'),
 				game.show_text('你要修 '+name+' 嗎？'),
 				'CHOICES: ["是","否"]',

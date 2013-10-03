@@ -13,7 +13,7 @@
 				'trigger': 'action_button',
 				'type': game.ev.type,
 			}, [
-				game.script('remove_type_move', ev+'.e'),
+				game.script('remove_type_move', ev+'.e','&quote;'+game.ev.type+'&quote;'),
 				game.show_text('助人為快樂之本，普物為電機之本。普通物理學之於電機人，就像是陽光、空氣、水之於生物體一般。若此關不過、那你的電機人生只好重頭來過。'),
 				game.show_text('你要修 '+name+' 嗎？'),
 				'CHOICES: ["是","否"]',

@@ -13,7 +13,7 @@
 				'trigger': 'action_button',
 				'type': game.ev.type,
 			}, [
-				game.script('remove_type_move', ev+'.e'),
+				game.script('remove_type_move', ev+'.e','&quote;'+game.ev.type+'&quote;'),
 				game.script( 'is_took', ev ),
 				'IF: "0 == variable[0]"',
 					game.show_text('請問你的學測英文是幾級分？'),

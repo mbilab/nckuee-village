@@ -11,7 +11,6 @@
 				'trigger': 'action_button',
 				'type': 'fixed',
 			}, [
-				game.script('remove_type_move', ev+'.e'),
 				game.show_text('漫漫黑夜嘆孤伶　鐘聲悠揚意難禁\\n自古紅顏多厄運　默默沉哀到三更\\n黃花飄落似有意　綠水東流卻無情\\n誰家男兒願留我　遠離脂粉冷淒淒\\n且把灰塵消除盡　白日永久放光明'),
 				game.show_text('＜玩家＞奇怪…這不是實習課嗎，難道我走錯教室了？'),
 				game.show_text('你要修 '+name+' 嗎？'),
@@ -27,7 +26,6 @@
 					game.show_text('%V[0]'),
 				'CHOICE_1',
 				'ENDCHOICES',
-				game.script('set_type_move', ev+'.e','&quote;'+game.ev.type+'&quote;'),
 			]);
 			this.e.display();
 		},

@@ -32,8 +32,8 @@ game.set_type_move = function(e,t) {
 	}
 }
 
-game.remove_type_move = function(e) {
-	e.removeTypeMove('random');	
+game.remove_type_move = function(e,t) {
+	e.removeTypeMove(t);	
 }
 
 game.script = function(s) {

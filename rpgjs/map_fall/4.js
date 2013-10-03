@@ -13,7 +13,7 @@
 				'trigger': 'action_button',
 				'type': game.ev.type,
 			}, [
-				game.script('remove_type_move', ev+'.e'),
+				game.script('remove_type_move', ev+'.e','&quote;'+game.ev.type+'&quote;'),
 				game.show_text('電腦科學，不同以往國、高中的一般科目，此課程是你在大一課程中接觸到最靠近專業電機領域的科目。我們將會教你目前比較多人使用的兩種程式語言，C 語言以及 JAVA，第一次碰程式難免陌生，多加練習會有幫助的。'),
 				game.show_text('你要修 '+name+' 嗎？'),
 				'CHOICES: ["是","否"]',
