@@ -2123,11 +2123,9 @@ Class.create("Game_Character", {
         switch (this.type) {
         case "random":
             this.moveRandom();
-	   // this.typeMove.push(this.type);
             break;
         case "approach":
             this.approachPlayer();
-	    //this.typeMove.push(this.type);
             break
         }
     },
@@ -2146,7 +2144,7 @@ Class.create("Game_Character", {
         }
     },
     lastTypeMove: function () {
-        return this.typeMove[this.typeMove.length - 1]
+       return this.typeMove[this.typeMove.length - 1]
     },
     removeTypeMove: function (b) {
         for (var a = 0; a < this.typeMove.length; a++) {
@@ -2163,7 +2161,7 @@ Class.create("Game_Character", {
                 break;
             case "approach":
                 this.approachPlayer();
-                break
+                break;
             }
         }
     },
@@ -3709,6 +3707,21 @@ Class.create("Spriteset_Map", {
         RPGJS.Path.load("pictures", c.filename, d, function (e) {
             var f = a.scene.createElement();
             f.drawImage("pictures_" + d);
+	    switch(c.align){
+		    case 'left':
+			    c.x = 70;
+			    console.log(game.win_height);
+			    c.y = (game.win_height*2/3 - e.height)/2;
+			    break;
+		    case 'right':
+			    c.x = game.win_width - e.width -70;
+			    c.y = (game.win_height*2/3 - e.height)/2;
+			    break;
+		    case 'middle':
+			    c.x = (game.win_width - e.width)/2;
+			    c.y = (game.win_height*2/3 - e.height)/2;
+			    break;
+	    }
             f.x = c.x;
             f.y = c.y;
             f.width = e.width;
