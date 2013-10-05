@@ -4,7 +4,7 @@
 	var ev = 'game.ev['+map+']['+id+']';
 	game.ev[map][id] = {
 		init: function(){
-			this.e = RPGJS.Map.createEvent( id, 0, 1 );
+			this.e = RPGJS.Map.createEvent( id, 5, 5 );
 			this.e.addPage({
 				'frequence': game.ev.frequence,
 				'graphic': 2,
