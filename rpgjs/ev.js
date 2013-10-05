@@ -1,6 +1,6 @@
 game.ev.frequence = 2;
 game.ev.speed = 1;
-game.ev.type = 'random';
+game.ev.type = 'fixed';
 
 game.can_take = function(ev) {
 	if ( ev.can_take && !ev.can_take() ) return;
@@ -42,13 +42,17 @@ game.script = function(s) {
 }
 
 game.show_text = function(t,p) {
-	if ( -1 === t.search('\\\\n') ) t = t.replace(/(.{21})/g,'$1\\n');
+	t = -1 === t.search('\n')
+	? t.replace(/(.{21})/g,'$1\\n') // without \n, auto wrap
+	: t.replace(/\n/g,'\\n'); // with \n, make them \\n
+	t = t.replace(/"/g,'\\"');
 	if(typeof p != 'undefined'){
 		return 'SHOW_TEXT: {"filename":"'+p.filename+'","id":"'+p.id+'","text": "'+t+'"}';
 	}else{
 		return 'SHOW_TEXT: {"text": "'+t+'"}';
 	}
 }
+
 game.take = function(ev) {
 	if ( ev.take && !ev.take() ) return;
 	var hp_cost = ev.hp_cost();
@@ -61,5 +65,7 @@ game.take = function(ev) {
 	game.n_took++;
 	RPGJS.Variables.data[0] = '習得了 '+ev.name+' ！\n消耗 '+hp_cost+' 點體力，還剩 '+game.hp+' 點體力。';
 }
+
+game.v0 = function(v) { return 'SCRIPT: {"text": "RPGJS.Variables.data[0] = \''+v+'\''; }
 
 // vi:nowrap:sw=4:ts=4
