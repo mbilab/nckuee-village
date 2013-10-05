@@ -41,9 +41,13 @@ game.script = function(s) {
 	return 'SCRIPT: {"text": "game.'+s+'('+args+')"}';
 }
 
-game.show_text = function(t) {
+game.show_text = function(t,p) {
 	if ( -1 === t.search('\\\\n') ) t = t.replace(/(.{21})/g,'$1\\n');
-	return 'SHOW_TEXT: {"text": "'+t+'"}';
+	if(typeof p != 'undefined'){
+		return 'SHOW_TEXT: {"filename":"'+p.filename+'","id":"'+p.id+'","text": "'+t+'"}';
+	}else{
+		return 'SHOW_TEXT: {"text": "'+t+'"}';
+	}
 }
 game.take = function(ev) {
 	if ( ev.take && !ev.take() ) return;

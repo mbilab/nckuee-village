@@ -638,7 +638,7 @@ Class.create("Interpreter", {
         } else {
             this.nextCommand()
         }
-        this.scene_window.text(f)
+        this.scene_window.text(f,g)
     },
     cmdChoice: function (b, a, c) {
         this.setCurrentPos(this._conditions[c]["endchoices"]);
