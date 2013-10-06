@@ -66,6 +66,6 @@ game.take = function(ev) {
 	RPGJS.Variables.data[0] = '習得了 '+ev.name+' ！\n消耗 '+hp_cost+' 點體力，還剩 '+game.hp+' 點體力。';
 }
 
-game.v0 = function(v) { return 'SCRIPT: {"text": "RPGJS.Variables.data[0] = \''+v+'\''; }
+game.v0 = function(v) { return 'SCRIPT: {"text": "RPGJS.Variables.data[0] = \''+v+'\'"}'; }
 
 // vi:nowrap:sw=4:ts=4

@@ -487,7 +487,7 @@ Class.create("Interpreter", {
                         h = Interpreter.commandFunction[b]
                     } if (h) {
                         if (e) {
-                            e = e.replace(/'/g, '"');
+//                            e = e.replace(/'/g, '"');
                             e = e.replace(/&quote;/g, "'");
                             e = JSON.parse(e);
                             return {
