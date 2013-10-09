@@ -1,15 +1,5 @@
 (function(){
 	var map = 1, id = 11, ev = 'game.ev['+map+']['+id+']';
-/*
-bargain
-培根 => 答案是議價，可惜答錯囉～體力扣５
-議價 =>  恭喜答對了～進入下一題，體力扣０
-請求 =>  答案是議價，可惜答錯囉～體力扣５
-seduce
-減少 => 別灰心～能答對到第三題已經很棒了，體力扣２
-果醬 =>  別灰心～能答對到第三題已經很棒了，體力扣２
-誘惑=>  恭喜答對了，全對真是太厲害了～體力扣０
-*/
 	var name = '大二英文';
 	game.ev[map][id] = {
 		hp_cost: function() { return 8; },
@@ -35,13 +25,36 @@ seduce
 							game.show_text('請翻譯ｒａｄｉｏ'),
 							'CHOICES: ["收音機","錄影帶","吹風機"]',
 							'CHOICE_0',
-								game.show_text('恭喜答對了～進入下一題，體力扣 0 點'),
+								game.show_text('恭喜答對了～進入下一題'),
+								game.show_text('請翻譯ｂａｒｇａｉｎ'),
+								'CHOICES: ["培根","議價","請求"]',
+								'CHOICE_0',
+									'SCRIPT: {"text": "game.hp -= 5"}',
+									game.v0('答案是議價，可惜答錯囉～體力扣 5 點'),
+								'CHOICE_1',
+									game.show_text('恭喜答對了～進入下一題'),
+									game.show_text('請翻譯ｓｅｄｕｃｅ'),
+									'CHOICES: ["減少","果醬","誘惑"]',
+									'CHOICE_0',
+										'SCRIPT: {"text": "game.hp -= 2"}',
+										game.v0('別灰心～能答對到第三題已經很棒了，體力扣 2 點'),
+									'CHOICE_1',
+										'SCRIPT: {"text": "game.hp -= 2"}',
+										game.v0('別灰心～能答對到第三題已經很棒了，體力扣 2 點'),
+									'CHOICE_2',
+										game.show_text('恭喜答對了，全對真是太厲害了～'),
+										game.script( 'take', ev ),
+									'ENDCHOICES',
+								'CHOICE_2',
+									'SCRIPT: {"text": "game.hp -= 5"}',
+									game.v0('答案是議價，可惜答錯囉～體力扣 5 點'),
+								'ENDCHOICES',
 							'CHOICE_1',
 								'SCRIPT: {"text": "game.hp -= 8"}',
-								game.v0('正解是收音機，連這麼基本的都答錯，英文要加強喔！！\\n體力扣 8 點'),
+								game.v0('正解是收音機，連這麼基本的都答錯，英文要加強喔！！體力扣 8 點'),
 							'CHOICE_2',
 								'SCRIPT: {"text": "game.hp -= 8"}',
-								game.v0('正解是收音機，連這麼基本的都答錯，英文要加強喔！！\\n體力扣 8 點'),
+								game.v0('正解是收音機，連這麼基本的都答錯，英文要加強喔！！體力扣 8 點'),
 							'ENDCHOICES',
 						'ENDIF',
 					"ENDIF",
