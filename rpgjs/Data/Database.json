@@ -6,7 +6,7 @@
   },
   "autotiles": {
     "1": {
-      "autotiles": [2,3],
+      "autotiles": [1,2],
       "propreties": [[0,0],[0,15]]
     }
   },

@@ -1,7 +1,7 @@
 {
   "autotiles": {
-    "2": "autotile1.png",
-    "3": "autotile2.png"
+    "1": "autotile1.png",
+    "2": "autotile2.png"
   },
   "characters": {
     "1": "event1.png",
