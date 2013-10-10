@@ -180,7 +180,7 @@ sub convert_tile{
 		}
 	}elsif($type eq 'tiled'){
 	  	$new = 0;
-		$id and $new = $id < 3072 ?  &terrain_transfer('tiled',$id) + $cfg{last_tile_id} : $id - 3071;
+		length $id and $new = $id < 3072 ?  &terrain_transfer('tiled',$id) + $cfg{last_tile_id} : $id - 3071;
 	}
 	return $new;
 }
@@ -214,7 +214,6 @@ sub terrain_transfer {
 		$id > $#map and return -1;
 		return $map[$id];
 	}elsif($type eq 'tiled'){
-	  	$id or return 0;
 		my $offset = int($id/48);
 		for my $i (0..$#map){
 			$offset*48+$map[$i] eq $id and return $offset*15+$i; 
