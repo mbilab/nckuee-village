@@ -8,7 +8,7 @@ game.can_take = function(ev) {
 	else RPGJS.Variables.data[0] = '你的體力不夠修這門課囉！';
 }
 
-game.cmd_v0 = function(v) { console.log(v); return 'SCRIPT: {"text": "RPGJS.Variables.data[0] = \''+1+'\'"}'; }
+game.cmd_v0 = function(v) { return 'SCRIPT: {"text": "RPGJS.Variables.data[0] = \''+1+'\'"}'; }
 
 game.defined = function() {
 	for ( var i = 0, o = game; i < arguments.length; i++ ) {

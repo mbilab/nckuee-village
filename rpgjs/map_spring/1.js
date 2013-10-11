@@ -1,7 +1,8 @@
 (function(){
-	var map = 1, id = 1, ev = 'game.ev['+map+']['+id+']';
+	var map = 2, id = 1, ev = 'game.ev['+map+']['+id+']';
 	game.ev[map][id] = {
 		init: function(){
+			console.log('okok');
 			this.e = RPGJS.Map.createEvent( id, 5, 5 );
 			this.e.addPage({
 				'frequence': game.ev.frequence,

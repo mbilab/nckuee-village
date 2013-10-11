@@ -34,11 +34,15 @@
 		<script src="map_fall/14.js"></script>
 		<script src="map_fall/15.js"></script>
 		<script src="map_fall/16.js"></script>
+		<script src="map_spring/1.js"></script>
 
 		<script>
 			function can_next_semester() { RPGJS.Switches.set(0, game['calc'] && game['phys']); }
 			function is_taked(course) { RPGJS.Switches.set(0, typeof game[course] !== 'undefined'); }
-			function init_map() { for ( var i in game.ev[1] ) game.ev[1][i].init(); }
+			function init_map() {
+				for ( var i in game.ev[1] ) game.ev[1][i].init();
+				for ( var i in game.ev[2] ) game.ev[2][i].init();
+			}
 			function take(course) { game[course] = true; }
 
 			RPGJS.defines({
