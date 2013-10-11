@@ -1,0 +1,18 @@
+{
+  "author": "Tien-Hao Chang",
+  "description": "nckuee-village",
+  "engines": { "node": ">=0.10.20" },
+  "homepage": "http://zoro.ee.ncku.edu.tw/rpg/",
+  "name": "nckuee-village",
+  "dependencies": {},
+  "devDependencies": {
+    "brunch": ">=1.7.7",
+    "javascript-brunch": ">=1.7.0",
+    "npm": ">=1.3.11"
+  },
+  "scripts": {
+    "build": "./node_modules/.bin/brunch build",
+    "start": "./node_modules/.bin/brunch watch"
+  },
+  "version": "0.0.1"
+}
