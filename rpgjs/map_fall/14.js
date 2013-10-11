@@ -14,7 +14,7 @@
 			this.e = RPGJS.Map.createEvent( id, 11, 9 );
 			this.e.addPage({
 				'frequence': game.ev.frequence,
-				'graphic': 17,
+				'graphic': 15,
    		   		'speed': game.ev.speed,
 				'trigger': 'action_button',
 				'type': game.ev.type,

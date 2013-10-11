@@ -5,7 +5,7 @@
 		hp_cost: function() { return 10; },
 		id: id,
 		init: function(){
-			this.e = RPGJS.Map.createEvent( id, 15, 4 );
+			this.e = RPGJS.Map.createEvent( id, 5, 11 );
 			this.e.addPage({
 				'graphic': 2,
 				'trigger': 'action_button',
