@@ -8,6 +8,8 @@ game.can_take = function(ev) {
 	else RPGJS.Variables.data[0] = '你的體力不夠修這門課囉！';
 }
 
+game.cmd_v0 = function(v) { console.log(v); return 'SCRIPT: {"text": "RPGJS.Variables.data[0] = \''+1+'\'"}'; }
+
 game.defined = function() {
 	for ( var i = 0, o = game; i < arguments.length; i++ ) {
 		if ( !o.hasOwnProperty(arguments[i]) ) return false;
@@ -66,6 +68,6 @@ game.take = function(ev) {
 	RPGJS.Variables.data[0] = '習得了 '+ev.name+' ！\n消耗 '+hp_cost+' 點體力，還剩 '+game.hp+' 點體力。';
 }
 
-game.v0 = function(v) { return 'SCRIPT: {"text": "RPGJS.Variables.data[0] = \''+v+'\'"}'; }
+game.v0 = function(v) { RPGJS.Variables.data[0] = v; }
 
 // vi:nowrap:sw=4:ts=4
