@@ -5,15 +5,21 @@
 		hp_cost: function() { return 'undefined' === typeof game.eng_14_15 ? 8 : 0; },
 		id: id,
 		init: function(){
-			this.e = RPGJS.Map.createEvent( id, 5, 7 );
-			this.e.addPage({
+			RPGJS.setEvent(map,id,[
+				{
+					"id":id,
+					"x":5,
+					"y":7,
+					"name":id
+				},
+				[{
 				'frequence': game.ev.frequence,
 				'graphic': 7,
    		   		'speed': game.ev.speed,
 				'trigger': 'action_button',
 				'type': game.ev.type,
-			}, [
-				game.script('remove_type_move', ev+'.e','&quote;'+game.ev.type+'&quote;'),
+				'commands':[
+				game.script('remove_type_move', id,'&quote;'+game.ev.type+'&quote;'),
 				game.script( 'is_took', ev ),
 				'IF: "0 == variable[0]"',
 					game.show_text('請問你的學測英文是幾級分？'),
@@ -30,9 +36,9 @@
 				"ELSE",
 					game.show_text('你已經修過 '+name+' 了！'),
 				"ENDIF",
-				game.script('set_type_move', ev+'.e','&quote;'+game.ev.type+'&quote;'),
-			]);
-			this.e.display();
+				game.script('set_type_move', id,'&quote;'+game.ev.type+'&quote;'),
+				]
+				}]]);
 		},
 		name: name,
 		take: null, // set this function and to override, return false to prevent default

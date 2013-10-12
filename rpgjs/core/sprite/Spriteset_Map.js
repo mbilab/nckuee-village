@@ -428,6 +428,22 @@ Class.create("Spriteset_Map", {
 		RPGJS.Path.load("pictures", params.filename, id, function(img) {
 			var el = self.scene.createElement();
 			el.drawImage("pictures_" + id);
+			// modify
+			switch(param.align){
+				case 'left':
+					param.x = 70;
+					param.y = (game.win_height*2/3 - img.height)/2;
+					break;
+				case 'right':
+					param.x = game.win_width - img.width -70;
+					param.y = (game.win_height*2/3 - img.height)/2;
+					break;
+				case 'middle':
+					param.x = (game.win_width - img.width)/2;
+					param.y = (game.win_height*2/3 - img.height)/2;
+					break;
+			}
+			// ---
 			el.x = params.x;
 			el.y = params.y;
 			el.width = img.width;

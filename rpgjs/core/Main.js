@@ -243,6 +243,8 @@ Existing type (id: root of path)
 		if (!this.events[map_id]) {
 			this.events[map_id] = {};
 		}
+		// debug clone command
+		obj[1][0]._commands = CE.clone(obj[1][0].commands);
 		this.events[map_id][event_id] = obj;
 	},
 	

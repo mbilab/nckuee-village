@@ -11,15 +11,21 @@
 		hp_cost: function() { return 8; },
 		id: id,
 		init: function(){
-			this.e = RPGJS.Map.createEvent( id, 13, 9 );
-			this.e.addPage({
+			RPGJS.setEvent(map,id,[
+				{
+					"id":id,
+					"x":13,
+					"y":9,
+					"name":id
+				},
+				[{
 				'frequence': game.ev.frequence,
 				'graphic': 16,
    		   		'speed': game.ev.speed,
 				'trigger': 'action_button',
 				'type': game.ev.type,
-			}, [
-				game.script('remove_type_move', ev+'.e','&quote;'+game.ev.type+'&quote;'),
+				'commands': [
+				game.script('remove_type_move', id,'&quote;'+game.ev.type+'&quote;'),
 				game.show_text('什麼是電儀表呢？修了你就知道…其實一點也不難。'),
 				game.show_text('你要修 '+name+' 嗎？'),
 				'CHOICES: ["是","否"]',
@@ -43,9 +49,9 @@
 					game.show_text('%V[0]'),
 				'CHOICE_1',
 				'ENDCHOICES',
-				game.script('set_type_move', ev+'.e','&quote;'+game.ev.type+'&quote;'),
-			]);
-			this.e.display();
+				game.script('set_type_move', id,'&quote;'+game.ev.type+'&quote;'),
+				],
+			}]]);
 		},
 		name: name,
 		take: null, // set this function and to override, return false to prevent default

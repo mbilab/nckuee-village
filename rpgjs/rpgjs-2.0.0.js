@@ -85,6 +85,8 @@ Class.create("RPGJS", {
         if (!this.events[a]) {
             this.events[a] = {}
         }
+	// debug clone command
+	c[1][0]._commands = CE.clone(c[1][0].commands);
         this.events[a][b] = c
     },
     setDynamicEvent: function (a, b) {
@@ -529,6 +531,7 @@ Class.create("Interpreter", {
         for (var d = 0; d < this.commands.length; d++) {
             c = this.commands[d];
             f = /(^[^:]+)/.exec(c);
+
             if (f != null) {
                 a = f[1];
                 if (a == "IF") {
@@ -561,7 +564,7 @@ Class.create("Interpreter", {
                     l++;
                     change = true
                 } else {
-                    if (/CHOICE_[0-9]+/.test(a)) {
+                    if (/CHOICE_[0-9]+$/.test(a)) {
                         f = /CHOICE_([0-9]+)/.exec(a);
                         b = g[l - 1];
                         this._conditions[b]["choice_" + f[1]] = d;
@@ -1950,6 +1953,9 @@ var _class = {
                     h[0].id = k
                 }
             }
+	    // debug  clone command
+	    h[1][0].commands = CE.clone(h[1][0]._commands);
+
             b.events[k] = Class.New("Game_Event", [b.map_id, h]);
             b.events[k].refresh();
             RPGJS.Plugin.call("Game", "addEvent", [b.events[k], b.map_id, h, f, this]);
@@ -3710,7 +3716,6 @@ Class.create("Spriteset_Map", {
 	    switch(c.align){
 		    case 'left':
 			    c.x = 70;
-			    console.log(game.win_height);
 			    c.y = (game.win_height*2/3 - e.height)/2;
 			    break;
 		    case 'right':

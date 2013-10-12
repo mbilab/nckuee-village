@@ -5,15 +5,21 @@
 		hp_cost: function() { return 10; },
 		id: id,
 		init: function(){
-			this.e = RPGJS.Map.createEvent( id, 9, 5 );
-			this.e.addPage({
+			RPGJS.setEvent(map,id,[
+				{
+					"id":id,
+					"x":9,
+					"y":5,
+					"name":id
+				},
+				[{
 				'frequence': game.ev.frequence,
 				'graphic': 4,
    		   		'speed': game.ev.speed,
 				'trigger': 'action_button',
 				'type': game.ev.type,
-			}, [
-				game.script('remove_type_move', ev+'.e','&quote;'+game.ev.type+'&quote;'),
+				'commands':[
+				game.script('remove_type_move', id,'&quote;'+game.ev.type+'&quote;'),
 				game.show_text('工程數學、控制工程…，電機系的數學也是想當重要的，想要好好過你的電機人生，微積分也是重要的基礎喔～'),
 				game.show_text('你要修 '+name+' 嗎？'),
 				'CHOICES: ["是","否"]',
@@ -40,9 +46,9 @@
 					"ENDIF",
 				'CHOICE_1',
 				'ENDCHOICES',
-				game.script('set_type_move', ev+'.e','&quote;'+game.ev.type+'&quote;'),
-			]);
-			this.e.display();
+				game.script('set_type_move', id,'&quote;'+game.ev.type+'&quote;'),
+				]
+			}]]);
 		},
 		name: name,
 		take: null, // set this function and to override, return false to prevent default

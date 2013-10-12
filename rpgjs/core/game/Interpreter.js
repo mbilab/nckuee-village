@@ -208,7 +208,8 @@ if (typeof exports != "undefined") {
 					
 					if (exec_cmd) {
 						if (params) {
-							params = params.replace(/'/g, '"');
+							//params = params.replace(/'/g, '"');
+							//modify
 							params = params.replace(/&quote;/g, "'");
 							params = JSON.parse(params);
 							return {name: name, id: id, params: params, callback: exec_cmd};
@@ -396,7 +397,8 @@ if (typeof exports != "undefined") {
 		else {
 			this.nextCommand();
 		}
-		this.scene_window.text(text);
+		this.scene_window.text(text,param);
+		//modify
 	},
 	
 	cmdChoice: function(params, name, id) {
@@ -897,7 +899,8 @@ if (typeof exports != "undefined") {
 	cmdShowPicture: function(params) {
 		var self = this;
 		params = this._valuePicture(params);
-		params.filename = RPGJS.Path.get("pictures", params.filename, false, true);
+		params.filename = RPGJS.Path.get("pictures", params.id, false, true);
+		// debug param.id => param.filename
 		global.game_map.callScene("pictures", ["add", [params.id, params, function() {
 			self.nextCommand();
 		}]]);

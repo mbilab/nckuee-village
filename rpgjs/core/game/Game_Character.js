@@ -200,7 +200,8 @@ Class.create("Game_Character", {
 	removeTypeMove: function(type) {
 		for (var i=0 ; i < this.typeMove.length ; i++) {
 			if (this.typeMove[i] == type) {
-				this.removeTypeMove[type] = true;
+				this.removeMove[type] = true;
+				//debug removeMove => removeTypeMove
 				delete this.typeMove[i];
 			}
 		}
@@ -232,10 +233,13 @@ Class.create("Game_Character", {
 
 		
 		approach();
+		this.typeMove.push('approach');
+		//debug push approach into typeMove
 		function approach() {
 		
-			if (self.removeTypeMove["approach"]) {
-				self.removeTypeMove["approach"] = false;
+			if (self.removeMove.approach) {
+				self.removeMove.approach = false;
+				//debug removeMove => removeTypeMove
 				return;
 			}
 			
@@ -610,10 +614,14 @@ Example
 
 		// this.typeMove.push("random");
 		rand();
+		this.typeMove.push('random');
+		//debug: push random into typeMove
+
 		function rand() {
 			var timer;
-			if (self.removeTypeMove["random"]) {
-				self.removeTypeMove["random"]= false;
+			if (self.removeMove.random) {
+				self.removeMove.random= false;
+				//debug removeTypeMove => removeMove 
 				return;
 			}
 			if (!global.game_map.getEvent(self.id)) {

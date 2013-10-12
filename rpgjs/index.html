@@ -52,8 +52,9 @@
 
 				RPGJS.Player.init({
 					actor: 1,
-					start: { x: 4, y: 4, id: 1 },
+					start: { x: 4, y: 4, id: 1},
 				});
+				init_map();
 				RPGJS.Scene.load(["Scene_Gameover"]);
 				RPGJS.Scene.load(["Scene_Load"]);
 				RPGJS.Scene.load(["Scene_Map"]);

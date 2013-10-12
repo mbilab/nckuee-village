@@ -23,7 +23,8 @@ game.is_took = function(ev) {
 	else RPGJS.Variables.data[0] = 0;
 }
 
-game.set_type_move = function(e,t) {
+game.set_type_move = function(id,t) {
+	e = global.game_map.getEvent(id);
 	switch(t){
 		case 'random':
 			e.moveRandom();	
@@ -34,7 +35,8 @@ game.set_type_move = function(e,t) {
 	}
 }
 
-game.remove_type_move = function(e,t) {
+game.remove_type_move = function(id,t) {
+	e = global.game_map.getEvent(id);
 	e.removeTypeMove(t);	
 }
 

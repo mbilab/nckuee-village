@@ -11,15 +11,21 @@
 		hp_cost: function() { return 18; },
 		id: id,
 		init: function(){
-			this.e = RPGJS.Map.createEvent( id, 11, 9 );
-			this.e.addPage({
+			RPGJS.setEvent(map,id,[
+				{
+					"id":id,
+					"x":11,
+					"y":9,
+					"name":id
+				},
+				[{
 				'frequence': game.ev.frequence,
 				'graphic': 15,
    		   		'speed': game.ev.speed,
 				'trigger': 'action_button',
 				'type': game.ev.type,
-			}, [
-				game.script('remove_type_move', ev+'.e','&quote;'+game.ev.type+'&quote;'),
+				'commands': [
+				game.script('remove_type_move', id,'&quote;'+game.ev.type+'&quote;'),
 				game.show_text('電學與磁學有著緊密的關係，本課程會介紹兩者間的種種密不可分關係，Maxwell’s Laws 是貫穿本學習的重要定律，想要學會電磁學，就不能不懂Maxwell’s Law。'),
 				game.show_text('你要修 '+name+' 嗎？'),
 				'CHOICES: ["是","否"]',
@@ -45,9 +51,9 @@
 					game.show_text('%V[0]'),
 				'CHOICE_1',
 				'ENDCHOICES',
-				game.script('set_type_move', ev+'.e','&quote;'+game.ev.type+'&quote;'),
-			]);
-			this.e.display();
+				game.script('set_type_move', id,'&quote;'+game.ev.type+'&quote;'),
+				],
+				}]]);
 		},
 		name: name,
 		take: null, // set this function and to override, return false to prevent default

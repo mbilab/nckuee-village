@@ -11,15 +11,21 @@
 		hp_cost: function() { return 10; },
 		id: id,
 		init: function(){
-			this.e = RPGJS.Map.createEvent( id, 11, 7 );
-			this.e.addPage({
+			RPGJS.setEvent(map,id,[
+				{
+					"id":id,
+					"x":11,
+					"y":7,
+					"name":id
+				},
+			[{
 				'frequence': game.ev.frequence,
 				'graphic': 10,
    		   		'speed': game.ev.speed,
 				'trigger': 'action_button',
 				'type': game.ev.type,
-			}, [
-				game.script('remove_type_move', ev+'.e','&quote;'+game.ev.type+'&quote;'),
+				'commands': [
+				game.script('remove_type_move', id,'&quote;'+game.ev.type+'&quote;'),
 				game.show_text('電路學的基礎是以克希荷夫定律為基礎，探討電子元件（電阻、電容、電感等）之電壓與電流的關係，本學期所教的電路以使用直流電為主，而交流電部分將留到下學期。'),
 				game.show_text('你要修 '+name+' 嗎？'),
 				'CHOICES: ["是","否"]',
@@ -35,9 +41,9 @@
 					game.show_text('%V[0]'),
 				'CHOICE_1',
 				'ENDCHOICES',
-				game.script('set_type_move', ev+'.e','&quote;'+game.ev.type+'&quote;'),
-			]);
-			this.e.display();
+				game.script('set_type_move', id,'&quote;'+game.ev.type+'&quote;'),
+				]
+			}]]);
 		},
 		name: name,
 		take: null, // set this function and to override, return false to prevent default

@@ -5,6 +5,10 @@ use GD;
 use JSON;
 use YAML;
 
+if($ARGV[0] and $ARGV[0] =~ /\.(:?JPG|jpg|PNG|png|GIF|gif)$/){
+	&graph_rpgjs2tiled($ARGV[0]);
+	exit;
+}
 my $map = &load_json($ARGV[0]);
 my $output = $ARGV[1] || "output.json";
 my %cfg = (

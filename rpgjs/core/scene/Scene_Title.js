@@ -104,7 +104,7 @@ RPGJS_Canvas.Scene.New({
 			RPGJS.scene.call("Scene_Map");
 		}
 		else {
-			RPGJS.scene.call("Scene_Map").load(init_map);
+			RPGJS.scene.call("Scene_Map").load();
 		}
 	},
 	load_game: function() {

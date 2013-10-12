@@ -11,15 +11,21 @@
 		hp_cost: function() { return 10; },
 		id: id,
 		init: function(){
-			this.e = RPGJS.Map.createEvent( id, 9, 7 );
-			this.e.addPage({
+			RPGJS.setEvent(map,id,[
+				{
+					"id":id,
+					"x":9,
+					"y":7,
+					"name":id
+				},
+				[{
 				'frequence': game.ev.frequence,
 				'graphic': 9,
    		   		'speed': game.ev.speed,
 				'trigger': 'action_button',
 				'type': game.ev.type,
-			}, [
-				game.script('remove_type_move', ev+'.e','&quote;'+game.ev.type+'&quote;'),
+				'commands': [
+				game.script('remove_type_move', id,'&quote;'+game.ev.type+'&quote;'),
 				game.show_text('在此課程中，會介紹你電子元件的特性及應用，像ＢＪＴ、ＣＭＯＳ…以及使用這些元件兜成的基本電路跟電路特性。目前最常被使用的原件是ＣＭＯＳ，但在高頻的情形下，ＢＪＴ能具有它的優勢。'),
 				game.show_text('你要修 '+name+' 嗎？'),
 				'CHOICES: ["是","否"]',
@@ -40,9 +46,9 @@
 					game.show_text('%V[0]'),
 				'CHOICE_1',
 				'ENDCHOICES',
-				game.script('set_type_move', ev+'.e','&quote;'+game.ev.type+'&quote;'),
-			]);
-			this.e.display();
+				game.script('set_type_move', id,'&quote;'+game.ev.type+'&quote;'),
+				]
+				}]]);
 		},
 		name: name,
 		take: null, // set this function and to override, return false to prevent default

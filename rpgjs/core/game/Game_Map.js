@@ -612,6 +612,8 @@ var _class = {
 				if (data[0].id) id = data[0].id;
 				else data[0].id = id;
 			}
+	    		// debug  clone command
+	    		data[1][0].commands = CE.clone(data[1][0]._commands);
 			self.events[id] = Class.New("Game_Event", [self.map_id, data]);
 			self.events[id].refresh();
 			RPGJS.Plugin.call("Game", "addEvent", [self.events[id], self.map_id, data, dynamic, this]);

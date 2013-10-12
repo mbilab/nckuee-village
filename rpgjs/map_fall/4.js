@@ -5,15 +5,21 @@
 		hp_cost: function() { return 20; },
 		id: id,
 		init: function(){
-			this.e = RPGJS.Map.createEvent( id, 11, 5 );
-			this.e.addPage({
+			RPGJS.setEvent(map,id,[
+				{
+					"id":id,
+					"x":11,
+					"y":5,
+					"name":id
+				},
+				[{
 				'frequence': game.ev.frequence,
 				'graphic': 5,
    		   		'speed': game.ev.speed,
 				'trigger': 'action_button',
 				'type': game.ev.type,
-			}, [
-				game.script('remove_type_move', ev+'.e','&quote;'+game.ev.type+'&quote;'),
+				'commands': [
+				game.script('remove_type_move', id,'&quote;'+game.ev.type+'&quote;'),
 				game.show_text('電腦科學，不同以往國、高中的一般科目，此課程是你在大一課程中接觸到最靠近專業電機領域的科目。我們將會教你目前比較多人使用的兩種程式語言，Ｃ語言以及ＪＡＶＡ，第一次碰程式難免陌生，多加練習會有幫助的。'),
 				game.show_text('你要修 '+name+' 嗎？'),
 				'CHOICES: ["是","否"]',
@@ -36,9 +42,9 @@
 					game.show_text('%V[0]'),
 				'CHOICE_1',
 				'ENDCHOICES',
-				game.script('set_type_move', ev+'.e','&quote;'+game.ev.type+'&quote;'),
-			]);
-			this.e.display();
+				game.script('set_type_move', id,'&quote;'+game.ev.type+'&quote;'),
+				]
+				}]]);
 		},
 		name: name,
 		take: null, // set this function and to override, return false to prevent default
