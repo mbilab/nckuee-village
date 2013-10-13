@@ -3,7 +3,7 @@ exports.config = {
 	files: {
 		javascripts: {
 			joinTo: {
-//				'rpgjs-built.js': /^core/,
+				'rpgjs-built.js': /^core\/Main.js|^core\/game|^core\/sprite/,
 				'ev-built.js': /^Ev.js$|^map_fall|^map_spring/,
 			},
 			order: {
@@ -14,7 +14,8 @@ exports.config = {
 		},
 	},
   modules: {
-		wrapper: function(path,data){ return "\n\n(function(){\n"+data+"})()" },
+//		wrapper: function(path,data){ return "\n\n(function(){\n"+data+"})()" },
+		wrapper: function(path,data){ return data },
 	},
 	paths: {
 		public: '.',
