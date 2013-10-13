@@ -30,22 +30,23 @@
 		// command related helper is stored in cmd below
 		move: function(){ global.game_map.getEvent(this.id).moveRandom() },
 		stop: function(){ global.game_map.getEvent(this.id).removeTypeMove('random') },
-		v0: function(v) { v[0] = v }, // useful for cmd.script()
+		v0: function(v) { RPGJS.Variables.data[0] = v }, // useful for cmd.script()
 		// overridable, override these only if necessary
 		can_take: function(){
-			if ( game.hp >= this.hp_cost() ) v[0] = 1;
-			else v[0] = '你的體力不夠修這門課囉！';
+			if ( game.hp >= this.hp_cost() ) RPGJS.Variables.data[0] = 1;
+			else RPGJS.Variables.data[0] = '你的體力不夠修這門課囉！';
 		},
 		frequence: 2,
-		is_took: function(){ v[0] = this.took ? '你已經修過 '+this.name+' 了！' : 0 },
+		init: function(){},
+		is_took: function(){ RPGJS.Variables.data[0] = this.took ? '你已經修過 '+this.name+' 了！' : 0 },
 		speed: 1,
 		take: function(){
 			var hp_cost = this.hp_cost();
-			if ( game.hp < hp_cost ) return v[0] = '你的體力不夠修這門課囉！';
+			if ( game.hp < hp_cost ) return RPGJS.Variables.data[0] = '你的體力不夠修這門課囉！';
 			this.took = true;
 			game.hp -= hp_cost;
 			game.n_took++;
-			v[0] = '習得了 '+this.name+' ！\n消耗 '+hp_cost+' 點體力，還剩 '+game.hp+' 點體力。';
+			RPGJS.Variables.data[0] = '習得了 '+this.name+' ！\n消耗 '+hp_cost+' 點體力，還剩 '+game.hp+' 點體力。';
 		},
 		took: false,
 		trigger: 'action_button',
@@ -65,8 +66,8 @@
 				return 'SHOW_TEXT: {"text": "'+t+'"}';
 			}
 		},
-		v0: function(v) { return game.Ev.script('RPGJS.Variables.data[0] = '+v) },
+		v0: function(v) { return game.Ev.prototype.cmd.script('RPGJS.Variables.data[0] = '+v) },
 	};
-})(jQuery,RPGJS.Variables.data);
+})(jQuery);
 
 // vi:nowrap:sw=4:ts=4
