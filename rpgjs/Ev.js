@@ -65,7 +65,7 @@
 		},
 		took: false,
 		trigger: 'action_button',
-		type: 'fixed',
+		type: 'random',
 	};
 	G.Ev.prototype.cmd = {
 		// command related helper, don't override these

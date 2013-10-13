@@ -2,6 +2,10 @@ var s = game.Ev.prototype.cmd.script, t = game.Ev.prototype.cmd.text, v0 = game.
 var map = 1, id = 1, ev = 'game.ev['+map+']['+id+']', name = '寶珠姐';
 game.ev[map][id] = new game.Ev({
 	id: id,
+	is_ready_to_next_semester: function(){
+		if ( game.hp >= 20 ) return RPGJS.Variables.data[0] = '還有 '+game.hp+' 點體力，確定要進入下一個學期？';
+		RPGJS.Variables.data[0] = 1;
+	},
 	map: map,
 	name: name,
 	opening_read: 0,
@@ -18,7 +22,17 @@ game.ev[map][id] = new game.Ev({
 	'CHOICE_1',
 		t('［Ｅｓｃ］鍵可以查看目前狀態'),
 	'CHOICE_2',
-		'TRANSFER_PLAYER: {"position-type": "constant", "appointement": {"x":1,"y":1,"id":2}}',
+		s(ev+'.is_ready_to_next_semester()'),
+		'IF: "1 == variable[0]"',
+			'TRANSFER_PLAYER: {"position-type": "constant", "appointement": {"x":1,"y":1,"id":2}}',
+		'ELSE',
+			t('%V[0]'),
+			'CHOICES: ["是","否"]',
+			'CHOICE_0',
+				'TRANSFER_PLAYER: {"position-type": "constant", "appointement": {"x":1,"y":1,"id":2}}',
+			'CHOICE_1',
+			'ENDCHOICES',
+		'ENDIF',
 	'CHOICE_3',
 	'ENDCHOICES',
 	s(ev+'.start()'),
