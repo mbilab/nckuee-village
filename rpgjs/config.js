@@ -4,7 +4,7 @@ exports.config = {
 		javascripts: {
 			joinTo: {
 //				'rpgjs-built.js': /^core/,
-				'ev-built.js': /^Ev.js$|^map_fall/,
+				'ev-built.js': /^Ev.js$|^map_fall|^map_spring/,
 			},
 			order: {
 				before: [
@@ -18,7 +18,7 @@ exports.config = {
 	},
 	paths: {
 		public: '.',
-		watched: ['core','Ev.js','map_fall'],
+		watched: ['core','Ev.js','map_fall','map_spring'],
 	},
 	// minify: true
 }
