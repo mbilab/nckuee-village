@@ -8,6 +8,7 @@
 		<!--script src="//rpgjs.com/cdn/rpgjs-latest.min.js"></script-->
 		<script src="rpgjs-2.0.0.js"></script>
 		<!--script src="rpgjs.js"></script-->
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 
 		<script>
 			var game = {
@@ -19,6 +20,7 @@
 				took: [],
 				year: 1
 			};
+			RPGJS.Variables = { data: {} };
 		</script>
 		<script src="ev.js"></script>
 		<script src="map_fall/1.js"></script>
@@ -35,6 +37,8 @@
 		<script src="map_fall/15.js"></script>
 		<script src="map_fall/16.js"></script>
 		<script src="map_spring/1.js"></script>
+
+		<script src="Ev.js"></script>
 
 		<script>
 			function can_next_semester() { RPGJS.Switches.set(0, game['calc'] && game['phys']); }
