@@ -13,9 +13,9 @@
 
 	G.Ev = function( opt, cmds ){ // Ev class
 		$.extend( true, this, opt );
-		if (!G.defined(this.graphic)) this.graphic = this.id + 1; // 1 for the actor
-		if (!G.defined(this.x)) this.x = ( (this.id-1) % 5 ) * 2 + 5;
-		if (!G.defined(this.y)) this.y = Math.floor(this.id/5) * 2 + 5;
+		if ( !G.defined(this.graphic) ) this.graphic = this.id + 1; // 1 for the actor
+		if ( !G.defined(this.x) ) this.x = ( (this.id-1) % 5 ) * 2 + 5;
+		if ( !G.defined(this.y) ) this.y = Math.floor( (this.id-1) / 5 ) * 2 + 5;
 		RPGJS.setEvent( this.map, this.id, [{
 			id: this.id,
 			x: this.x,
@@ -45,12 +45,18 @@
 			if ( G.hp >= this.hp_cost() ) RPGJS.Variables.data[0] = 1;
 			else RPGJS.Variables.data[0] = '你的體力不夠修這門課囉！';
 		},
+		fail: function(t,hp_cost){
+			if ( !G.defined(hp_cost) ) hp_cost = this.hp_cost();
+			G.hp -= this.hp_cost();
+			G.n_failed++;
+			RPGJS.Variables.data[0] = t+'\n消耗 '+hp_cost+' 點體力，還剩 '+G.hp+' 點體力。';
+		},
 		frequence: 2,
 		init: function(){},
 		is_took: function(){ RPGJS.Variables.data[0] = this.took ? '你已經修過 '+this.name+' 了！' : 0 },
 		speed: 1,
-		take: function(){
-			var hp_cost = this.hp_cost();
+		take: function(hp_cost){
+			if ( !G.defined(hp_cost) ) hp_cost = this.hp_cost();
 			if ( G.hp < hp_cost ) return RPGJS.Variables.data[0] = '你的體力不夠修這門課囉！';
 			this.took = true;
 			G.hp -= hp_cost;
@@ -78,7 +84,7 @@
 				return 'SHOW_TEXT: {"text": "'+t+'"}';
 			}
 		},
-		v0: function(v) { return G.Ev.prototype.cmd.script('RPGJS.Variables.data[0] = '+v) },
+		v0: function(v) { return G.Ev.prototype.cmd.script('RPGJS.Variables.data[0] = "'+v+'"') },
 	};
 })(jQuery,game);
 
