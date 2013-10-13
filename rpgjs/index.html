@@ -9,6 +9,14 @@
 		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 
 		<script>
+			$(function(){
+				$("#game").focus(function(){
+					$("body").css('overflow', 'hidden');
+				});
+				$("#game").blur(function(){
+					$("body").css('overflow', 'auto');
+				});
+			});
 			var game = {
 				ev: { 1: {}, 2: {} },
 				hp: 100,
@@ -39,10 +47,16 @@
 				RPGJS.scene.call('Scene_Title');
 			});
 		</script>
+		<style>
+		#game {
+			width: 640px;
+			height: 480px;
+		}
+		</style>
 
 	</head>
 	<body>
-		<canvas id="canvas" width="640px" height="480px"></canvas>
+		<div id="game" tabindex="0"><canvas id="canvas" width="640px" height="480px"></canvas></div>
 		<div id="disqus_thread"></div>
 		<script type="text/javascript">
 			/* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
