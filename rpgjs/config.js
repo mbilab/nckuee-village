@@ -3,7 +3,8 @@ exports.config = {
 	files: {
 		javascripts: {
 			joinTo: {
-				'rpgjs.js': /^core/,
+//				'rpgjs-built.js': /^core/,
+				'ev-built.js': /^Ev.js$|^map_fall/,
 			},
 			order: {
 				before: [
@@ -13,11 +14,11 @@ exports.config = {
 		},
 	},
   modules: {
-		wrapper: function(path,data){ return "\n"+data },
+		wrapper: function(path,data){ return "\n\n(function(){\n"+data+"})()" },
 	},
 	paths: {
 		public: '.',
-		watched: ['core'],
+		watched: ['core','Ev.js','map_fall'],
 	},
 	// minify: true
 }

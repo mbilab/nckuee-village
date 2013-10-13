@@ -1,4 +1,6 @@
+ev-built.js
+ev-built.js.map
 node_modules/
 npm-debug.log
-rpgjs.js
-rpgjs.js.map
+rpgjs-built.js
+rpgjs-built.js.map

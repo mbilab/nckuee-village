@@ -20,7 +20,7 @@
     "1": {
       "autotiles_id": "1",
       "tileset_id": "1",
-      "events": ["2"]
+      "events": [1,2]
     },
     "2": {
       "autotiles_id": "1",

@@ -12,7 +12,7 @@
 
 	game.Ev = function( opt, cmds ){ // Ev class
 		$.extend( true, this, opt );
-		RPGJS.setEvent( map, id, [{
+		RPGJS.setEvent( this.map, this.id, [{
 			id: this.id,
 			x: this.x,
 			y: this.y,
@@ -28,7 +28,12 @@
 	game.Ev.prototype = { // Ev helper and overridable
 		// helper, you can override these but not suggested
 		// command related helper is stored in cmd below
-		move: function(){ global.game_map.getEvent(this.id).moveRandom() },
+		start: function(){
+			switch (this.type) {
+				case 'approach': global.game_map.getEvent(this.id).approachPlayer(); break;
+				case 'random': global.game_map.getEvent(this.id).moveRandom(); break;
+			}
+		},
 		stop: function(){ global.game_map.getEvent(this.id).removeTypeMove('random') },
 		v0: function(v) { RPGJS.Variables.data[0] = v }, // useful for cmd.script()
 		// overridable, override these only if necessary
@@ -54,7 +59,10 @@
 	};
 	game.Ev.prototype.cmd = {
 		// command related helper, don't override these
-		script: function(s) { return 'SCRIPT: {"text": "'+game.escape(s)+'"}' },
+		script: function(s) {
+			s = s.replace( /^v0\(/, 'game.Ev.prototype.v0(' );
+			return 'SCRIPT: {"text": "'+game.escape(s)+'"}'
+		},
 		text: function(t,p) {
 			t = -1 === t.search('\n')
 			? t.replace(/(.{21})/g,'$1\\n') // without \n, auto wrap
