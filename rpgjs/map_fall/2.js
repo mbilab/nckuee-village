@@ -1,13 +1,10 @@
 var s = game.Ev.prototype.cmd.script, t = game.Ev.prototype.cmd.text, v0 = game.Ev.prototype.cmd.v0;
 var map = 1, id = 2, ev = 'game.ev['+map+']['+id+']', name = '普通物理學（一）';
 game.ev[map][id] = new game.Ev({
-	graphic: 3,
 	hp_cost: function() { return 10; },
 	id: id,
 	map: map,
 	name: name,
-	x: 7,
-	y: 5,
 }, [
 	s(ev+'.stop()'),
 	t('助人為快樂之本，普物為電機之本。普通物理學之於電機人，就像是陽光、空氣、水之於生物體一般。若此關不過、那你的電機人生只好重頭來過。'),
@@ -32,7 +29,7 @@ game.ev[map][id] = new game.Ev({
 		t('%V[0]'),
 	'CHOICE_1',
 	'ENDCHOICES',
-	s(ev+'.move()'),
+	s(ev+'.start()'),
 ]);
 
 // vi:nowrap:sw=4:ts=4

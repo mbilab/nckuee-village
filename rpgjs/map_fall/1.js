@@ -1,13 +1,10 @@
 var s = game.Ev.prototype.cmd.script, t = game.Ev.prototype.cmd.text, v0 = game.Ev.prototype.cmd.v0;
 var map = 1, id = 1, ev = 'game.ev['+map+']['+id+']', name = '寶珠姐';
 game.ev[map][id] = new game.Ev({
-	graphic: 2,
 	id: id,
 	map: map,
 	name: name,
 	opening_read: 0,
-	x: 5,
-	y: 5,
 }, [
 	s(ev+'.stop()'),
 	s('v0('+ev+'.opening_read)'),
