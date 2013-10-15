@@ -21,7 +21,7 @@
 			x: this.x,
 			y: this.y,
 		},[{
-			commands: cmds,
+			commands: [].concat.apply( [], cmds ),
 			frequence: this.frequence,
 			graphic: this.graphic,
 			speed: this.speed,
