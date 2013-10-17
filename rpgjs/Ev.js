@@ -99,10 +99,10 @@
 			s = s.replace( /^v0\(/, 'game.Ev.prototype.v0(' );
 			return 'SCRIPT: {"text": "'+G.escape(s)+'"}'
 		},
-		text: function( text, p ) {
+		text: function( text, id ) {
 			text = G.escape(text);
-			if ( 'undefined' != typeof p ){
-				return 'SHOW_TEXT: {"filename":"'+p.filename+'","id":"'+p.id+'","text": "'+text+'"}';
+			if ( 'undefined' != typeof id ){
+				return 'SHOW_TEXT: {"id":"'+id+'","text": "'+text+'"}';
 			} else {
 				return 'SHOW_TEXT: {"text": "'+text+'"}';
 			}

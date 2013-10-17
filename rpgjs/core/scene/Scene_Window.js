@@ -93,11 +93,11 @@ RPGJS_Canvas.Scene.New({
 		box.cursor.enable(true);
 	},
 	//text: function(_text) {
-	text: function(_text,arg) {
+	text: function(arg) {
 	  	var self = this;
 		var content = this.window.getContent();
 		content.empty();
-		var text = RPGJS_Canvas.Text.new(this, _text);
+		var text = RPGJS_Canvas.Text.new(this, arg.text);
 		var offset = (typeof arg.id !== 'undefined') ? 160 : 80; 
 
 		text.style({
@@ -113,6 +113,7 @@ RPGJS_Canvas.Scene.New({
 			}
 		});
 		if(typeof arg.id !== 'undefined'){
+		  	arg.filename = global.materials['pictures'][arg.id]; 
 	      		var params = {filename:arg.filename,id:arg.id,opacity:255,'operand-type':"constant",x:20,y:25};
 			RPGJS.Path.load("pictures", params.filename, params.id, function(img) {
 			  	var bpos = self.window.position();

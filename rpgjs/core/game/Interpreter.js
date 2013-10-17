@@ -397,7 +397,8 @@ if (typeof exports != "undefined") {
 		else {
 			this.nextCommand();
 		}
-		this.scene_window.text(text,params);
+		params.text = text;
+		this.scene_window.text(params);
 		//modify
 	},
 	
