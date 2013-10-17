@@ -9,6 +9,24 @@
 			return true;
 		},
 		escape: function(s){ return s.replace(/"/g,'\\"').replace(/\n/g,"\\n") },
+		wrap: function( text, width ){
+			var r = width; // remain width
+			var token = text.match(/\n|[\x00-\xff]+|[^\x00-\xff]+/ig);
+			text = '';
+			for ( var i = 0; i < token.length; i++ ) {
+				if ( "\n" === token[i] ) { r = width; text += "\n"; }
+				else if ( token[i].match(/[\x00-\xff]/i) ) {
+					if ( token[i].length < r ) { r -= token[i].length; text += token[i]; }
+					else if ( token[i].length == r ) { r = width; text += token[i]+"\n"; }
+					else { text += token[i].substr( 0, r-1 )+"-\n"; token[i] = token[i].substr(r-1); i--; r = width; }
+				} else {
+					if ( token[i].length < r/2 ) { r -= token[i].length*2; text += token[i]; }
+					else if ( token[i].length == r/2 ) { r = width; text += token[i]+"\n"; }
+					else { text += token[i].substr( 0, r/2 )+"\n"; token[i] = token[i].substr(r/2); i--; r = width; }
+				}
+			}
+			return text;
+		},
 	});
 
 	G.Ev = function( opt, cmds ){ // Ev class
@@ -82,23 +100,6 @@
 			return 'SCRIPT: {"text": "'+G.escape(s)+'"}'
 		},
 		text: function( text, p ) {
-			// wrap
-			var n = r = 42;
-			var token = text.match(/\n|[\x00-\xff]+|[^\x00-\xff]+/ig);
-			text = '';
-			for ( var i = 0; i < token.length; i++ ) {
-				if ( "\n" === token[i] ) { r = n; text += "\n"; }
-				else if ( token[i].match(/[\x00-\xff]/i) ) {
-					if ( token[i].length < r ) { r -= token[i].length; text += token[i]; }
-					else if ( token[i].length == r ) { r = n; text += token[i]+"\n"; }
-					else { text += token[i].substr( 0, r-1 )+"-\n"; token[i] = token[i].substr(r-1); i--; r = n; }
-				} else {
-					if ( token[i].length < r/2 ) { r -= token[i].length*2; text += token[i]; }
-					else if ( token[i].length == r/2 ) { r = n; text += token[i]+"\n"; }
-					else { text += token[i].substr( 0, r/2 )+"\n"; token[i] = token[i].substr(r/2); i--; r = n; }
-				}
-			}
-
 			text = G.escape(text);
 			if ( 'undefined' != typeof p ){
 				return 'SHOW_TEXT: {"filename":"'+p.filename+'","id":"'+p.id+'","text": "'+text+'"}';

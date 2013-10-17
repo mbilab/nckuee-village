@@ -376,7 +376,7 @@ if (typeof exports != "undefined") {
 			match = regex.exec(text);
 		}
 		
-		text = text.replace(/&#39;/g, "'");
+		text = game.wrap( text, 42 );
 		
 		if (!this.scene_window) {
 			this.scene_window = RPGJS.scene.call("Scene_Window", {
