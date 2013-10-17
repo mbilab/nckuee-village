@@ -16,7 +16,7 @@
 		if ( !G.defined(this.graphic) ) this.graphic = this.id + 1; // 1 for the actor
 		if ( !G.defined(this.x) ) this.x = ( (this.id-1) % 5 ) * 2 + 5;
 		if ( !G.defined(this.y) ) this.y = Math.floor( (this.id-1) / 5 ) * 2 + 5;
-		G.semester.ev[opt.map][opt.id] = { is_failed: 0 };
+		G.semester.ev[opt.id] = { is_failed: 0 };
 		RPGJS.setEvent( this.map, this.id, [{
 			id: this.id,
 			x: this.x,
@@ -51,12 +51,16 @@
 			G.hp -= this.hp_cost();
 			G.n_failed++;
 			G.semester.n_failed++;
-			G.semester.ev[this.map][this.id].is_failed = 1;
+			G.semester.ev[this.id].is_failed = 1;
 			RPGJS.Variables.data[0] = t+'\n消耗 '+hp_cost+' 點體力，還剩 '+G.hp+' 點體力。';
 		},
 		frequence: 2,
 		init: function(){},
-		is_took: function(){ RPGJS.Variables.data[0] = this.is_passed || game.semester.ev[this.map][this.id].is_failed ? '你已經修過 '+this.name+' 了！' : 0 },
+		is_took: function(){
+			if ( this.is_passed ) return RPGJS.Variables.data[0] = '你已經修過 '+this.name+' 了！';
+			if ( game.semester.ev[this.id].is_failed ) return RPGJS.Variables.data[0] = '你這學期已經被當過了，請等下一個學年再選修。';
+			return 0;
+		},
 		is_passed: false,
 		speed: 1,
 		take: function(hp_cost){
