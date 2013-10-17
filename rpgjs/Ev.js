@@ -77,7 +77,7 @@
 		is_took: function(){
 			if ( this.is_passed ) return RPGJS.Variables.data[0] = '你已經修過 '+this.name+' 了！';
 			if ( game.semester.ev[this.id].is_failed ) return RPGJS.Variables.data[0] = '你這學期已經被當過了，請等下一個學年再選修。';
-			return 0;
+			return RPGJS.Variables.data[0] = 0;
 		},
 		is_passed: false,
 		speed: 1,
