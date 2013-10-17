@@ -24,7 +24,7 @@ defined $map->{map} and &rpgjs2tiled;
 sub tiled2rpgjs {
 	my %ret;
 	for (my ($i,$auto) = (0,0); $i <= $#{$map->{tilesets}}; $i++){
-		defined $map->{tilesets}[$i]{terrains} and $map->{tilesets}[$i]{autotile} = $auto++;
+		$map->{tilesets}[$i]{name} !~ /tileset/ and $map->{tilesets}[$i]{autotile} = $auto++;
 	}
 	for my $layer ( @{$map->{layers}} ){
 		for my $j ( 0 .. $map->{height}-1){
@@ -176,7 +176,8 @@ sub convert_tile{
 				last;
 			}
 		}
-		if(defined $map->{tilesets}[$i-1]{terrains}){
+		#if(defined $map->{tilesets}[$i-1]{terrains}){
+		if($map->{tilesets}[$i-1]{name} !~ /tileset/){
 			$_ = &terrain_transfer('rpgjs',$id - $map->{tilesets}[$i-1]{firstgid});
 			$new = $_<0? 3072+ $cfg{default_tile}: 48*$map->{tilesets}[$i-1]{autotile}+$_;
 		}else{
