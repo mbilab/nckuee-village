@@ -2,7 +2,7 @@ var s = game.Ev.prototype.cmd.script, t = game.Ev.prototype.cmd.text, v0 = game.
 var map = 1, id = 99, ev = 'game.ev['+map+']['+id+']', name = '系辦王小姐';
 game.ev[map][id] = new game.Ev({
 	dropped_out: function(){
-		if ( .5<=game.semester.n_passed/game.semester.n_took || 0==game.n_21 || 5<=game.hp ) return RPGJS.Variables.data[0] = 0;
+		if ( .5<=game.semester.n_passed/(game.semester.n_failed+game.semester.n_passed) || 0==game.n_21 || 5<=game.hp ) return RPGJS.Variables.data[0] = 0;
 		RPGJS.Variables.data[0] = '這是你第二次被２１了，你的體力也不足，無法再修課了，非常遺憾，你被退學了！';
 	},
 	graphic: 2,
@@ -10,24 +10,25 @@ game.ev[map][id] = new game.Ev({
 	map: map,
 	name: name,
 	next_semester: function(flag){
+		var G = game;
 		var s = game.semester;
-		RPGJS.Variables.data[0] = '你這學期修了 '+s.n_took+' 門課，通過'+s.n_passed+' 門，體力剩下 '+game.hp+' 點。';
-		if ( .5 <= s.n_passed / s.n_took ) {
+		RPGJS.Variables.data[0] = '你這學期修了 '+(s.n_failed+s.n_passed)+' 門課，通過 '+s.n_passed+' 門，體力剩下 '+game.hp+' 點。';
+		if ( .5 <= s.n_passed / (s.n_failed+s.n_passed) ) {
 			if ( !G.defined(flag) ) RPGJS.Variables.data[0] += "\n確定要進入下一個學期了嗎？";
-			else RPGJS.Variables.data[0] = flag;
+			else RPGJS.Variables.data[0] = 1 - flag;
 		} else if ( 0 == game.n_21 ) {
 			if ( !G.defined(flag) ) RPGJS.Variables.data[0] += "\n你被２１了，要不要再多修幾門課來避免２１？如果以後再被２１，那就要被退學囉！確定要進入下一學期了嗎？";
-			else RPGJS.Variables.data[0] = flag;
+			else RPGJS.Variables.data[0] = 1 - flag;
 		} else if ( 5 <= game.hp ) {
 			if ( !G.defined(flag) ) RPGJS.Variables.data[0] += "\n這是你第二次被２１了，趕快再去修課，不然你就要被退學了！是否要再修課？";
-			else RPGJS.Variables.data[0] = 1 - flag;
+			else RPGJS.Variables.data[0] = flag;
 		} else {
 			console.log('impossible! check dropped_out() and next_semester()');
 			if ( !G.defined(flag) ) RPGJS.Variables.data[0] += "\n你太神了，這一行不可能出現才對，看到的話請聯絡開發團隊！";
 			else RPGJS.Variables.data[0] = 0;
 		}
 	},
-	took_enough: function(){ RPGJS.Variables.data[0] = game.semester.n_passed >= 4 ? 1 : '至少要修習過 4 門課才可以到下一個學期喔～' },
+	took_enough: function(){ RPGJS.Variables.data[0] = (game.semester.n_failed+game.semester.n_passed) >= 4 ? 1 : '至少要修習過 4 門課才可以到下一個學期喔～' },
 	x: 5,
 	y: 4,
 }, [
@@ -40,6 +41,7 @@ game.ev[map][id] = new game.Ev({
 			s(ev+'.dropped_out()'),
 			'IF: "0 == variable[0]"',
 				s(ev+'.next_semester()'),
+				t('%V[0]'),
 				'CHOICES: ["是","否"]',
 				'CHOICE_0',
 					s(ev+'.next_semester(0)'),

@@ -16,6 +16,7 @@
 		if ( !G.defined(this.graphic) ) this.graphic = this.id + 1; // 1 for the actor
 		if ( !G.defined(this.x) ) this.x = ( (this.id-1) % 5 ) * 2 + 5;
 		if ( !G.defined(this.y) ) this.y = Math.floor( (this.id-1) / 5 ) * 2 + 5;
+		G.semester.ev[opt.map][opt.id] = { is_failed: 0 };
 		RPGJS.setEvent( this.map, this.id, [{
 			id: this.id,
 			x: this.x,
@@ -49,21 +50,24 @@
 			if ( !G.defined(hp_cost) ) hp_cost = this.hp_cost();
 			G.hp -= this.hp_cost();
 			G.n_failed++;
+			G.semester.n_failed++;
+			G.semester.ev[this.map][this.id].is_failed = 1;
 			RPGJS.Variables.data[0] = t+'\n消耗 '+hp_cost+' 點體力，還剩 '+G.hp+' 點體力。';
 		},
 		frequence: 2,
 		init: function(){},
-		is_took: function(){ RPGJS.Variables.data[0] = this.took ? '你已經修過 '+this.name+' 了！' : 0 },
+		is_took: function(){ RPGJS.Variables.data[0] = this.is_passed || game.semester.ev[this.map][this.id].is_failed ? '你已經修過 '+this.name+' 了！' : 0 },
+		is_passed: false,
 		speed: 1,
 		take: function(hp_cost){
 			if ( !G.defined(hp_cost) ) hp_cost = this.hp_cost();
 			if ( G.hp < hp_cost ) return RPGJS.Variables.data[0] = '你的體力不夠修這門課囉！';
-			this.took = true;
+			this.is_passed = true;
 			G.hp -= hp_cost;
-			G.n_took++;
+			G.n_passed++;
+			G.semester.n_passed++;
 			RPGJS.Variables.data[0] = '習得了 '+this.name+' ！\n消耗 '+hp_cost+' 點體力，還剩 '+G.hp+' 點體力。';
 		},
-		took: false,
 		trigger: 'action_button',
 		type: 'fixed',
 	};
