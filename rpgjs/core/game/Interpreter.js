@@ -328,7 +328,9 @@ if (typeof exports != "undefined") {
 
 		if (cmd) {
 			this.isRun = true;
-			var params = this[cmd.callback].call(this, cmd.params, cmd.name, cmd.id);
+			var callback = (typeof cmd.callback === 'function') ? cmd.callback : this[cmd.callback];
+			//var params = this[cmd.callback].call(this, cmd.params, cmd.name, cmd.id);
+			var params = callback.call(this, cmd.params, cmd.name, cmd.id);
 			
 		}
 		else  {

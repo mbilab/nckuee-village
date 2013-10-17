@@ -51,6 +51,10 @@
 				RPGJS.Scene.load(["Scene_Title"]);
 				RPGJS.Scene.load(["Scene_Window"]);
 				RPGJS.scene.call('Scene_Title');
+				Interpreter.addCommand('RETURN',function(params,name){
+					this.commandsExit();
+					this.nextCommand();
+				});
 			});
 		</script>
 		<style>
