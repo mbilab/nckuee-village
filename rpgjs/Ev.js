@@ -28,6 +28,13 @@ var game = {
 };
 game.reset_semester();
 
+(function($){$(document).ready(function(){
+	$(window).resize(function(){
+		$('#cfg').height($(this).height());
+		$('#cfg').width($(this).width()<950?250:$(this).width()-700);
+	}).resize();
+})})(jQuery);
+
 // the above might be moved out to another js file such as game.js
 
 (function($,G){
