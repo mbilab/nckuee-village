@@ -2,77 +2,31 @@
 <html>
 	<head>
 		<meta charset="utf-8" />
+		<title>成電新手村</title>
 		<script src="//canvasengine.net/cdn/dev/canvasengine-latest.all.min.js"></script>
 		<script src="rpgjs-built.js"></script>
 		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-
-		<script>
-			$(function(){
-				$("#game").focus(function(){
-					$("body").css('overflow', 'hidden');
-				});
-				$("#game").blur(function(){
-					$("body").css('overflow', 'auto');
-				});
-			});
-			var game = {
-				ev: { 1: {}, 2: {} },
-				hp: 100,
-				maxhp: 100,
-				n_failed: 0,
-				n_passed: 0,
-				name: 'Player',
-				semester: {
-					ev: {},
-					n_failed: 0,
-					n_passed: 0,
-				},
-				took: [],
-				year: 1
-			};
-		</script>
-
 		<script src="ev-built.js"></script>
-
-		<script>
-			RPGJS.defines({
-				canvas: "canvas"
-			}).ready(function(){
-				RPGJS.Player.init({
-					actor: 1,
-					start: { x: 4, y: 4, id: 1},
-				});
-				RPGJS.Scene.load(["Scene_Gameover"]);
-				RPGJS.Scene.load(["Scene_Load"]);
-				RPGJS.Scene.load(["Scene_Map"]);
-				RPGJS.Scene.load(["Scene_Menu"]);
-				RPGJS.Scene.load(["Scene_Title"]);
-				RPGJS.Scene.load(["Scene_Window"]);
-				RPGJS.scene.call('Scene_Title');
-			});
-		</script>
+		<script>game.init();</script>
 		<style>
 		#game {
 			width: 640px;
 			height: 480px;
 		}
 		</style>
-
 	</head>
 	<body>
 		<div id="game" tabindex="0"><canvas id="canvas" width="640px" height="480px"></canvas></div>
-		<div id="disqus_thread"></div>
-		<script type="text/javascript">
-			/* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
-			var disqus_shortname = 'nckuee-village'; // required: replace example with your forum shortname
-
-			/* * * DON'T EDIT BELOW THIS LINE * * */
-			(function() {
-				var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-				dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-				(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-			})();
+		<script>
+			// prevent scrolling while pressing up/down in the game
+			$('#game').focus(function(){
+				$('body').css('overflow','hidden');
+			}).blur(function(){
+				$('body').css('overflow','auto');
+			}).focus();
 		</script>
+		<div id="disqus_thread"></div>
+		<script src='//nckuee-village.disqus.com/embed.js'></script>
 		<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 		<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
 	</body>

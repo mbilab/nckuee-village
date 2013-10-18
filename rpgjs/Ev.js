@@ -1,3 +1,35 @@
+var game = {
+	ev: { 1: {}, 2: {} },
+	hp: 100,
+	i_semester: 0,
+	init: function(){
+		RPGJS.defines({
+			canvas: 'canvas'
+		}).ready(function(){
+			RPGJS.Player.init({
+				actor: 1,
+				start: { x: 4, y: 4, id: 1 },
+			});
+			RPGJS.scene.call('Scene_Title');
+		});
+	},
+	max_hp: 100,
+	n_failed: 0,
+	n_passed: 0,
+	name: 'Player',
+	passed: [],
+	reset_semester: function(){
+		this.semester = {
+			ev: {},
+			n_failed: 0,
+			n_passed: 0,
+		};
+	}
+};
+game.reset_semester();
+
+// the above might be moved out to another js file such as game.js
+
 (function($,G){
 	$.extend( true, G, { // global helper
 		defined: function(root){
