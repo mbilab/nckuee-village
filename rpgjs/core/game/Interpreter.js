@@ -111,7 +111,8 @@ if (typeof exports != "undefined") {
 			'ENDIF':					'cmdEndif',
 			'CHOICES':					'cmdChoices',
 			'CHOICE':					'cmdChoice',
-			'ENDCHOICES':				'cmdEndChoices'
+			'ENDCHOICES':				'cmdEndChoices',
+			'RETURN':				'cmdReturn'
 		};
 		
 		for (var key in commands) {
@@ -1163,6 +1164,11 @@ if (typeof exports != "undefined") {
 		this.nextCommand();
 	},
 
+	// RETURN
+	cmdReturn: function() {
+		this.commandsExit();
+		this.nextCommand();
+	},
 
 	_nextRealPos: function() {
 		var pos = self.currentCmd+1;
