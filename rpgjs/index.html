@@ -3,19 +3,16 @@
 	<head>
 		<meta charset="utf-8" />
 		<title>成電新手村</title>
+		<link href="built/app.css" rel="stylesheet" />
 		<script src="//canvasengine.net/cdn/dev/canvasengine-latest.all.min.js"></script>
-		<script src="rpgjs-built.js"></script>
+		<script src="built/rpgjs.js"></script>
 		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-		<script src="ev-built.js"></script>
+		<script src="built/ev.js"></script>
 		<script>game.init();</script>
-		<style>
-		#game {
-			width: 640px;
-			height: 480px;
-		}
-		</style>
 	</head>
 	<body>
+		<button id="_cfg">&#x2630;</button>
+		<div id="cfg"></div>
 		<div id="game" tabindex="0"><canvas id="canvas" width="640px" height="480px"></canvas></div>
 		<script>
 			// prevent scrolling while pressing up/down in the game
@@ -25,10 +22,10 @@
 				$('body').css('overflow','auto');
 			}).focus();
 		</script>
-		<div id="disqus_thread"></div>
+		<!--div id="disqus_thread"></div>
 		<script src='//nckuee-village.disqus.com/embed.js'></script>
 		<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-		<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+		<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a-->
 	</body>
 </html>
 <!--

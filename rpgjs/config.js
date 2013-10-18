@@ -3,23 +3,25 @@ exports.config = {
 	files: {
 		javascripts: {
 			joinTo: {
-				'rpgjs-built.js': /^core\/Main.js|^core\/game|^core\/sprite/,
-				'ev-built.js': /^Ev.js$|^map_fall|^map_spring/,
+				'built/rpgjs.js': /^core\/Main.js|^core\/game|^core\/sprite/,
+				'built/ev.js': /^Ev.js$|^map_fall|^map_spring/,
+			},
+		},
+		stylesheets: {
+			joinTo: {
+				'built/app.css': /^app.styl$|^reset.css$/,
 			},
 			order: {
-				before: [
-					'core/Main.js',
-				],
+				before: ['reset.css'],
 			},
 		},
 	},
   modules: {
-//		wrapper: function(path,data){ return "\n\n(function(){\n"+data+"})()" },
 		wrapper: function(path,data){ return data },
 	},
 	paths: {
 		public: '.',
-		watched: ['core','Ev.js','map_fall','map_spring'],
+		watched: ['app.styl','core','Ev.js','map_fall','map_spring','reset.css'],
 	},
 	// minify: true
 }

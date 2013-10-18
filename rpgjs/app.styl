@@ -1,0 +1,48 @@
+bd-clr = #aaa
+bg-clr = #eee
+fg-clr = #666
+
+body
+button
+input
+select
+  border-radius 2px
+  color fg-clr
+  font-family Verdana sans-serif
+  font-size 16px
+  line-height 16px
+
+body
+  background-color transparent
+ 
+button
+  background-color bg-clr
+  border 1px solid bd-clr
+  margin 0
+  &:hover
+    background-color #ddd
+
+#_cfg
+  padding 5px 6px
+  position absolute
+  right 10px
+  top 10px
+  z-index 3
+
+#cfg
+  background-color bg-clr
+  box-shadow 0 0 5px 1px bd-clr
+  height 100px
+  position absolute
+  right 0
+  top 0
+  width 100px
+  z-index 2
+
+#game
+  border 1px solid bd-clr
+  border-radius 2px
+  height 480px
+  margin 10px
+  padding 5px
+  width 640px
