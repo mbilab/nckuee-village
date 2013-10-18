@@ -91,7 +91,7 @@ RPGJS_Canvas.Scene.New({
 				continue;
 			}
 			
-			hp_bar = this.displayBar(actor, "maxhp", "hp");
+			hp_bar = this.displayBar(actor, "max_hp", "hp");
 			hp_bar.y = 35;
 			//sp_bar = this.displayBar(actor, "maxsp", "sp");
 			//sp_bar.y = 60;
@@ -122,12 +122,12 @@ RPGJS_Canvas.Scene.New({
 			
 			//this.drawText("LV " + actor.currentLevel, sprite_b, 270, 10, {
 			
-			this.drawText(this.num2year(game.year)+" year", sprite_b, 230, 10, {
+			this.drawText(this.num2year(game.i_semester), sprite_b, 180, 10, {
 				size: "20px"
 			});
 			
 			//this.drawText(actor.name, sprite_b, 150, 10);
-			this.drawText(game.name, sprite_b, 150, 10);
+			this.drawText(game.name, sprite_b, 100, 10);
 			
 			body.append(sprite_b);
 			
@@ -166,12 +166,20 @@ RPGJS_Canvas.Scene.New({
 	},
 	num2year: function(n){ 
 	  var r;
-	  switch(n){
-	    case 1:r=n+'st';break;
-	    case 2:r=n+'nd';break;
-	    case 3:r=n+'rd';break;
-	    case 4:r=n+'st';break;
+	  var term = n%2;
+	  n = parseInt(n/2);
+	  switch(n++){
+	    case 0:r=n+'st';break;
+	    case 1:r=n+'nd';break;
+	    case 2:r=n+'rd';break;
+	    case 3:r=n+'th';break;
 	  }
+	  r += ' year ';
+	  switch (term++){
+	    case 0:r+=term+'st';break;
+	    case 1:r+=term+'nd';break;
+	  }
+	  r += ' term';
 	  return r;
 	},
 	__index: function(stage) {
@@ -779,7 +787,7 @@ RPGJS_Canvas.Scene.New({
 				size: "30px"
 			});
 			//this.drawText("LV : " + data_actor.currentLevel, info, 20, 45);
-			this.drawText(this.num2year(game.year)+" year", info, 20, 45);
+			this.drawText(this.num2year(game.i_semester), info, 20, 45);
 			CE.each(["atk", "pdef", "mdef"], function(i, type) {
 				self.drawText(type.toUpperCase() + " :   " + data_actor.getParamPoint(type), info, 20, 35 * i + 75);
 			});
@@ -993,7 +1001,7 @@ RPGJS_Canvas.Scene.New({
 		});
 		
 		//this.drawText("LV : " + data_actor.currentLevel, body, 300, 65, {
-		this.drawText(this.num2year(game.year)+ " year", body, 300, 65, {
+		this.drawText(this.num2year(game.i_semester), body, 300, 65, {
 			size: "18px"
 		});
 		this.drawText("EXP : " + data_actor.currentExp, body, 300, 95, {
@@ -1029,7 +1037,7 @@ RPGJS_Canvas.Scene.New({
 		//battler.drawImage("battler");
 		battler.x = _canvas.width;
 		
-		hp_bar = this.displayBar(data_actor, "maxhp", "hp");
+		hp_bar = this.displayBar(data_actor, "max_hp", "hp");
 		hp_bar.y = 65;
 		//sp_bar = this.displayBar(data_actor, "maxsp", "sp");
 		//sp_bar.y = 90;
