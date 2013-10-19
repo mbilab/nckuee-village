@@ -16,14 +16,6 @@
 			<div id="disqus_thread"></div>
 		</div>
 		<div id="game" tabindex="0"><canvas id="canvas" width="640px" height="480px"></canvas></div>
-		<script>
-			// prevent scrolling while pressing up/down in the game
-			$('#game').focus(function(){
-				$('body').css('overflow','hidden');
-			}).blur(function(){
-				$('body').css('overflow','auto');
-			}).focus();
-		</script>
 		<script src='//nckuee-village.disqus.com/embed.js'></script>
 		<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 		<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>

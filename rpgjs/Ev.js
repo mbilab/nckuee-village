@@ -29,10 +29,19 @@ var game = {
 game.reset_semester();
 
 (function($){$(document).ready(function(){
+	game.canvas_wd = $('#game').offset().left + $('#game').outerWidth() + 30;
+	game.cfg_min_wd = 250;
+	game.min_wd = game.canvas_wd + game.cfg_min_wd;
 	$(window).resize(function(){
-		$('#cfg').height($(this).height());
-		$('#cfg').width($(this).width()<950?250:$(this).width()-700);
+		var ht = $(this).height(), wd = $(this).width();
+		$('#cfg').height(ht);
+		$('#cfg').width(wd<game.min_wd?game.cfg_min_wd:wd-game.canvas_wd);
 	}).resize();
+	$('#_cfg').click(function(){
+		$('#cfg').animate({
+			right: '0px' === $('#cfg').css('right') ? -1.1*$('#cfg').width() : 0
+		}, 100);
+	});
 })})(jQuery);
 
 // the above might be moved out to another js file such as game.js
