@@ -29,18 +29,28 @@ var game = {
 game.reset_semester();
 
 (function($){$(document).ready(function(){
+	game.$cfg = $('#cfg');
 	game.canvas_wd = $('#game').offset().left + $('#game').outerWidth() + 30;
 	game.cfg_min_wd = 250;
 	game.min_wd = game.canvas_wd + game.cfg_min_wd;
 	$(window).resize(function(){
 		var ht = $(this).height(), wd = $(this).width();
-		$('#cfg').height(ht);
-		$('#cfg').width(wd<game.min_wd?game.cfg_min_wd:wd-game.canvas_wd);
+		game.$cfg.height(ht).width(wd<game.min_wd?game.cfg_min_wd:wd-game.canvas_wd);
+		if ( '0px' !== game.$cfg.css('right') ) game.$cfg.css( 'right', -1.1*game.$cfg.width() );
 	}).resize();
+	game.$cfg.css( 'right', -1.1*game.$cfg.width() );
 	$('#_cfg').click(function(){
-		$('#cfg').animate({
-			right: '0px' === $('#cfg').css('right') ? -1.1*$('#cfg').width() : 0
-		}, 100);
+		if ( '0px' === game.$cfg.css('right') ) { // hide
+			$('#_cfg').removeClass('shown');
+			game.$cfg.animate({
+				right: -1.1*game.$cfg.width(),
+			}, 100);
+		} else { // show
+			$('#_cfg').addClass('shown');
+			game.$cfg.animate({
+				right: 0,
+			}, 100);
+		}
 	});
 })})(jQuery);
 
