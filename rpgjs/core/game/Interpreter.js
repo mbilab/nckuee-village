@@ -372,7 +372,6 @@ if (typeof exports != "undefined") {
 	cmdShowText: function(params) {
 		var self = this;
 		var prevCmd = this.getPrevCommand();
-		var nextCmd = this.getNextCommand();
 		var text = params.text;
 		var regex = /%V\[([0-9]+)\]/g;
 		var match = regex.exec(text);
@@ -383,7 +382,21 @@ if (typeof exports != "undefined") {
 		}
 		
 		text = game.wrap( text, 42 );
-		
+
+		// paginate: 7 lines per page
+		lines = text.split("\n");	
+		var max_lines = 7;
+		if(lines.length > max_lines){
+		  	text = lines.slice(0,max_lines).join("\n");
+			this.commands.splice(this.getCurrentPos()+1,0,'SHOW_TEXT: {'+(("undefined" != typeof params.id)?'"id":"'+params.id+'", ':'')+'"text":"'+((lines.length == max_lines+1)?lines[max_lines]:lines.splice(max_lines,lines.length-max_lines).join(''))+'"}');
+			// change pos in _condition
+			for(var id in this._conditions){
+				for(var name in this._conditions[id]){
+					if(this._conditions[id][name] > this.getCurrentPos()+1) this._conditions[id][name]++;
+				}
+			}
+		}
+
 		if (!this.scene_window) {
 			this.scene_window = RPGJS.scene.call("Scene_Window", {
 				overlay: true
@@ -391,6 +404,7 @@ if (typeof exports != "undefined") {
 			this.scene_window.box();
 		}
 		
+		var nextCmd = this.getNextCommand();
 		if (nextCmd.name != "CHOICES") {
 			this.scene_window.onEnterPress(function() {
 				if (nextCmd.name != "SHOW_TEXT") {
