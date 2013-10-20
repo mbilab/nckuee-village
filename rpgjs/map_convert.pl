@@ -21,6 +21,37 @@ $map or print "Nothing to read!\nUsage -\n\tmap_convert.pl JSONFILE [OUPUT]\n" a
 defined $map->{layers} and &tiled2rpgjs;
 defined $map->{map} and &rpgjs2tiled;
 
+sub graph_rpgjs2tiled {
+	my $fn = shift;
+	my $output = $ARGV[1] || "output.png";
+
+	my $img;
+	$fn =~ /\.(?:png|PNG)/ and $img = GD::Image->newFromPng($fn);
+	$fn =~ /\.(?:jpg|JPG)/ and $img = GD::Image->newFromJpeg($fn);
+	$fn =~ /\.(?:gif|GIF)/ and $img = GD::Image->newFromGif($fn);
+	($img->width == 96 and $img->height == 128) or die "Invalid autotile !\n";
+	my $new_img = new GD::Image(160,96);
+	$new_img->copy($img,0,0,0,32,96,96);
+	$new_img->copy($img,96,64,32,0,32,32);
+	$new_img->copy($img,96+16,0+16,64+16,0+16,16,16);
+	$new_img->copy($img,128,0+16,64,0+16,16,16);
+	$new_img->copy($img,96+16,32,64+16,0,16,16);
+	$new_img->copy($img,128,32,64,0,16,16);
+
+	$new_img->copy($img,96,0,32,64,16,32);
+	$new_img->copy($img,96,32,32,64,16,32);
+
+	$new_img->copy($img,96+16,0,32,64,32,16);
+
+	$new_img->copy($img,128+16,0,32,64,16,32);
+	$new_img->copy($img,128+16,32,32,64,16,32);
+
+	$new_img->copy($img,96+16,32+16,32,64,32,16);
+	open FH,">$output" or die;
+	binmode FH;
+	print FH $new_img->png;
+	close FH;
+}
 sub tiled2rpgjs {
 	my %ret;
 	for (my ($i,$auto) = (0,0); $i <= $#{$map->{tilesets}}; $i++){
