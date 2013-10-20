@@ -159,11 +159,11 @@ sub rpgjs2tiled {
 						terrains => [
 							{
 								name => $name."_in",
-								tile => -1
+								tile => 6
 							},
 							{
 								name => $name."_out",
-								tile => -1
+								tile => 13
 							}
 						],
 						tileheight => 32,

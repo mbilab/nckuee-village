@@ -387,12 +387,20 @@ if (typeof exports != "undefined") {
 		lines = text.split("\n");	
 		var max_lines = 7;
 		if(lines.length > max_lines){
-		  	text = lines.slice(0,max_lines).join("\n");
-			this.commands.splice(this.getCurrentPos()+1,0,'SHOW_TEXT: {'+(("undefined" != typeof params.id)?'"id":"'+params.id+'", ':'')+'"text":"'+((lines.length == max_lines+1)?lines[max_lines]:lines.splice(max_lines,lines.length-max_lines).join(''))+'"}');
+		  	text = lines.splice(0,max_lines).join("\n");
+			this.commands.splice(this.getCurrentPos()+1,0,'SHOW_TEXT: {"page":'+(("undefined" != typeof params.page)?++params.page:1)+', '+(("undefined" != typeof params.id)?'"id":"'+params.id+'", ':'')+'"text":"'+((lines.length == max_lines+1)?lines[max_lines]:lines.slice(0,lines.length).join(''))+'"}');
 			// change pos in _condition
 			for(var id in this._conditions){
 				for(var name in this._conditions[id]){
 					if(this._conditions[id][name] > this.getCurrentPos()+1) this._conditions[id][name]++;
+				}
+			}
+		}else if("undefined" != typeof params.page){
+		  	this.commands.splice(this.getCurrentPos()-params.page+1,params.page);
+			this.setCurrentPos(this.getCurrentPos()-params.page);
+			for(var id in this._conditions){
+				for(var name in this._conditions[id]){
+					if(this._conditions[id][name] > this.getCurrentPos()+1) this._conditions[id][name]-=params.page;
 				}
 			}
 		}
