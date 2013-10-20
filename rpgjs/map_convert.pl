@@ -16,7 +16,7 @@ my %cfg = (
 	default_tile => $ARGV[2] || 0,
 	graphics_dir => 'Graphics'
 );
-$map or print "Nothing to read!\nUsage -\n\tmap_convert.pl JSONFILE [OUPUT]\n" and exit;
+$map or print "Nothing to read!\nUsage -\n\tmap_convert.pl JSONFILE [OUPUT]\n\tmap_convert.pl AUTOTILE [OUTPUT_PNG]\n" and exit;
 
 defined $map->{layers} and &tiled2rpgjs;
 defined $map->{map} and &rpgjs2tiled;
