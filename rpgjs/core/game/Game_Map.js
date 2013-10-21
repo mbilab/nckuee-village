@@ -291,7 +291,8 @@ var _class = {
 			
 			if (state.over >= 1) {
 				if (!testLineTile(state.result.coincident)) {
-					e._hit = true;
+				  	//specify collided obj
+					e._hit = (entity.__name__ == 'Game_Player')? -1 : id;
 					entity.restorePosition();
 				
 					if (state.over == 1) {
@@ -310,11 +311,11 @@ var _class = {
 
 				}
 				else {
-					e._hit = false;
+					//e._hit = 0;
 				}
 			}
 			else {
-				e._hit = false;
+			  	e._hit = 0;
 			}
 			
 		}
@@ -347,7 +348,7 @@ var _class = {
 		var e;
 		for (var id in this.events) {
 			e = this.events[id];
-			if (e && e._hit && e.trigger == "action_button") {
+			if (e && e._hit == -1 && e.trigger == "action_button") {
 				RPGJS.Plugin.call("Game", "execEvent", [e, this]);
 				e.execTrigger();
 			}
