@@ -72,7 +72,7 @@ Class.create("Game_System", {
 @param {Integer} id Material id
 */
 	sePlay: function(id) {
-		this._playAudio(id, "se");
+		this._playSound(id, "se");
 	},
 	
 /**
@@ -152,6 +152,11 @@ Class.create("Game_System", {
 		this._current[type] = id;
 		RPGJS.Path.loadMaterial(type + "s", id, function() {
 			RPGJS_Canvas.Sound.playLoop(type + "s_" + id);
+		});
+	},
+	_playSound: function(id, type) {
+		RPGJS.Path.loadMaterial(type + "s", id, function() {
+			RPGJS_Canvas.Sound.play(type + "s_" + id);
 		});
 	},
 	

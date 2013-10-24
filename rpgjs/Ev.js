@@ -147,6 +147,7 @@ game.reset_semester();
 			G.n_passed++;
 			G.semester.n_passed++;
 			RPGJS.Variables.data[0] = '習得了 '+this.name+' ！\n消耗 '+hp_cost+' 點體力，還剩 '+G.hp+' 點體力。';
+			RPGJS.System.sePlay(1);
 		},
 		trigger: 'action_button',
 		type: 'fixed',
