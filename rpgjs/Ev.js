@@ -38,7 +38,7 @@ game.reset_semester();
 		game.$cfg.height(ht).width(wd<game.min_wd?game.cfg_min_wd:wd-game.canvas_wd);
 		if ( '0px' !== game.$cfg.css('right') ) game.$cfg.css( 'right', -1.1*game.$cfg.width() );
 	}).resize();
-	game.$cfg.css( 'right', -1.1*game.$cfg.width() );
+	game.$cfg.css( 'right', -1.1*game.$cfg.width() ).css( 'display', 'block' );
 	$('#_cfg').click(function(){
 		if ( '0px' === game.$cfg.css('right') ) { // hide
 			$('#_cfg').removeClass('shown');
