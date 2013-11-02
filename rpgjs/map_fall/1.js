@@ -3,7 +3,7 @@ var map = 1, id = 1, ev = 'game.ev['+map+']['+id+']', name = '寶珠姐';
 game.ev[map][id] = new game.Ev({
 	id: id,
 	is_ready_to_next_semester: function(){
-		if ( game.hp >= 20 ) return RPGJS.Variables.data[0] = '還有 '+game.hp+' 點體力，確定要進入下一個學期？';
+		if ( game.hp >= 20 ) return RPGJS.Variables.data[0] = '還有 '+game.player.hp+' 點體力，確定要進入下一個學期？';
 		RPGJS.Variables.data[0] = 1;
 	},
 	map: map,

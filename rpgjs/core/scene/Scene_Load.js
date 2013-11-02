@@ -49,7 +49,7 @@ RPGJS_Canvas.Scene.New({
 			Marshal._pointer[name] = 0;
 		
 			if (game_save && game_save.__name__ == "Game_Save") {
-				this.refreshSlot(content, game_save.get(i));
+				this.refreshSlot(content, game_save.data[0]);
 				content.attr('exist', true);
 			}
 			else {
@@ -184,7 +184,6 @@ RPGJS_Canvas.Scene.New({
 				evdump[map][id] = { is_passed: game.ev[map][id].is_passed };
 			}
 		}
-		console.log(evdump);
 		Marshal.dump(evdump, slot);
 
 	
