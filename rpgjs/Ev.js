@@ -1,7 +1,5 @@
 var game = {
 	ev: { 1: {}, 2: {} },
-	hp: 100,
-	i_semester: 0,
 	init: function(){
 		RPGJS.defines({
 			canvas: 'canvas'
@@ -13,17 +11,38 @@ var game = {
 			RPGJS.scene.call('Scene_Title');
 		});
 	},
-	max_hp: 100,
-	n_failed: 0,
-	n_passed: 0,
-	name: 'Player',
-	passed: [],
+	player: {
+		hp: 100,
+		i_semester: 0,
+		max_hp: 100,
+		n_failed: 0,
+		n_passed: 0,
+		name: 'Player',
+	},
 	reset_semester: function(){
 		this.semester = {
 			ev: {},
 			n_failed: 0,
 			n_passed: 0,
 		};
+	},
+	show_semester: function(n){ 
+		var r;
+		var term = n%2;
+		n = parseInt(n/2);
+		switch(n++){
+			case 0:r=n+'st';break;
+			case 1:r=n+'nd';break;
+			case 2:r=n+'rd';break;
+			case 3:r=n+'th';break;
+		}
+		r += ' year ';
+		switch (term++){
+			case 0:r+=term+'st';break;
+			case 1:r+=term+'nd';break;
+		}
+		r += ' term';
+		return r;
 	}
 };
 game.reset_semester();
@@ -119,16 +138,16 @@ game.reset_semester();
 		v0: function(v) { RPGJS.Variables.data[0] = v }, // useful for cmd.script()
 		// overridable, override these only if necessary
 		can_take: function(){
-			if ( G.hp >= this.hp_cost() ) RPGJS.Variables.data[0] = 1;
+			if ( G.player.hp >= this.hp_cost() ) RPGJS.Variables.data[0] = 1;
 			else RPGJS.Variables.data[0] = '你的體力不夠修這門課囉！';
 		},
 		fail: function(t,hp_cost){
 			if ( !G.defined(hp_cost) ) hp_cost = this.hp_cost();
-			G.hp -= this.hp_cost();
-			G.n_failed++;
+			G.player.hp -= this.hp_cost();
+			G.player.n_failed++;
 			G.semester.n_failed++;
 			G.semester.ev[this.id].is_failed = 1;
-			RPGJS.Variables.data[0] = t+'\n消耗 '+hp_cost+' 點體力，還剩 '+G.hp+' 點體力。';
+			RPGJS.Variables.data[0] = t+'\n消耗 '+hp_cost+' 點體力，還剩 '+G.player.hp+' 點體力。';
 		},
 		frequence: 2,
 		init: function(){},
@@ -141,12 +160,12 @@ game.reset_semester();
 		speed: 1,
 		take: function(hp_cost){
 			if ( !G.defined(hp_cost) ) hp_cost = this.hp_cost();
-			if ( G.hp < hp_cost ) return RPGJS.Variables.data[0] = '你的體力不夠修這門課囉！';
+			if ( G.player.hp < hp_cost ) return RPGJS.Variables.data[0] = '你的體力不夠修這門課囉！';
 			this.is_passed = true;
-			G.hp -= hp_cost;
-			G.n_passed++;
+			G.player.hp -= hp_cost;
+			G.player.n_passed++;
 			G.semester.n_passed++;
-			RPGJS.Variables.data[0] = '習得了 '+this.name+' ！\n消耗 '+hp_cost+' 點體力，還剩 '+G.hp+' 點體力。';
+			RPGJS.Variables.data[0] = '習得了 '+this.name+' ！\n消耗 '+hp_cost+' 點體力，還剩 '+G.player.hp+' 點體力。';
 			RPGJS.System.sePlay(1);
 		},
 		trigger: 'action_button',

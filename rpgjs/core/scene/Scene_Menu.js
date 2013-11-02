@@ -47,13 +47,13 @@ RPGJS_Canvas.Scene.New({
 		var el_empty = this.createElement(), 
 			el = this.createElement(),
 			//val = Math.floor(actor.getCurrentParam(type));
-			val = game[type];
+			val = game.player[type];
 
 			
 		el_empty.strokeStyle = "black";
 		el_empty.strokeRect(0, 0, 112, 18);
 		//el.drawImage(param, 1, 1, (actor.getParamPoint(param) * 100 / val) + "%");
-		el.drawImage(param, 1, 1, (game[param] * 100 / val) + "%");
+		el.drawImage(param, 1, 1, (game.player[param] * 100 / val) + "%");
 		el_empty.opacity = 0.8;
 		el_empty.x = 150;
 		el_empty.append(el);
@@ -61,7 +61,7 @@ RPGJS_Canvas.Scene.New({
 			size: "20px"
 		});
 		//this.drawText(Math.floor(actor.getParamPoint(param)) + " / " + val, el_empty, 120, 2, {
-		this.drawText(Math.floor(game[param]) + " / " + val, el_empty, 120, 2, {
+		this.drawText(Math.floor(game.player[param]) + " / " + val, el_empty, 120, 2, {
 			size: "10px"
 		});
 		return el_empty;
@@ -122,12 +122,12 @@ RPGJS_Canvas.Scene.New({
 			
 			//this.drawText("LV " + actor.currentLevel, sprite_b, 270, 10, {
 			
-			this.drawText(this.num2year(game.i_semester), sprite_b, 180, 10, {
+			this.drawText(game.show_semester(game.player.i_semester), sprite_b, 180, 10, {
 				size: "20px"
 			});
 			
 			//this.drawText(actor.name, sprite_b, 150, 10);
-			this.drawText(game.name, sprite_b, 100, 10);
+			this.drawText(game.player.name, sprite_b, 100, 10);
 			
 			body.append(sprite_b);
 			
@@ -163,24 +163,6 @@ RPGJS_Canvas.Scene.New({
 			set: body,
 			width: width_actor
 		};
-	},
-	num2year: function(n){ 
-	  var r;
-	  var term = n%2;
-	  n = parseInt(n/2);
-	  switch(n++){
-	    case 0:r=n+'st';break;
-	    case 1:r=n+'nd';break;
-	    case 2:r=n+'rd';break;
-	    case 3:r=n+'th';break;
-	  }
-	  r += ' year ';
-	  switch (term++){
-	    case 0:r+=term+'st';break;
-	    case 1:r+=term+'nd';break;
-	  }
-	  r += ' term';
-	  return r;
 	},
 	__index: function(stage) {
 		var actor, _canvas = this.getCanvas(),
@@ -513,7 +495,7 @@ RPGJS_Canvas.Scene.New({
 			var i = 0;
 			for (var map in game.ev){
 				for (var id in game.ev[map]){
-				  	if(!game.ev[map][id].took) continue;
+				  	if(!game.ev[map][id].is_passed) continue;
 			  		var prop = {name:game.ev[map][id].name,consumable:0};
 					item = this._displayItem(prop, i);
 
@@ -783,11 +765,11 @@ RPGJS_Canvas.Scene.New({
 			var currentItem, changeItem, val;
 			info.empty();
 			//this.drawText(data_actor.name, info, 20, 10, {
-			this.drawText(game.name, info, 20, 10, {
+			this.drawText(game.player.name, info, 20, 10, {
 				size: "30px"
 			});
 			//this.drawText("LV : " + data_actor.currentLevel, info, 20, 45);
-			this.drawText(this.num2year(game.i_semester), info, 20, 45);
+			this.drawText(game.show_semester(game.player.i_semester), info, 20, 45);
 			CE.each(["atk", "pdef", "mdef"], function(i, type) {
 				self.drawText(type.toUpperCase() + " :   " + data_actor.getParamPoint(type), info, 20, 35 * i + 75);
 			});
@@ -991,7 +973,7 @@ RPGJS_Canvas.Scene.New({
 		var data_actor = global.game_actors.getById(actor_id);
 
 		//this.drawText(data_actor.name, body, 20, 20, {
-		this.drawText(game.name, body, 20, 20, {
+		this.drawText(game.player.name, body, 20, 20, {
 			size: "30px"
 		});
 		
@@ -1001,7 +983,7 @@ RPGJS_Canvas.Scene.New({
 		});
 		
 		//this.drawText("LV : " + data_actor.currentLevel, body, 300, 65, {
-		this.drawText(this.num2year(game.i_semester), body, 300, 65, {
+		this.drawText(game.show_semester(game.player.i_semester), body, 300, 65, {
 			size: "18px"
 		});
 		this.drawText("EXP : " + data_actor.currentExp, body, 300, 95, {

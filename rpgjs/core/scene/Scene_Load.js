@@ -46,8 +46,9 @@ RPGJS_Canvas.Scene.New({
 			content.attr('index', i);
 			
 			game_save = Marshal.load(name);
+			Marshal._pointer[name] = 0;
 		
-			if (game_save) {
+			if (game_save && game_save.__name__ == "Game_Save") {
 				this.refreshSlot(content, game_save.get(i));
 				content.attr('exist', true);
 			}
@@ -90,6 +91,7 @@ RPGJS_Canvas.Scene.New({
 			this.select = this._execSave;
 			back = function() {
 				RPGJS_Canvas.Scene.exit("Scene_Load");
+				RPGJS_Canvas.Scene.get("Scene_Menu").openWindow('index');
 			};
 		}
 		else {
@@ -121,8 +123,10 @@ RPGJS_Canvas.Scene.New({
 		
 		var marginleft = - 30;
 		
-		this.drawText(data.actor_name, el, 150 + marginleft, 10);
-		this.drawText("LV " + data.level, el, 150 + marginleft, 35);
+		//this.drawText(data.actor_name, el, 150 + marginleft, 10);
+		this.drawText(game.player.name, el, 150 + marginleft, 10);
+		//this.drawText("LV " + data.level, el, 150 + marginleft, 35);
+		this.drawText(game.show_semester(game.player.i_semester), el, 150 + marginleft, 35);
 		
 		function toDate(total_sec) {
 			var hour = "" + Math.floor(total_sec / 60 / 60),
@@ -134,11 +138,13 @@ RPGJS_Canvas.Scene.New({
 			return hour + " : " + min + " : " + sec;
 		}
 		
-		this.drawText(data.actor_name, el, 150 + marginleft, 10);
-		this.drawText("LV " + data.level, el, 150 + marginleft, 35);
+		//this.drawText(data.actor_name, el, 150 + marginleft, 10);
+		this.drawText(game.player.name, el, 150 + marginleft, 10);
+		//this.drawText("LV " + data.level, el, 150 + marginleft, 35);
+		this.drawText(game.show_semester(game.player.i_semester), el, 150 + marginleft, 35);
 		
 		this.drawText(toDate(data.time), el, 200 + marginleft, 10);
-		this.drawText(date.toLocaleString(), el, 200 + marginleft, 35);
+		this.drawText(date.toLocaleString(), el, 150 + marginleft, 60);
 		
 		
 	},
@@ -166,9 +172,21 @@ RPGJS_Canvas.Scene.New({
 		
 		Marshal.dump(global.game_save, slot);
 		Marshal.dump(global.game_switches, slot);
-		Marshal.dump(global.game_variables, slot);
+		//Marshal.dump(global.game_variables, slot);
 		Marshal.dump(global.game_selfswitches, slot);
 		Marshal.dump(global.game_actors, slot);
+		Marshal.dump(game.player, slot);
+		Marshal.dump(game.semester, slot);
+		var evdump = {};
+		for (var map in game.ev){
+			evdump[map] = {};
+			for (var id in game.ev[map]){
+				evdump[map][id] = { is_passed: game.ev[map][id].is_passed };
+			}
+		}
+		console.log(evdump);
+		Marshal.dump(evdump, slot);
+
 	
 	},
 	
@@ -179,11 +197,23 @@ RPGJS_Canvas.Scene.New({
 			return;
 		}
 		
-		global.game_save = data_save;
+		//global.game_save = data_save;
+		global.game_save = Marshal.load(slot);
 		global.game_switches = Marshal.load(slot);
-		global.game_variables = Marshal.load(slot);
+		//global.game_variables = Marshal.load(slot);
 		global.game_selfswitches = Marshal.load(slot);
 		global.game_actors = Marshal.load(slot);
+
+		game.player = Marshal.load(slot);
+		game.semester = Marshal.load(slot);
+		var evload = Marshal.load(slot);
+		for (var map in game.ev){
+			for (var id in game.ev[map]){
+				game.ev[map][id].is_passed = evload[map][id].is_passed;
+			}
+		}
+		Marshal._pointer[slot] = 0;
+
 		global.game_player = global.game_actors.get(0);
 
 		global.game_player.x /= global.game_map.tile_w;
@@ -197,6 +227,5 @@ RPGJS_Canvas.Scene.New({
 	},
 	
 	exit: function() {
-		
 	}
 });
