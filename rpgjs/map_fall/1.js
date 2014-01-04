@@ -24,7 +24,7 @@ game.ev[map][id] = new game.Ev({
 	'CHOICE_2',
 		s(ev+'.is_ready_to_next_semester()'),
 		'IF: "1 == variable[0]"',
-			'TRANSFER_PLAYER: {"position-type": "constant", "appointement": {"x":1,"y":1,"id":2}}',
+			'TRANSFER_PLAYER: {"position-type": "constant", "appointement": {"x":4,"y":4,"id":2}}',
 		'ELSE',
 			t('%V[0]'),
 			'CHOICES: ["是","否"]',

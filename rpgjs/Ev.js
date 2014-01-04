@@ -6,7 +6,7 @@ var game = {
 		}).ready(function(){
 			RPGJS.Player.init({
 				actor: 1,
-				start: { x: 4, y: 4, id: 1 },
+				start: { x: 4, y: 4, id: 2 },
 			});
 			RPGJS.scene.call('Scene_Title');
 		});
@@ -138,8 +138,8 @@ game.reset_semester();
 		v0: function(v) { RPGJS.Variables.data[0] = v }, // useful for cmd.script()
 		// overridable, override these only if necessary
 		can_take: function(){
-			if ( G.player.hp >= this.hp_cost() ) RPGJS.Variables.data[0] = 1;
-			else RPGJS.Variables.data[0] = '你的體力不夠修這門課囉！';
+			if ( G.player.hp < this.hp_cost() ) RPGJS.Variables.data[0] = '你的體力不夠修這門課囉！';
+			else RPGJS.Variables.data[0] = 1;
 		},
 		fail: function(t,hp_cost){
 			if ( !G.defined(hp_cost) ) hp_cost = this.hp_cost();
@@ -153,7 +153,7 @@ game.reset_semester();
 		init: function(){},
 		is_took: function(){
 			if ( this.is_passed ) return RPGJS.Variables.data[0] = '你已經修過 '+this.name+' 了！';
-			if ( game.semester.ev[this.id].is_failed ) return RPGJS.Variables.data[0] = '你這學期已經被當過了，請等下一個學年再選修。';
+			if ( game.semester.ev[this.id].is_failed ) return RPGJS.Variables.data[0] = '你這學期已經被當過了，請等下一個學年再修。';
 			return RPGJS.Variables.data[0] = 0;
 		},
 		is_passed: false,
