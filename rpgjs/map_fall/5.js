@@ -1,7 +1,7 @@
 var s = game.Ev.prototype.cmd.script, t = game.Ev.prototype.cmd.text, v0 = game.Ev.prototype.cmd.v0;
-var map = 1, id = 5, ev = 'game.ev['+map+']['+id+']', name = '基礎國文';
+var map = 1, id = 5, ev = 'game.ev['+map+']['+id+']', name = '基礎國文(一)';
 game.ev[map][id] = new game.Ev({
-	hp_cost: function() { return 8; },
+	hp_cost: function() { return 15; },
 	id: id,
 	map: map,
 	name: name,
