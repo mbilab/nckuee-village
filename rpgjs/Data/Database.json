@@ -26,7 +26,7 @@
     "2": {
       "autotiles_id": "1",
       "tileset_id": "1",
-      "events": [1,2]
+      "events": [1,2,3]
     },
     "3": {
       "autotiles_id": "1",

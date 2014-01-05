@@ -6,7 +6,7 @@ var game = {
 		}).ready(function(){
 			RPGJS.Player.init({
 				actor: 1,
-				start: { x: 4, y: 4, id: 2 },
+				start: { x: 4, y: 4, id: 1 },
 			});
 			RPGJS.scene.call('Scene_Title');
 		});
@@ -158,14 +158,15 @@ game.reset_semester();
 		},
 		is_passed: false,
 		speed: 1,
-		take: function(hp_cost){
+		take: function(t,hp_cost){
 			if ( !G.defined(hp_cost) ) hp_cost = this.hp_cost();
 			if ( G.player.hp < hp_cost ) return RPGJS.Variables.data[0] = '你的體力不夠修這門課囉！';
 			this.is_passed = true;
 			G.player.hp -= hp_cost;
 			G.player.n_passed++;
 			G.semester.n_passed++;
-			RPGJS.Variables.data[0] = '習得了 '+this.name+' ！\n消耗 '+hp_cost+' 點體力，還剩 '+G.player.hp+' 點體力。';
+			if ( '' !== t ) t += '\n\n';
+			RPGJS.Variables.data[0] = t+'習得了 '+this.name+' ！\n消耗 '+hp_cost+' 點體力，還剩 '+G.player.hp+' 點體力。';
 			RPGJS.System.sePlay(1);
 		},
 		trigger: 'action_button',
