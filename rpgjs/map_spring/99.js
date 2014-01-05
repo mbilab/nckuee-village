@@ -1,5 +1,5 @@
 var s = game.Ev.prototype.cmd.script, t = game.Ev.prototype.cmd.text, v0 = game.Ev.prototype.cmd.v0;
-var map = 1, id = 99, ev = 'game.ev['+map+']['+id+']', name = '系辦王小姐';
+var map = 2, id = 99, ev = 'game.ev['+map+']['+id+']', name = '系辦王小姐';
 game.ev[map][id] = new game.Ev({
 	dropped_out: function(){
 		if ( .5<=game.semester.n_passed/(game.semester.n_failed+game.semester.n_passed) || 0==game.player.n_21 || 5<=game.player.hp ) return RPGJS.Variables.data[0] = 0;

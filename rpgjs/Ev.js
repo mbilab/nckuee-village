@@ -6,9 +6,10 @@ var game = {
 		}).ready(function(){
 			RPGJS.Player.init({
 				actor: 1,
-				start: { x: 4, y: 4, id: 2 },
+				start: { x: 4, y: 4, id: 1 },
 			});
 			RPGJS.scene.call('Scene_Title');
+			jQuery.extend(RPGJS_Canvas.Scene.get('Scene_Map').data,{musics:{bgm:0}});
 		});
 	},
 	player: {

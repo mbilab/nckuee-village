@@ -56,7 +56,7 @@ RPGJS_Canvas.Scene.New({
 	load: function(callback) {
 		var self = this;
 		global.game_map.load(this.params, function(data) {
-			self.data = data;
+			self.data = jQuery.extend( {}, data, self.data ); // make self.data higher priority than data
 			self.loadMaterials(data, callback);
 		}, this);
 	},
