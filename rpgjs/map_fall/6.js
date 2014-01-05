@@ -1,5 +1,5 @@
 var s = game.Ev.prototype.cmd.script, t = game.Ev.prototype.cmd.text, v0 = game.Ev.prototype.cmd.v0;
-var map = 1, id = 6, ev = 'game.ev['+map+']['+id+']', name = '大一英文';
+var map = 1, id = 6, ev = 'game.ev['+map+']['+id+']', name = '大一英文(一)';
 game.ev[map][id] = new game.Ev({
 	hp_cost: function() { return 'undefined' === typeof game.eng_14_15 ? 8 : 0; },
 	id: id,
