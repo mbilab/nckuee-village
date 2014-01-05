@@ -6,7 +6,7 @@ var game = {
 		}).ready(function(){
 			RPGJS.Player.init({
 				actor: 1,
-				start: { x: 4, y: 4, id: 1 },
+				start: { x: 4, y: 4, id: 2 },
 			});
 			RPGJS.scene.call('Scene_Title');
 		});
@@ -88,7 +88,7 @@ game.reset_semester();
 		escape: function(s){ return s.replace(/"/g,'\\"').replace(/\n/g,"\\n") },
 		wrap: function( text, width ){
 			var r = width; // remain width
-			var token = text.match(/\n|[\x00-\xff]+|[^\x00-\xff]+/ig);
+			var token = text.match(/\n|[\x00-\x09\x0b-\xff]+|[^\x00-\xff]+/ig);
 			text = '';
 			for ( var i = 0; i < token.length; i++ ) {
 				if ( "\n" === token[i] ) { r = width; text += "\n"; }
