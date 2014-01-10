@@ -120,3 +120,5 @@ RPGJS_Canvas.Scene.New({
 		return false;
 	}
 });
+
+// vi:nowrap:sw=4:ts=4

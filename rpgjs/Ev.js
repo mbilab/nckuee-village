@@ -9,6 +9,7 @@ var game = {
 				start: { x: 4, y: 4, id: 1 },
 			});
 			RPGJS.scene.call('Scene_Title');
+//			RPGJS.scene.call('Scene_Gameover');
 			jQuery.extend(RPGJS_Canvas.Scene.get('Scene_Map').data,{musics:{bgm:0}});
 		});
 	},
