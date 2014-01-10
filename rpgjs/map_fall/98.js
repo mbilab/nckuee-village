@@ -3,19 +3,26 @@ var map = 1, id = 98, ev = 'game.ev['+map+']['+id+']', name = '教務處鄭先�
 game.ev[map][id] = new game.Ev({
 	can_graduate: function(){
 		if ( game.player.i_semester < 5 ) return RPGJS.Variables.data[0] = "至少要經過六個學期，才可以畢業喔！";
-		var n_req = 0, req = '';
-		[2,3,4,5,6,7,8,9,11,14,15].forEach(function(i){
-			if (game.ev[1][i].took) return;
-			++n_req;
-			req += game.ev[1][i].name+',';
-		});
-		[2,3,4,5,6].forEach(function(i){
-			if (game.ev[2][i].took) return;
-			++n_req;
-			req += game.ev[2][i].name+',';
-		});
-		if ( 0 < n_req ) return RPGJS.Variables.data[0] = '尚缺以下 '+n_req+' 門必修課喔：\n'+req.substring(0, req.length-1);
+		var req = this.count( [2,3,4,5,6,7,8,9,11,14,15], [2,3,4,5,6], 'passed' );
+		if ( req.n_no ) return RPGJS.Variables.data[0] = '尚缺以下 '+req.n_no+' 門必修課喔：\n'+req.list.substring(0, req.list.length-1);
+//		req = this.count( [44,45], [43,44], 'took' );
+//		if ( req.n_no ) return RPGJS.Variables.data[0] = '尚缺以下 '+req.n_no+' 門必選課喔：\n'+req.list.substring(0, req.list.length-1);
+//		req = this.count( [], [], 'passed' );
+//		if ( req.n_yes < 16 ) return RPGJS.Variables.data[0] = '尚缺 '+(16-req.n_yes)+' 門選修課，還有以下課程可以選擇：\n'+req.list.substring(0, req.list.length-1);
 		RPGJS.Variables.data[0] = 1;
+	},
+	count: function(ev1,ev2,attr){
+		var req_ev = { 1:ev1, 2:ev2 };
+		var ret = { list: '', n_no: 0, n_yes: 0 };
+		[1,2].forEach(function(map){
+			req_ev[map].forEach(function(i){
+				if (game.ev[map][i][attr]) { ++ret.n_yes; return; }
+				++ret.n_no;
+				ret.list += game.ev[map][i].name+',';
+			});
+		});
+		if (ret.n_no) ret.list = ret.list.substring(0, ret.list.length-1);
+		return ret;
 	},
 	graphic: 2,
 	id: id,

@@ -15,10 +15,14 @@ var game = {
 	player: {
 		hp: 100,
 		i_semester: 0,
-		max_hp: 100,
+		max_hp: 120,
 		n_failed: 0,
 		n_passed: 0,
 		name: 'Player',
+	},
+	next_semester: function(){
+		this.player.hp = this.semester.n_passed < 7 ? 100 : 120;
+		this.reset_semester();
 	},
 	reset_semester: function(){
 		this.semester = {

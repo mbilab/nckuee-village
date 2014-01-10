@@ -49,6 +49,7 @@ game.ev[map][id] = new game.Ev({
 					s(ev+'.next_semester(1)'),
 				'ENDCHOICES',
 				'IF: "1 == variable[0]"',
+					s('game.next_semester()'),
 					'TRANSFER_PLAYER: {"position-type": "constant", "appointement": {"x":4,"y":4,"id":2}}',
 				'ENDIF',
 			'ENDIF',
