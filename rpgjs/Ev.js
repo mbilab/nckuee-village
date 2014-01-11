@@ -154,6 +154,7 @@ game.reset_semester();
 			G.semester.n_failed++;
 			G.semester.ev[this.id].is_failed = 1;
 			RPGJS.Variables.data[0] = t+'\n消耗 '+hp_cost+' 點體力，還剩 '+G.player.hp+' 點體力。';
+			RPGJS.System.sePlay(2);
 		},
 		frequence: 2,
 		init: function(){},
