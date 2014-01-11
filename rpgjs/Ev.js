@@ -172,6 +172,7 @@ game.reset_semester();
 			G.player.hp -= hp_cost;
 			G.player.n_passed++;
 			G.semester.n_passed++;
+			if ( 'undefined' == typeof t ) t = '';
 			if ( '' !== t ) t += '\n\n';
 			RPGJS.Variables.data[0] = t+'習得了 '+this.name+' ！\n消耗 '+hp_cost+' 點體力，還剩 '+G.player.hp+' 點體力。';
 			RPGJS.System.sePlay(1);
