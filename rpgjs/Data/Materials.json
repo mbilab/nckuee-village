@@ -36,7 +36,8 @@
     "5_4": "5_4.jpg"
   },
   "ses":{
-    "1": "get.wav"
+    "1": "get.wav",
+    "2": "fail.wav"
   },
   "tilesets": {
     "1": "tileset.png"

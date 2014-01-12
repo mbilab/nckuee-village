@@ -3,36 +3,37 @@ RPGJS_Canvas.Scene.New({
 	
 	materials: {
 		images: {
-//			background: "Graphics/Gameovers/gameover.jpg",
-			cce: "Graphics/Gameovers/cce.jpg",
-			comm: "Graphics/Gameovers/comm.jpg",
-			master: "Graphics/Gameovers/master.jpg",
-			mse: "Graphics/Gameovers/mse.jpg",
-			postpone: "Graphics/Gameovers/postpone.jpg",
+			actor: "Graphics/Gameovers/actor10-1.png",
+			library: "Graphics/Gameovers/library.jpg",
 		}
 	},
 	
 	ready: function(stage) {
 	
-		var background = this.createElement();
-		background.drawImage('cce');
-		stage.append(background);
+		var bg = this.createElement()
+		bg.drawImage('library');
+		stage.append(bg);
 
-		var content = this.createElement();
-		var text = RPGJS_Canvas.Text.New(this, '恭喜順利畢業，因為你有選修Ａ課程\n、Ｂ課程、Ｃ課程、Ｄ課程，推薦你\n可以往電通所發展');
-		text.style({
-			color: 'red',
+		var fg = this.createElement();
+		fg.drawImage('actor');
+		fg.x = -272;
+		fg.y = 192;
+		stage.append(fg);
+		RPGJS_Canvas.Timeline.new(fg).to({x:0}, 20, Ease.easeOutBack).call();
+
+		var msg = this.createElement();
+		msg.x = 480;
+		var txt = RPGJS_Canvas.Text.New(this, game.wrap('恭喜順利畢業，因為你有選修Ａ課程、Ｂ課程、Ｃ課程、Ｄ課程，推薦你可以往微電子所發展', 28));
+		txt.style({
+			color: 'white',
 			family: '微軟正黑體',
-			shadow: '0 0 5 #ffffff',
-			size: '40px',
+			shadow: '0 0 5 #000000',
+			size: '24px',
 			textBaseline: 'top',
 		});
-		text.draw(content, 0, 0);
-		stage.append(content);
-
-		RPGJS_Canvas.Timeline.new(content).to({
-			y: 200,
-		}, 20, Ease.easeOutBack).call();
+		txt.draw(msg, 0, 350);
+		stage.append(msg);
+		RPGJS_Canvas.Timeline.new(msg).to({x:272}, 20, Ease.easeOutBack).call();
 		
 		RPGJS_Canvas.Input.press([Input.Enter, Input.Space], function() {
 			RPGJS.scene.call("Scene_Title");
