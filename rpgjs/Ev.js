@@ -6,7 +6,7 @@ var game = {
 		}).ready(function(){
 			RPGJS.Player.init({
 				actor: 1,
-				start: { x: 4, y: 4, id: 1 },
+				start: { x: 4, y: 4, id: 2 },
 			});
 			RPGJS.scene.call('Scene_Title');
 //			RPGJS.scene.call('Scene_Gameover');
