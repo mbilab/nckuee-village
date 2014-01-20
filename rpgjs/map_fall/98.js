@@ -5,18 +5,19 @@ game.ev[map][id] = new game.Ev({
 		if ( game.player.i_semester < 5 ) return RPGJS.Variables.data[0] = "至少要經過六個學期，才可以畢業喔！";
 		var req = this.count( [2,3,4,5,6,7,8,9,11,14,15], [2,3,4,5,6], 'passed' );
 		if ( req.n_no ) return RPGJS.Variables.data[0] = '尚缺以下 '+req.n_no+' 門必修課喔：\n'+req.list.substring(0, req.list.length-1);
-//		req = this.count( [44,45], [43,44], 'took' );
-//		if ( req.n_no ) return RPGJS.Variables.data[0] = '尚缺以下 '+req.n_no+' 門必選課喔：\n'+req.list.substring(0, req.list.length-1);
+		req = this.count( [44,45], [43,44], 'took' );
+		if ( req.n_no ) return RPGJS.Variables.data[0] = '尚缺以下 '+req.n_no+' 門必選課喔：\n'+req.list.substring(0, req.list.length-1);
 //		req = this.count( [], [], 'passed' );
 //		if ( req.n_yes < 16 ) return RPGJS.Variables.data[0] = '尚缺 '+(16-req.n_yes)+' 門選修課，還有以下課程可以選擇：\n'+req.list.substring(0, req.list.length-1);
-		RPGJS.Variables.data[0] = 1;
+		RPGJS.scene.call('Scene_Gameover');
+		RPGJS.Variables.data[0] = 0;
 	},
 	count: function(ev1,ev2,attr){
 		var req_ev = { 1:ev1, 2:ev2 };
 		var ret = { list: '', n_no: 0, n_yes: 0 };
 		[1,2].forEach(function(map){
 			req_ev[map].forEach(function(i){
-				if (game.ev[map][i][attr]) { ++ret.n_yes; return; }
+				if (!game.ev[map][i] || game.ev[map][i][attr]) { ++ret.n_yes; return; }
 				++ret.n_no;
 				ret.list += game.ev[map][i].name+',';
 			});
@@ -56,25 +57,11 @@ game.ev[map][id] = new game.Ev({
 	'CHOICES: ["是的！我準備好了！","還沒！過一陣子我再來！"]',
 	'CHOICE_0',
 		s(ev+'.can_graduate()'),
-		'IF: "1 == variable[0]"',
-			s(ev+'.dropped_out()'),
-			'IF: "0 == variable[0]"',
-				s(ev+'.next_semester()'),
-				t('%V[0]'),
-				'CHOICES: ["是","否"]',
-				'CHOICE_0',
-					s(ev+'.next_semester(0)'),
-				'CHOICE_1',
-					s(ev+'.next_semester(1)'),
-				'ENDCHOICES',
-				'IF: "1 == variable[0]"',
-					'TRANSFER_PLAYER: {"position-type": "constant", "appointement": {"x":4,"y":4,"id":2}}',
-				'ENDIF',
-			'ENDIF',
-		'ENDIF',
-		t('%V[0]'),
 	'CHOICE_1',
 	'ENDCHOICES',
+	'IF: "0 != variable[0]"',
+		t('%V[0]'),
+	"ENDIF",
 	s(ev+'.start()'),
 ]);
 

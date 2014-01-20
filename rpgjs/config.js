@@ -3,8 +3,9 @@ exports.config = {
 	files: {
 		javascripts: {
 			joinTo: {
-				'built/rpgjs.js': /^core\/Main.js|^core\/game|^core\/sprite/,
+				'built/app.js': /^main.js$/,
 				'built/ev.js': /^Ev.js$|^map_fall|^map_spring/,
+				'built/rpgjs.js': /^core\/Main.js|^core\/game|^core\/sprite/,
 			},
 		},
 		stylesheets: {
@@ -21,7 +22,7 @@ exports.config = {
 	},
 	paths: {
 		public: '.',
-		watched: ['app.styl','core','Ev.js','map_fall','map_spring','reset.css'],
+		watched: ['app.styl','core','Ev.js','main.js','map_fall','map_spring','reset.css'],
 	},
 	// minify: true
 }

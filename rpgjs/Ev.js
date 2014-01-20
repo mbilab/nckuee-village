@@ -1,18 +1,6 @@
 var game = {
+	cheat: '',
 	ev: { 1: {}, 2: {} },
-	init: function(){
-		RPGJS.defines({
-			canvas: 'canvas'
-		}).ready(function(){
-			RPGJS.Player.init({
-				actor: 1,
-				start: { x: 4, y: 4, id: 1 },
-			});
-			RPGJS.scene.call('Scene_Title');
-//			RPGJS.scene.call('Scene_Gameover');
-			jQuery.extend(RPGJS_Canvas.Scene.get('Scene_Map').data,{musics:{bgm:0}});
-		});
-	},
 	player: {
 		hp: 100,
 		i_semester: 0,
@@ -20,17 +8,6 @@ var game = {
 		n_failed: 0,
 		n_passed: 0,
 		name: 'Player',
-	},
-	next_semester: function(){
-		this.player.hp = this.semester.n_passed < 7 ? 100 : 120;
-		this.reset_semester();
-	},
-	reset_semester: function(){
-		this.semester = {
-			ev: {},
-			n_failed: 0,
-			n_passed: 0,
-		};
 	},
 	show_semester: function(n){ 
 		var r;
@@ -51,33 +28,6 @@ var game = {
 		return r;
 	}
 };
-game.reset_semester();
-
-(function($){$(document).ready(function(){
-	game.$cfg = $('#cfg');
-	game.canvas_wd = $('#game').offset().left + $('#game').outerWidth() + 30;
-	game.cfg_min_wd = 250;
-	game.min_wd = game.canvas_wd + game.cfg_min_wd;
-	$(window).resize(function(){
-		var ht = $(this).height(), wd = $(this).width();
-		game.$cfg.height(ht).width(wd<game.min_wd?game.cfg_min_wd:wd-game.canvas_wd);
-		if ( '0px' !== game.$cfg.css('right') ) game.$cfg.css( 'right', -1.1*game.$cfg.width() );
-	}).resize();
-	game.$cfg.css( 'right', -1.1*game.$cfg.width() ).css( 'display', 'block' );
-	$('#_cfg').click(function(){
-		if ( '0px' === game.$cfg.css('right') ) { // hide
-			$('#_cfg').removeClass('shown');
-			game.$cfg.animate({
-				right: -1.1*game.$cfg.width(),
-			}, 100);
-		} else { // show
-			$('#_cfg').addClass('shown');
-			game.$cfg.animate({
-				right: 0,
-			}, 100);
-		}
-	});
-})})(jQuery);
 
 // the above might be moved out to another js file such as game.js
 
@@ -92,6 +42,17 @@ game.reset_semester();
 			return true;
 		},
 		escape: function(s){ return s.replace(/"/g,'\\"').replace(/\n/g,"\\n") },
+		next_semester: function(){
+			this.player.hp = this.semester.n_passed < 7 ? 100 : 120;
+			this.reset_semester();
+		},
+		reset_semester: function(){
+			this.semester = {
+				ev: {},
+				n_failed: 0,
+				n_passed: 0,
+			};
+		},
 		wrap: function( text, width ){
 			var r = width; // remain width
 			var token = text.match(/\n|[\x00-\x09\x0b-\xff]+|[^\x00-\xff]+/ig);
@@ -117,7 +78,6 @@ game.reset_semester();
 		if ( !G.defined(this.graphic) ) this.graphic = this.id + 1; // 1 for the actor
 		if ( !G.defined(this.x) ) this.x = ( (this.id-1) % 5 ) * 2 + 5;
 		if ( !G.defined(this.y) ) this.y = Math.floor( (this.id-1) / 5 ) * 2 + 5;
-		G.semester.ev[opt.id] = { is_failed: 0 };
 		RPGJS.setEvent( this.map, this.id, [{
 			id: this.id,
 			x: this.x,
