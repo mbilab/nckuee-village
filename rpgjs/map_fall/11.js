@@ -1,5 +1,5 @@
 var s = game.Ev.prototype.cmd.script, t = game.Ev.prototype.cmd.text, v0 = game.Ev.prototype.cmd.v0;
-var map = 1, id = 11, ev = 'game.ev['+map+']['+id+']', name = '大二英文';
+var map = 1, id = 11, ev = 'game.ev['+map+']['+id+']', name = '大二英文(一)';
 game.ev[map][id] = new game.Ev({
 	hp_cost: function() { return 8; },
 	id: id,
@@ -7,7 +7,7 @@ game.ev[map][id] = new game.Ev({
 	name: name,
 }, [
 	s(ev+'.stop()'),
-	t('＜開場介紹＞'),
+	t('世界上最遠的距離不是你不知道我愛你，而是英文單字從開始到結束的距離。'),
 	t('你要修 '+name+' 嗎？'),
 	'CHOICES: ["是","否"]',
 	'CHOICE_0',
@@ -44,9 +44,11 @@ game.ev[map][id] = new game.Ev({
 				'ENDCHOICES',
 			'ENDIF',
 		'ENDIF',
-		t('%V[0]'),
 	'CHOICE_1',
 	'ENDCHOICES',
+	'IF: "0 != variable[0]"',
+		t('%V[0]'),
+	"ENDIF",
 	s(ev+'.start()'),
 ]);
 
