@@ -31,6 +31,7 @@ var game = {
 		escape: function(s){ return s.replace(/"/g,'\\"').replace(/\n/g,"\\n") },
 		next_semester: function(){
 			this.player.hp = this.semester.n_passed < 7 ? 100 : 120;
+			this.player.i_semester++;
 			this.reset_semester();
 		},
 		pause_music: function(id){

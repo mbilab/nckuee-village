@@ -68,8 +68,11 @@ $(document).ready(function(){
 	}).keypress(function(e){
 		if ( 33 == e.which ) {
 			if ( '' == game.cheat ) { game.cheat = '!'; return true; }
-			/six/.test(game.cheat)
+			/four|req|six/.test(game.cheat)
 			switch (game.cheat) {
+				case '!four':
+					game.semester.n_passed = 4;
+					break;
 				case '!req':
 					take( [2,3,4,5,6,7,8,9,11,14,15], [2,3,4,5,6], 'passed' );
 					take( [44,45], [43,44], 'took' );
