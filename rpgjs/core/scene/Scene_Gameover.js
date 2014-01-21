@@ -9,9 +9,10 @@ RPGJS_Canvas.Scene.New({
 	},
 	
 	ready: function(stage) {
+		var go = game.player.gameover;
 	
 		var bg = this.createElement()
-		bg.drawImage('library');
+		bg.drawImage(go.bg);
 		stage.append(bg);
 
 		var fg = this.createElement();
@@ -23,7 +24,7 @@ RPGJS_Canvas.Scene.New({
 
 		var msg = this.createElement();
 		msg.x = 480;
-		var txt = RPGJS_Canvas.Text.New(this, game.wrap('恭喜順利畢業，因為你有選修Ａ課程、Ｂ課程、Ｃ課程、Ｄ課程，推薦你可以往微電子所發展', 28));
+		var txt = RPGJS_Canvas.Text.New(this, game.wrap(go.msg, 28));
 		txt.style({
 			color: 'white',
 			family: '微軟正黑體',
