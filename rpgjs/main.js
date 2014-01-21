@@ -60,8 +60,15 @@ $(document).ready(function(){
 				case '!six':
 					game.player.i_semester = 5
 					break;
+				default:
+					game.cheat = '';
+					return true;
 			}
-			console.log(game.cheat);
+			RPGJS.System.sePlay(1);
+			var scene = RPGJS_Canvas.Scene.get('Scene_Title');
+			var effect = RPGJS_Canvas.Effect.New(scene, scene._stage);
+			effect.shake(1, 24, 24, 'xy');
+//			effect.screenFlash('f43140', 24);
 			game.cheat = '';
 		} else if ( game.cheat.length ) game.cheat += String.fromCharCode(e.keyCode);
 		return true;

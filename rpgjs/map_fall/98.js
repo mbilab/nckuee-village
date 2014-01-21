@@ -2,6 +2,9 @@ var s = game.Ev.prototype.cmd.script, t = game.Ev.prototype.cmd.text, v0 = game.
 var map = 1, id = 98, ev = 'game.ev['+map+']['+id+']', name = '教務處鄭先生';
 game.ev[map][id] = new game.Ev({
 	can_graduate: function(){
+		var effect = RPGJS_Canvas.Effect.new(this, stage);
+		effect.changeScreenColorTone("black", 20, "darker", 0.6);
+		return RPGJS.Variables.data[0] = 0;
 		if ( game.player.i_semester < 5 ) return RPGJS.Variables.data[0] = "至少要經過六個學期，才可以畢業喔！";
 		var req = this.count( [2,3,4,5,6,7,8,9,11,14,15], [2,3,4,5,6], 'passed' );
 		if ( req.n_no ) return RPGJS.Variables.data[0] = '尚缺以下 '+req.n_no+' 門必修課喔：\n'+req.list.substring(0, req.list.length-1);
