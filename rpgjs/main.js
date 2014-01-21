@@ -6,7 +6,7 @@ $(document).ready(function(){
 			actor: 1,
 			start: { x: 4, y: 4, id: 1 },
 		});
-		$.extend(RPGJS_Canvas.Scene.get('Scene_Map').data,{musics:{bgm:0}});
+//		$.extend(RPGJS_Canvas.Scene.get('Scene_Map').data,{musics:{bgm:0}});
 		RPGJS.scene.call('Scene_Title');
 //		CE.io ? RPGJS.scene.call("Scene_Map") : RPGJS.scene.call("Scene_Map").load();
 //		RPGJS.scene.call('Scene_Gameover');
@@ -48,7 +48,24 @@ $(document).ready(function(){
 			});
 		});
 	}
-	$(document).keypress(function(e){
+	$(document).keydown(function(e){
+		if ( 119 != e.which ) return true;
+		var id = 0;
+		switch (game.current_scene().name) {
+			case 'Scene_Title': id = 1; break;
+			case 'Scene_Map': id = 2; break;
+			case 'Scene_Gameover': id = 3; break;
+		}
+		if ( 0 == id ) return true;
+		if ( game.mute ) {
+			game.mute = false;
+			game.play_music(id);
+		} else {
+			game.pause_music(id);
+			game.mute = true;
+		}
+		return true;
+	}).keypress(function(e){
 		if ( 33 == e.which ) {
 			if ( '' == game.cheat ) { game.cheat = '!'; return true; }
 			/six/.test(game.cheat)
@@ -65,10 +82,10 @@ $(document).ready(function(){
 					return true;
 			}
 			RPGJS.System.sePlay(1);
-			var scene = RPGJS_Canvas.Scene.get('Scene_Title');
+			var scene = game.current_scene();
 			var effect = RPGJS_Canvas.Effect.New(scene, scene._stage);
-			effect.shake(1, 24, 24, 'xy');
-//			effect.screenFlash('f43140', 24);
+			effect.shake(1, 30, 30, 'xy');
+//			effect.screenFlash('f43140', 30);
 			game.cheat = '';
 		} else if ( game.cheat.length ) game.cheat += String.fromCharCode(e.keyCode);
 		return true;

@@ -4,8 +4,9 @@
     "2": "autotile2.png"
   },
   "bgms": {
-    "1": "village.mp3",
-    "2": "village2.mp3"
+    "1": "01 - Opening.ogg",
+    "2": "07 - Town.ogg",
+    "3": "25 - Finale.ogg"
   },
   "characters": {
     "1": "event1.png",

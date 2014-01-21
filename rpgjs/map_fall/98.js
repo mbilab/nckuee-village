@@ -7,11 +7,18 @@ game.ev[map][id] = new game.Ev({
 		if ( req.n_no ) return RPGJS.Variables.data[0] = '尚缺以下 '+req.n_no+' 門必修課喔：\n'+req.no_list;
 		req = this.check( [44,45], [43,44], 'took' );
 		if ( req.n_no ) return RPGJS.Variables.data[0] = '尚缺以下 '+req.n_no+' 門必選課喔：\n'+req.no_list;
-//		req = this.check( [], [], 'passed' );
+		req = this.check( [], [], 'passed' );
 //		if ( req.n_yes < 16 ) return RPGJS.Variables.data[0] = '尚缺 '+(16-req.n_yes)+' 門選修課，還有以下課程可以選擇：\n'+req.no_list;
 
+		RPGJS.System.fadeOutMusic(180);
+
 		RPGJS.Variables.data[0] = 0;
-		RPGJS.scene.call('Scene_Gameover');
+		var scene = RPGJS_Canvas.Scene.get('Scene_Map');
+		var effect = RPGJS_Canvas.Effect.New(scene, scene._stage);
+		effect.changeScreenColorTone('000000', 180, 'darker', 1, function(){
+			RPGJS.scene.call('Scene_Gameover');
+		});
+
 		req = this.check( [18,24,28,37], [20,31], 'passed' );
 		if ( 4 <= req.n_yes ) return game.player.gameover = { bg: 'library', msg: '恭喜順利畢業，因為你有選修 '+req.yes_list+' 等課程，推薦你可以往電通所發展' }
 		req = this.check( [17,21,23,33], [14,23,26,30], 'passed' );
@@ -26,7 +33,6 @@ game.ev[map][id] = new game.Ev({
 		if ( 4 == req.n_yes ) return game.player.gameover = { bg: 'library', msg: '恭喜順利畢業，因為你有選修 '+req.yes_list+' 等課程，推薦你可以往電機所ＶＬＳＩ／ＣＡＤ組發展' }
 		req = this.check( [30,33,39,43,44], [27,30], 'passed' );
 		if ( 3 <= req.n_yes ) return game.player.gameover = { bg: 'library', msg: '恭喜順利畢業，因為你有選修 '+req.yes_list+' 等課程，推薦你可以往電機所電力組發展' }
-
 		game.player.gameover = { bg: 'library', msg: '恭喜順利畢業，推薦你可以往微電子所發展' }
 	},
 	check: function(ev1,ev2,attr){

@@ -12,6 +12,7 @@ RPGJS_Canvas.Scene.New({
 	},
 	
 	ready: function(stage) {
+		game.play_music(1);
 	
 		var background = this.createElement();
 		background.drawImage("background");

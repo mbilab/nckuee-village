@@ -37,6 +37,8 @@ RPGJS_Canvas.Scene.New({
 	ready: function(stage, el, params) {
 		var self = this;
 
+		game.play_music(2);
+
 		var _canvas = this.getCanvas();
 		game.win_width = _canvas.width; 
 		game.win_height = _canvas.height; 

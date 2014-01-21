@@ -1,6 +1,7 @@
 var game = {
 	cheat: '',
 	ev: { 1: {}, 2: {} },
+	mute: false,
 	player: {
 		hp: 100,
 		i_semester: 0,
@@ -9,30 +10,16 @@ var game = {
 		n_passed: 0,
 		name: 'Player',
 	},
-	show_semester: function(n){ 
-		var r;
-		var term = n%2;
-		n = parseInt(n/2);
-		switch(n++){
-			case 0:r=n+'st';break;
-			case 1:r=n+'nd';break;
-			case 2:r=n+'rd';break;
-			case 3:r=n+'th';break;
-		}
-		r += ' year ';
-		switch (term++){
-			case 0:r+=term+'st';break;
-			case 1:r+=term+'nd';break;
-		}
-		r += ' term';
-		return r;
-	}
 };
 
 // the above might be moved out to another js file such as game.js
 
 (function($,G){
 	$.extend( true, G, { // global helper
+		current_scene: function(){
+			var s = RPGJS_Canvas.Scene._scenesIndex;
+			return RPGJS_Canvas.Scene.get(s[s.length-1]);
+		},
 		defined: function(root){
 			if ( 'undefined' === typeof root ) return false;
 			for ( var i = 1; i < arguments.length; i++ ) {
@@ -46,12 +33,41 @@ var game = {
 			this.player.hp = this.semester.n_passed < 7 ? 100 : 120;
 			this.reset_semester();
 		},
+		pause_music: function(id){
+			var sound = RPGJS_Canvas.Sound.get('bgms_'+id);
+			if (sound) sound.pause();
+		},
+		play_music: function(id){
+			if (this.mute) return;
+			var sound = RPGJS_Canvas.Sound.get('bgms_'+id);
+			if (sound) {
+				sound.paused ? sound.resume() : sound.play();
+			} else RPGJS.System.bgmPlay(id);
+		},
 		reset_semester: function(){
 			this.semester = {
 				ev: {},
 				n_failed: 0,
 				n_passed: 0,
 			};
+		},
+		show_semester: function(n){ 
+			var r;
+			var term = n%2;
+			n = parseInt(n/2);
+			switch(n++){
+				case 0:r=n+'st';break;
+				case 1:r=n+'nd';break;
+				case 2:r=n+'rd';break;
+				case 3:r=n+'th';break;
+			}
+			r += ' year ';
+			switch (term++){
+				case 0:r+=term+'st';break;
+				case 1:r+=term+'nd';break;
+			}
+			r += ' term';
+			return r;
 		},
 		wrap: function( text, width ){
 			var r = width; // remain width
