@@ -1,7 +1,7 @@
 var game = {
 	cheat: '',
 	ev: { 1: {}, 2: {} },
-	mute: false,
+	mute: true,
 	player: {
 		hp: 100,
 		i_semester: 0,
@@ -129,7 +129,8 @@ var game = {
 			G.player.hp -= this.hp_cost();
 			G.player.n_failed++;
 			G.semester.n_failed++;
-			G.semester.ev[this.id].is_failed = 1;
+			if (!G.defined(G.semester.ev[this.id])) G.semester.ev[this.id] = {};
+			G.semester.ev[this.id].failed = 1;
 			RPGJS.Variables.data[0] = t+'\n消耗 '+hp_cost+' 點體力，還剩 '+G.player.hp+' 點體力。';
 			RPGJS.System.sePlay(2);
 		},
@@ -137,7 +138,7 @@ var game = {
 		init: function(){},
 		is_took: function(){
 			if ( this.is_passed ) return RPGJS.Variables.data[0] = '你已經修過 '+this.name+' 了！';
-			if ( game.semester.ev[this.id].is_failed ) return RPGJS.Variables.data[0] = '你這學期已經被當過了，請等下一個學年再修。';
+			if ( G.defined(G.semester.ev[this.id], 'failed') ) return RPGJS.Variables.data[0] = '你這學期已經被當過了，請等下一個學年再修。';
 			return RPGJS.Variables.data[0] = 0;
 		},
 		is_passed: false,

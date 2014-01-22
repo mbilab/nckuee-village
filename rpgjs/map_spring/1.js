@@ -5,6 +5,7 @@ game.ev[map][id] = new game.Ev({
 	map: map,
 	name: name,
 	opening_read: 1,
+	type: 'fixed',
 }, [
 	s(ev+'.stop()'),
 	s('v0('+ev+'.opening_read)'),

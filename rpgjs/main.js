@@ -72,13 +72,16 @@ $(document).ready(function(){
 			switch (game.cheat) {
 				case '!four':
 					game.semester.n_passed = 4;
+					console.log('這學期修四門課了！');
 					break;
 				case '!req':
 					take( [2,3,4,5,6,7,8,9,11,14,15], [2,3,4,5,6], 'passed' );
 					take( [44,45], [43,44], 'took' );
+					console.log('修完必修學分了！');
 					break;
 				case '!six':
 					game.player.i_semester = 5
+					console.log('修過六個學期了！');
 					break;
 				default:
 					game.cheat = '';
