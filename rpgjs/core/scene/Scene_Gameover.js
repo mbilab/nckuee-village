@@ -27,17 +27,16 @@ RPGJS_Canvas.Scene.New({
 			stage.append(fg);
 			RPGJS_Canvas.Timeline.new(fg).to({x:0}, 30, Ease.easeOutBack).call();
 
-			var msg = self.createElement();
-			msg.x = 480;
-			var txt = RPGJS_Canvas.Text.New(self, game.wrap(go.msg, 28));
-			txt.style({
-				color: 'white',
-				family: '微軟正黑體',
-				shadow: '0 0 5 #000000',
-				size: '24px',
+			var msg = $.extend({}, self.createElement(), {
+				fillStyle: 'white',
+				font: '24px 微軟正黑體',
+				shadowColor: 'black',
+				shadowBlur: 5,
 				textBaseline: 'top',
+				x: 480,
+				y: 350,
 			});
-			txt.draw(msg, 0, 350);
+			msg.fillText(game.wrap(go.msg, 28), 0, 0);
 			stage.append(msg);
 			RPGJS_Canvas.Timeline.new(msg).to({x:272}, 30, Ease.easeOutBack).call();
 		});

@@ -9,7 +9,7 @@ $(document).ready(function(){
 //		$.extend(RPGJS_Canvas.Scene.get('Scene_Map').data,{musics:{bgm:0}});
 		RPGJS.scene.call('Scene_Title');
 //		CE.io ? RPGJS.scene.call("Scene_Map") : RPGJS.scene.call("Scene_Map").load();
-//		RPGJS.scene.call('Scene_Gameover');
+//		game.player.gameover = { bg: 'library', msg: '測試用結局' }; RPGJS.scene.call('Scene_Gameover');
 	});
 	game.reset_semester();
 
