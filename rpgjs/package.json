@@ -2,7 +2,7 @@
   "author": "Tien-Hao Chang",
   "description": "nckuee-village",
   "engines": { "node": ">=0.10.20" },
-  "homepage": "http://zoro.ee.ncku.edu.tw/rpg/",
+  "homepage": "http://140.116.72.102/~chiachiachia/rpg/nckuee-village/rpgjs/",
   "name": "nckuee-village",
   "dependencies": {},
   "devDependencies": {
