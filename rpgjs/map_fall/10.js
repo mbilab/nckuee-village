@@ -27,9 +27,9 @@ game.ev[map][id] = new game.Ev({
 					s(ev+'.take("恭喜您成功修過工程數學(一)")'),
 				'CHOICE_1',
 					s(ev+'.fail()'),
-				'CHOICE_2'	
+				'CHOICE_2',	
 					s(ev+'.fail()'),
-				'CHOICE_3'
+				'CHOICE_3',
 					s(ev+'.fail()'),
 				'ENDCHOICES',
 			'ENDIF',
