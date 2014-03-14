@@ -1,6 +1,12 @@
 var s = game.Ev.prototype.cmd.script, t = game.Ev.prototype.cmd.text, v0 = game.Ev.prototype.cmd.v0;
 var map = 1, id = 21, ev = 'game.ev['+map+']['+id+']', name = '材料科學導論';
 game.ev[map][id] = new game.Ev({
+	can_take: function() {
+		 if ( game.defined( game, 'ev', 2, 1, 'took' ) ) return true;
+//		 RPGJS.Variables.data[0] = '需要先修 '+game.ev[2][1].name+' ！';
+		 RPGJS.Variables.data[0] = '需要先修 普通物理學（二） ！';
+		 return false;
+	}
 	hp_cost: function() { return 10; },
 	id: id,
 	map: map,
