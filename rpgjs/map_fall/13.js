@@ -15,14 +15,14 @@ game.ev[map][id] = new game.Ev({
 		'IF: "0 == variable[0]"',
 			s(ev+'.can_take()'),
 			'IF: "1 == variable[0]"',
-				t('請問在拉式轉換中，ｆ（ｔ）＝ｔｕ（ｔ），則轉換之Ｆ（ｓ）為？')
+				t('請問在拉式轉換中，ｆ（ｔ）＝ｔｕ（ｔ），則轉換之Ｆ（ｓ）為？'),
 				'CHOICES: ["1","1/s","1/s^2","1/s+a"]',
 				'CHOICE_0',
 					s(ev+'.fail()'),
 				'CHOICE_1',
 					s(ev+'.fail()'),
-				'CHOICE_2'
-				    s(ev+'.take("答對了")')
+				'CHOICE_2',
+				    s(ev+'.take("答對了")'),
 				'CHOICE_3',
 					s(ev+'.fail()'),
 				'ENDCHOICES',
