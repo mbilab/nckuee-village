@@ -6,7 +6,7 @@ game.ev[map][id] = new game.Ev({
 //		 RPGJS.Variables.data[0] = '需要先修 '+game.ev[2][1].name+' ！';
 		 RPGJS.Variables.data[0] = '需要先修 普通物理學（二） ！';
 		 return false;
-	}
+	},
 	hp_cost: function() { return 10; },
 	id: id,
 	map: map,
