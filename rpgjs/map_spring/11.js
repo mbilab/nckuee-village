@@ -1,5 +1,4 @@
 var s = game.Ev.prototype.cmd.script, t = game.Ev.prototype.cmd.text, v0 = game.Ev.prototype.cmd.v0;
-ss)，請問下列何者不是應該出現的損失？
 var map = 2, id = 11, ev = 'game.ev['+map+']['+id+']', name = '電機概論';
 game.ev[map][id] = new game.Ev({
 	can_take: function() {
