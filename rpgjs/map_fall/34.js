@@ -21,7 +21,7 @@ game.ev[map][id] = new game.Ev({
 		'IF: "0 == variable[0]"',
 			s(ev+'.can_take()'),
 			'IF: "1 == variable[0]"',
-				t('請問下列哪一個可能會是本課程會用到的實作程式？"),
+				t('請問下列哪一個可能會是本課程會用到的實作程式？'),
 				'CHOICES: ["verilog","angry bird","photoshop"]',
 	 			'CHOICE_0',
 					s(ev+'.take("答對了～")'),
