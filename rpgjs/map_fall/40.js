@@ -1,7 +1,13 @@
 var s = game.Ev.prototype.cmd.script, t = game.Ev.prototype.cmd.text, v0 = game.Ev.prototype.cmd.v0;
 var map = 1, id = 40, ev = 'game.ev['+map+']['+id+']', name = '電儀表學實驗';
 game.ev[map][id] = new game.Ev({
-	hp_cost: function() { return 5; },
+
+	can_take:function(){
+		if (G.palyer.hp<this.hp_cost())RPGJS.Variables.data[0]='你的體力不夠修這門課囉！';
+		else RPGJS.Variables.data[0]=1;
+	},
+
+	hp_cost: function() { return 10; },
 	id: id,
 	map: map,
 	name: name,
