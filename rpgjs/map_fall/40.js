@@ -3,6 +3,7 @@ var map = 1, id = 40, ev = 'game.ev['+map+']['+id+']', name = '電儀表學實�
 game.ev[map][id] = new game.Ev({
 
 	can_take:function(){
+		return RPGJS.Variables.data[0] = 1;
 		if (G.palyer.hp<this.hp_cost())RPGJS.Variables.data[0]='你的體力不夠修這門課囉！';
 		else RPGJS.Variables.data[0]=1;
 	},
