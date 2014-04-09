@@ -3,7 +3,7 @@ var map = 2, id = 15, ev = 'game.ev['+map+']['+id+']', name = '數位電子學';
 game.ev[map][id] = new game.Ev({
 	can_take: function() {
 		return RPGJS.Variables.data[0] = 1;
-		if ( !game.defined( game, 'ev', 2, 2, 'took' ) ) RPGJS.Variables.data[0] = '需要先修 '+game.ev[2][2].name+' ！';
+		if ( !game.defined( game, 'ev', 1, 8, 'took' ) ) RPGJS.Variables.data[0] = '需要先修 '+game.ev[1][8].name+' ！';
 		else if ( G.player.hp < this.hp_cost() ) RPGJS.Variables.data[0] = '你的體力不夠修這門課囉！';
 		else RPGJS.Variables.data[0] = 1;
 	},
