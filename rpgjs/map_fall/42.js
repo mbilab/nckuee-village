@@ -7,7 +7,7 @@ game.ev[map][id] = new game.Ev({
 		RPGJS.Variables.data[0] = '需要先修 電機概論 ！';
 		return false;
 	},
-	hp_cost: function() { return 5; },
+	hp_cost: function() { return 10; },
 	id: id,
 	map: map,
 	name: name,
