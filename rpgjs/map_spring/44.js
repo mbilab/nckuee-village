@@ -29,7 +29,7 @@ game.ev[map][id] = new game.Ev({
 				'CHOICE_2',
 					s(ev+'.fail("答錯了＞＜！！序列跟堆疊也都是儲存資料的一種形式喔～")'),
 				'CHOICE_3',
-					s(ev+'.take("恭喜答對了！相信有的基本概念，對於以後的學習一定有幫助，加油！")'),
+					s(ev+'.take("恭喜答對了！相信有了基本概念，對於以後的學習一定有幫助，加油！")'),
 				'ENDCHOICES',
 			'ENDIF',
 		"ENDIF",
