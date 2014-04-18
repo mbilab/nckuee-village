@@ -1,0 +1,1397 @@
+[33mcommit c62b4dfe1ef60c75f08b16c9622ce562ab90e671[m
+Author: dirty <darby.chang@gmail.com>
+Date:   Fri Apr 18 16:38:37 2014 +0800
+
+    Fix scroll bug while pressing right in firefox.
+
+[33mcommit 7c84e8076f36c227689fad41bb8996aa84092a35[m
+Author: Goolley <calvin7899@gmail.com>
+Date:   Sun Apr 13 00:56:34 2014 +0800
+
+    modified 31.js
+
+[33mcommit d23316fd3969b824edcbcb51f1a2c011bf5d9196[m
+Author: Goolley <calvin7899@gmail.com>
+Date:   Sun Apr 13 00:56:01 2014 +0800
+
+    modified 10.js
+
+[33mcommit 83e7074e5a4707040a54bbc28d4a1dce3f7a8c09[m
+Author: q5183t251 <s0a6m45@yahoo.com.tw>
+Date:   Fri Apr 11 09:50:24 2014 +0800
+
+    modified 44.js add 35.js 38.js
+
+[33mcommit 35a5d46504cedd30dabe1543d8be86716f20dc4a[m
+Author: q5183t251 <s0a6m45@yahoo.com.tw>
+Date:   Fri Apr 11 09:35:44 2014 +0800
+
+    modified 31.js
+
+[33mcommit cb1af6b14898961c60dd72aff51445e19a090c47[m
+Author: douplus <ccdouplus@gmail.com>
+Date:   Fri Apr 11 01:15:27 2014 +0800
+
+    add all npc number in material.json and data.json
+
+[33mcommit c498a987cf9a44928921fbb399e3c9c1f9170ff3[m
+Author: douplus <ccdouplus@gmail.com>
+Date:   Fri Apr 11 00:55:47 2014 +0800
+
+    fix Materal.json
+
+[33mcommit 2dde9cb20800f9b47c50288a13bdc36ca3bff536[m
+Merge: 93c49e7 e21e3d7
+Author: q5183t251 <s0a6m45@yahoo.com.tw>
+Date:   Thu Apr 10 13:02:10 2014 +0800
+
+    Merge branch 'master' of github.com:mbilab/nckuee-village
+    
+    Conflicts:
+    	rpgjs/Data/Materials.json
+
+[33mcommit 93c49e7253654e6adc6460deb41f6aa0f05e6c40[m
+Author: q5183t251 <s0a6m45@yahoo.com.tw>
+Date:   Thu Apr 10 13:00:51 2014 +0800
+
+    debug by q
+
+[33mcommit e21e3d7adf3d9ddfdfe7d480e01296dd39482e33[m
+Author: Goolley <calvin7899@gmail.com>
+Date:   Thu Apr 10 12:36:27 2014 +0800
+
+    debug
+
+[33mcommit 337c878bc6a860d6b871cd39d38a83125ff20643[m
+Author: q5183t251 <s0a6m45@yahoo.com.tw>
+Date:   Thu Apr 10 01:34:33 2014 +0800
+
+    add 36 & 37 & 39 & 40 & 41.js
+
+[33mcommit a35d1c647ee115da9597b3378968690b7c641788[m
+Merge: 2e60dda 0e2ce7c
+Author: q5183t251 <s0a6m45@yahoo.com.tw>
+Date:   Thu Apr 10 01:09:31 2014 +0800
+
+    Merge branch 'master' of github.com:mbilab/nckuee-village
+
+[33mcommit 2e60dda70476ef4dcd0eb7d1b1ef9931c005b962[m
+Author: q5183t251 <s0a6m45@yahoo.com.tw>
+Date:   Thu Apr 10 01:09:25 2014 +0800
+
+    add 12.js
+
+[33mcommit 0e2ce7ca69801efddca6b2e3013e5fc3512393ec[m
+Author: Goolley <calvin7899@gmail.com>
+Date:   Thu Apr 10 00:57:08 2014 +0800
+
+    add 29.js
+
+[33mcommit e0be9d1545b57f107f3487acccdafe4a1f35dc37[m
+Author: q5183t251 <s0a6m45@yahoo.com.tw>
+Date:   Thu Apr 10 00:53:05 2014 +0800
+
+    add 42.js
+
+[33mcommit 07eb3040f456c9828fd0365ea2c3890cdf84b56b[m
+Author: Goolley <calvin7899@gmail.com>
+Date:   Thu Apr 10 00:46:15 2014 +0800
+
+    23~27&30~34
+
+[33mcommit ea55f96c215404956ddc4fe1941af7f9e2f9c86f[m
+Author: q5183t251 <s0a6m45@yahoo.com.tw>
+Date:   Thu Apr 10 00:42:15 2014 +0800
+
+    add 14.js
+
+[33mcommit da25fc4df99b642cf00be619abd64b9487196e11[m
+Author: q5183t251 <s0a6m45@yahoo.com.tw>
+Date:   Thu Apr 10 00:31:24 2014 +0800
+
+    add 44.js
+
+[33mcommit 9a836fb50238ed6a3cdda6ae4d51789f4564750c[m
+Author: q5183t251 <s0a6m45@yahoo.com.tw>
+Date:   Thu Apr 10 00:25:46 2014 +0800
+
+    modified 41.js & 42.js
+
+[33mcommit c99bced9d9148821250499638c777438038fd7b5[m
+Author: q5183t251 <s0a6m45@yahoo.com.tw>
+Date:   Thu Apr 10 00:21:34 2014 +0800
+
+    add 35.js
+
+[33mcommit da2e75889e922abeaf9b5fec40592bfaf60bb5fe[m
+Author: Goolley <calvin7899@gmail.com>
+Date:   Thu Apr 10 00:05:05 2014 +0800
+
+    16&17&18&19&20&21&22.js
+
+[33mcommit f31a12f762cc97f3da39164b5a801e93a48cb537[m
+Author: Goolley <calvin7899@gmail.com>
+Date:   Wed Apr 9 23:30:48 2014 +0800
+
+    add 15.js
+
+[33mcommit 69b9143872d32e04327c79c78504f313e85a0dd2[m
+Author: Goolley <calvin7899@gmail.com>
+Date:   Thu Apr 3 17:47:15 2014 +0800
+
+    add 15.js
+
+[33mcommit 2d7d42252244ea6894d15a4c737b1f2d1ee6493c[m
+Author: Goolley <calvin7899@gmail.com>
+Date:   Thu Apr 3 17:41:42 2014 +0800
+
+    modified 38&40.js
+
+[33mcommit 490003ae97e913311e075674d1acec08d88d46fa[m
+Author: Goolley <calvin7899@gmail.com>
+Date:   Thu Apr 3 17:31:36 2014 +0800
+
+    add 38&43&45.js
+
+[33mcommit d4ebeccb078fcf781d00870742e1a7661c7fbe67[m
+Author: Goolley <calvin7899@gmail.com>
+Date:   Thu Apr 3 17:17:57 2014 +0800
+
+    modified 40.js
+
+[33mcommit 15705409b27ed7790466fd52e5ffa7585abac689[m
+Author: Goolley <calvin7899@gmail.com>
+Date:   Wed Apr 2 18:11:49 2014 +0800
+
+    modified 26&34.js
+
+[33mcommit 776bc3bd2c6b198b9c5e1c6c2d54e9cbd12ef3fb[m
+Author: Goolley <calvin7899@gmail.com>
+Date:   Wed Apr 2 18:07:34 2014 +0800
+
+    add 19&22&26&30&31&34.js
+
+[33mcommit 11c2dcd3286f0bd23c1f31569f954cfbb3dd2fe9[m
+Author: Goolley <calvin7899@gmail.com>
+Date:   Wed Apr 2 17:13:42 2014 +0800
+
+    modified Materials.json
+
+[33mcommit 64d65ae6444b3afb9a2f73e59974f229c5dfeb61[m
+Author: douplus <ccdouplus@gmail.com>
+Date:   Thu Mar 27 12:30:06 2014 +0800
+
+    add 21 in material.json
+
+[33mcommit 8f47dcbc536990af9357702eeacbd19fa80285cb[m
+Author: q5183t251 <s0a6m45@yahoo.com.tw>
+Date:   Thu Mar 27 11:45:54 2014 +0800
+
+    modified 11.js
+
+[33mcommit f03c7596b7d16505a2cc94b34a123910912ecb3d[m
+Author: q5183t251 <s0a6m45@yahoo.com.tw>
+Date:   Mon Mar 24 00:03:04 2014 +0800
+
+    add 32.js & 33.js & 37.js & 39.js
+
+[33mcommit af65b62fda252eddc26bb74f24acb3671e954f74[m
+Author: q5183t251 <s0a6m45@yahoo.com.tw>
+Date:   Sun Mar 23 23:39:54 2014 +0800
+
+    add 23.js
+
+[33mcommit 440441a6144f2d2017e8ebcf0b7cb83da48b1fae[m
+Author: q5183t251 <s0a6m45@yahoo.com.tw>
+Date:   Sun Mar 23 23:30:40 2014 +0800
+
+    modified 20.js & 29.js
+
+[33mcommit afa10dd5d6b5d02fe154ca78f940c253c390c06f[m
+Author: Goolley <calvin7899@gmail.com>
+Date:   Sun Mar 23 15:51:03 2014 +0800
+
+    add 11.js
+
+[33mcommit 9b9b1218fad2a284a733798381e625e05fa96a69[m
+Author: Goolley <calvin7899@gmail.com>
+Date:   Sun Mar 23 15:41:40 2014 +0800
+
+    add 10.js
+
+[33mcommit 541e757fdc020825119b50fdec81a16edf065390[m
+Author: Goolley <calvin7899@gmail.com>
+Date:   Sun Mar 23 15:16:33 2014 +0800
+
+    add 9.js
+
+[33mcommit 77668238c49e93a3d8517727e3d6aea827bc1f34[m
+Author: Goolley <calvin7899@gmail.com>
+Date:   Sun Mar 23 15:16:14 2014 +0800
+
+    add 8.js
+
+[33mcommit a89628ede029734b82f579dbd1f3b1ab2d52c48d[m
+Author: q5183t251 <s0a6m45@yahoo.com.tw>
+Date:   Sat Mar 22 22:58:39 2014 +0800
+
+    add 20.js
+
+[33mcommit 6f177b06f4319928979968a8f0f2debf61991383[m
+Author: Goolley <calvin7899@gmail.com>
+Date:   Sat Mar 22 15:23:13 2014 +0800
+
+    modified 2.js
+
+[33mcommit 482878fff304a55a8a97ed39d35f95ec9474ae25[m
+Author: Goolley <calvin7899@gmail.com>
+Date:   Sat Mar 22 15:16:51 2014 +0800
+
+    Revert "add 2.js"
+    
+    This reverts commit fd0561ace3be50c05585eb5be28d4f9e4fe339af.
+
+[33mcommit fd0561ace3be50c05585eb5be28d4f9e4fe339af[m
+Author: Goolley <calvin7899@gmail.com>
+Date:   Sat Mar 22 15:14:15 2014 +0800
+
+    add 2.js
+
+[33mcommit d6516b367589e0cf1d2db48d26595024e2219edd[m
+Author: Goolley <calvin7899@gmail.com>
+Date:   Sat Mar 22 15:07:19 2014 +0800
+
+    modified 21.js
+
+[33mcommit e74fffdccbe13c325accd2da0de784890bc7ef1e[m
+Author: Goolley <calvin7899@gmail.com>
+Date:   Sat Mar 22 15:06:42 2014 +0800
+
+    modified 13.js
+
+[33mcommit efe770959d74b09919b4d949a2168a9f0d3434e0[m
+Author: Goolley <calvin7899@gmail.com>
+Date:   Fri Mar 14 21:44:25 2014 +0800
+
+    add 42.js
+
+[33mcommit 9e23dd5cdcc37abc1a96b6506d2c3f746f06c1b6[m
+Author: Goolley <calvin7899@gmail.com>
+Date:   Fri Mar 14 21:29:59 2014 +0800
+
+    add 41.js
+
+[33mcommit 00bf3be11628ae5741e5f034e02069941cd6461b[m
+Author: Goolley <calvin7899@gmail.com>
+Date:   Fri Mar 14 21:23:58 2014 +0800
+
+    add 40.js
+
+[33mcommit 89ca4188b9940d072f48c8739a74d8e62997c6a0[m
+Author: Goolley <calvin7899@gmail.com>
+Date:   Fri Mar 14 21:13:10 2014 +0800
+
+    modified 21.js
+
+[33mcommit 76afa70b69343cceb7940c790248888ad46bb3ee[m
+Author: Goolley <calvin7899@gmail.com>
+Date:   Fri Mar 14 21:00:00 2014 +0800
+
+    add 21.js
+
+[33mcommit 43927a07030bff9adac166421002eb24311ccc72[m
+Author: Goolley <calvin7899@gmail.com>
+Date:   Fri Mar 14 19:28:16 2014 +0800
+
+    add 13.js
+
+[33mcommit fe70e41eaa711e605bc8d79911065f4a90f0fd6f[m
+Author: q5183t251 <s0a6m45@yahoo.com.tw>
+Date:   Thu Mar 13 13:49:10 2014 +0800
+
+    modify 10.js
+
+[33mcommit 690791db3e48915150bf3e664b1717d0753ab079[m
+Author: q5183t251 <s0a6m45@yahoo.com.tw>
+Date:   Wed Mar 12 22:38:51 2014 +0800
+
+    add 29.js
+
+[33mcommit 4537bb0771add0e14134ea9f399bb60b26cf1040[m
+Merge: be48012 ee647b0
+Author: Goolley <calvin7899@gmail.com>
+Date:   Sun Mar 9 10:55:20 2014 +0800
+
+    Merge branch 'master' of github.com:mbilab/nckuee-village
+
+[33mcommit ee647b0f7727d813e65ea488970408ffb13638dd[m
+Author: douplus <ccdouplus@gmail.com>
+Date:   Sat Mar 8 23:55:25 2014 +0800
+
+    add 10 in the Database.json
+
+[33mcommit be480120ba024c986b96f393d808ad3eb6894a9c[m
+Author: Goolley <calvin7899@gmail.com>
+Date:   Sat Mar 8 22:25:26 2014 +0800
+
+    add 10.js
+
+[33mcommit 0c685df571671104ec7c9ab9e405ec19279de9dd[m
+Author: douplus <ccdouplus@gmail.com>
+Date:   Mon Mar 3 18:11:34 2014 +0800
+
+    add 12 in Database.json
+
+[33mcommit 392d3c1618f0839efbf60931ef6ddc29aefa4aca[m
+Author: douplus <ccdouplus@gmail.com>
+Date:   Mon Mar 3 14:57:11 2014 +0800
+
+    make 12.js complete
+
+[33mcommit bcc20800da84bbb8da87ca3ce1a3be0a001fb3b8[m
+Author: douplus <ccdouplus@gmail.com>
+Date:   Mon Mar 3 14:23:09 2014 +0800
+
+    fix the link to canvasengine-1.3.0.all.min.js
+
+[33mcommit 395439505e9df1652e53067171bc5334eebfe5f8[m
+Author: chia <ccdouplus@gmail.com>
+Date:   Mon Mar 3 10:47:20 2014 +0800
+
+    add 12.js
+
+[33mcommit cd717a572b7ba85a667a04088ae73af5beb571fc[m
+Author: dirty <darby.chang@gmail.com>
+Date:   Sat Feb 22 16:10:27 2014 +0800
+
+    add fc.
+
+[33mcommit ab9d2611697e8317ee99163f301265838fbc1932[m
+Author: dirty <darby.chang@gmail.com>
+Date:   Thu Feb 20 18:17:52 2014 +0800
+
+    Add hackpad link.
+
+[33mcommit 80d3c3a364e6ec8af263cbf86b66b04cb9fa4a68[m
+Author: dirty <darby.chang@gmail.com>
+Date:   Thu Jan 30 09:27:28 2014 +0800
+
+    Refine system programming.
+
+[33mcommit 84baa08bdcc2174f7f09b01dd418c700a7ca23e5[m
+Author: dirty <darby.chang@gmail.com>
+Date:   Sat Jan 25 23:42:12 2014 +0800
+
+    linear
+
+[33mcommit 92295fa1fd17cbb06cd7e951af6b4f34a2c54354[m
+Author: dirty <darby.chang@gmail.com>
+Date:   Sat Jan 25 23:28:03 2014 +0800
+
+    soc
+
+[33mcommit d7f4a157c898941c41f71406ada3764d8c0303b0[m
+Author: dirty <darby.chang@gmail.com>
+Date:   Fri Jan 24 00:18:49 2014 +0800
+
+    Update intro of elecmachine.
+
+[33mcommit b4e524fc3c6fbd08368aa9924a9a46277490d702[m
+Author: dirty <darby.chang@gmail.com>
+Date:   Thu Jan 23 22:16:24 2014 +0800
+
+    Finish system programming.
+
+[33mcommit 56b967b5e28b77bf3da8ed87b10fa808525acc67[m
+Author: dirty <darby.chang@gmail.com>
+Date:   Thu Jan 23 14:12:53 2014 +0800
+
+    Fix text flash problem.
+
+[33mcommit 07d912fc1c904ae069ce2aff416fc9a6b9bc0a09[m
+Author: dirty <darby.chang@gmail.com>
+Date:   Thu Jan 23 01:19:24 2014 +0800
+
+    system programming (partial)
+
+[33mcommit 964e50df9e002891f52dc30aebd190519e96d5cc[m
+Author: dirty <darby.chang@gmail.com>
+Date:   Tue Jan 21 22:17:57 2014 +0800
+
+    Add a new cheat, four.
+
+[33mcommit df7ab7857496f284225966ddbe988880d6f14160[m
+Author: dirty <darby.chang@gmail.com>
+Date:   Tue Jan 21 21:31:33 2014 +0800
+
+    Add background musics (and mute function).
+
+[33mcommit 09467cec59d764638ef1277c91a1eff617f4d8c2[m
+Author: dirty <darby.chang@gmail.com>
+Date:   Tue Jan 21 17:33:12 2014 +0800
+
+    Remove pro_*.png.
+
+[33mcommit 41800b4bd1630227fc796d209ac30b28cf010c10[m
+Author: dirty <darby.chang@gmail.com>
+Date:   Tue Jan 21 17:29:15 2014 +0800
+
+    Gameover scenes.
+
+[33mcommit 9871ab36e380e2ed1440874ececfdd4b54c985d9[m
+Author: dirty <darby.chang@gmail.com>
+Date:   Tue Jan 21 10:31:58 2014 +0800
+
+    Cheat effects.
+
+[33mcommit 4d66c93487e6fbc38db1a5ab4a7cb848713ea719[m
+Author: dirty <darby.chang@gmail.com>
+Date:   Tue Jan 21 10:05:58 2014 +0800
+
+    Remove console log in shake.
+
+[33mcommit 0f073323eb65f7706a6152a0ca7a80ce4338892e[m
+Author: dirty <darby.chang@gmail.com>
+Date:   Mon Jan 20 16:18:43 2014 +0800
+
+    Add cheating.
+
+[33mcommit 273aa8ec45a58419495166fad09d926236408160[m
+Author: dirty <darby.chang@gmail.com>
+Date:   Mon Jan 20 10:42:07 2014 +0800
+
+    wp
+
+[33mcommit 4d5b54e2640ab396e03afa96049ab9c4242a1e54[m
+Author: dirty <darby.chang@gmail.com>
+Date:   Mon Jan 20 10:28:32 2014 +0800
+
+    biomems
+
+[33mcommit c8d3451c53c871717b14fa11006ac61c2930ec78[m
+Author: dirty <darby.chang@gmail.com>
+Date:   Mon Jan 20 10:21:49 2014 +0800
+
+    fpd
+
+[33mcommit 575f336fa9d5f33614df5fb4c600ffbd8dd882f3[m
+Author: dirty <darby.chang@gmail.com>
+Date:   Thu Jan 16 08:29:06 2014 +0800
+
+    ids
+
+[33mcommit 6fe5191fc0d2d45a6784306382260ca222f99060[m
+Author: dirty <darby.chang@gmail.com>
+Date:   Wed Jan 15 10:51:47 2014 +0800
+
+    english4
+
+[33mcommit 9e71fdf292b0f8db52d4159dac8ff95e226369d3[m
+Author: dirty <darby.chang@gmail.com>
+Date:   Wed Jan 15 10:28:20 2014 +0800
+
+    co
+
+[33mcommit 02ba61c1bf16c37f4ad0c0026bae9c7930ab2014[m
+Author: dirty <darby.chang@gmail.com>
+Date:   Wed Jan 15 10:18:17 2014 +0800
+
+    chemistry
+
+[33mcommit 9dd416b739e1b7c6cc51556e6dc888068eed56f2[m
+Author: dirty <darby.chang@gmail.com>
+Date:   Tue Jan 14 23:11:24 2014 +0800
+
+    Fix using Input.Space as the action button.
+
+[33mcommit 2cdfdcf9abbc685a3273e83dc8c41241f817cc92[m
+Author: dirty <darby.chang@gmail.com>
+Date:   Sun Jan 12 21:09:33 2014 +0800
+
+    Make different mirrors the same disque thread.
+
+[33mcommit 659f1b9c56fe95a6464bd57458bb1c9c1ebdbb96[m
+Author: chia <ccdouplus@gmail.com>
+Date:   Sun Jan 12 17:21:38 2014 +0800
+
+    delete useless jpg
+
+[33mcommit 8fd96d4febde9e8a17fe014a608fa4e065820516[m
+Author: chia <ccdouplus@gmail.com>
+Date:   Sun Jan 12 17:00:53 2014 +0800
+
+    delete some actually useless bg picture
+
+[33mcommit 071a9e1a094112da172110638c7d3971b0d8a8f7[m
+Merge: 1fe2803 2a84d91
+Author: chia <ccdouplus@gmail.com>
+Date:   Sun Jan 12 15:41:45 2014 +0800
+
+    Merge branch 'master' of github.com:mbilab/nckuee-village
+
+[33mcommit 1fe28036270bee61f150c7316015853b6c458294[m
+Author: chia <ccdouplus@gmail.com>
+Date:   Sun Jan 12 15:39:20 2014 +0800
+
+    Gameover backgroung photos 2014/1/12
+
+[33mcommit 2a84d9156057cb8f7f4eac2a153857b8dd3ce40a[m
+Author: xo6r4 <xo6r44@gmail.com>
+Date:   Sun Jan 12 01:56:00 2014 +0800
+
+    Check argument of take().
+
+[33mcommit c83dc0af9d9b6e8d7a49971cc8294851c23e7b48[m
+Author: xo6r4 <xo6r44@gmail.com>
+Date:   Sun Jan 12 01:47:05 2014 +0800
+
+    Add fail.wav.
+
+[33mcommit 79f8f09aaab7914b44a40ce5e3389a72b715e9db[m
+Author: xo6r4 <xo6r44@gmail.com>
+Date:   Sun Jan 12 01:45:43 2014 +0800
+
+    Add SE for failing a test.
+
+[33mcommit 759e5fcc9b0129be77269140be3ca12a2da9f9eb[m
+Author: xo6r4 <xo6r44@gmail.com>
+Date:   Sun Jan 12 01:17:59 2014 +0800
+
+    Fix bug of loading autotiles.
+
+[33mcommit 8d428214520cc60d23eed669fe23c9c5242f124a[m
+Author: dirty <darby.chang@gmail.com>
+Date:   Sat Jan 11 23:50:34 2014 +0800
+
+    Finish over scene design.
+
+[33mcommit 72d2c88bee07c367a69fe5d6052892de820d7c06[m
+Author: chia <ccdouplus@gmail.com>
+Date:   Sat Jan 11 21:16:37 2014 +0800
+
+    add professor png
+
+[33mcommit d1e75bfef6570226ba8fa63477508feeee6117ae[m
+Author: chia <ccdouplus@gmail.com>
+Date:   Sat Jan 11 14:03:31 2014 +0800
+
+    change the name of Gameover pictures
+
+[33mcommit 0e98d02fe81bd51bb512e427f4a91fb3ec503160[m
+Author: chia <ccdouplus@gmail.com>
+Date:   Sat Jan 11 13:59:37 2014 +0800
+
+    change the Gameover pictures name
+
+[33mcommit 863d5d4025ae1504fcbf42d16059964e453db442[m
+Author: chia <ccdouplus@gmail.com>
+Date:   Sat Jan 11 13:32:17 2014 +0800
+
+    change the name of Gameover pictures
+
+[33mcommit a34600a20cfefcc033b5419372d1e63c3e1eb166[m
+Author: chia <ccdouplus@gmail.com>
+Date:   Sat Jan 11 03:19:27 2014 +0800
+
+    add chemistry choosen b and c show pictures
+
+[33mcommit 5465e5bd2273a90cedeb2564cc70cfddf4567be7[m
+Author: chia <ccdouplus@gmail.com>
+Date:   Sat Jan 11 03:13:11 2014 +0800
+
+    add chinese2 pictures
+
+[33mcommit ecc7a0f0f04809c82cb2a8161833d340ae851678[m
+Author: chia <ccdouplus@gmail.com>
+Date:   Sat Jan 11 01:18:55 2014 +0800
+
+    modify ending bg1
+
+[33mcommit 0a59be2f12104c78d650b8e420e0b2f23c35e7e1[m
+Author: chia <ccdouplus@gmail.com>
+Date:   Sat Jan 11 01:01:53 2014 +0800
+
+    add professors pictures
+
+[33mcommit 22d999ad707821e1d0b7977db78522fb6b973cc3[m
+Author: chia <ccdouplus@gmail.com>
+Date:   Fri Jan 10 23:56:12 2014 +0800
+
+    add ending bg pictures
+
+[33mcommit d99413be53b9ccbdf1aebc0c91a2a836d1163a82[m
+Author: chia <ccdouplus@gmail.com>
+Date:   Fri Jan 10 23:55:04 2014 +0800
+
+    ending bg for ending 2
+
+[33mcommit aa410267a4f009582077118f7cf6b14996dff3bd[m
+Author: chia <ccdouplus@gmail.com>
+Date:   Fri Jan 10 23:53:22 2014 +0800
+
+    ending bg picture for end1
+
+[33mcommit 5536f4dd5ccc100c872fd25328894038794a8afe[m
+Author: dirty <darby.chang@gmail.com>
+Date:   Fri Jan 10 20:03:04 2014 +0800
+
+    Start to design over scene.
+
+[33mcommit 0ac886f9d554881f3fcbeb23f857c86cdcb6c2a4[m
+Author: dirty <darby.chang@gmail.com>
+Date:   Fri Jan 10 13:10:42 2014 +0800
+
+    Add graduate conditions.
+
+[33mcommit cd33652af3cffdf563f4c0bd3d8fdf2ffe25c509[m
+Author: dirty <darby.chang@gmail.com>
+Date:   Sun Jan 5 21:34:11 2014 +0800
+
+    npc98
+
+[33mcommit 234e96382895c9c450568af5a10ea32be3d474fa[m
+Author: dirty <darby.chang@gmail.com>
+Date:   Sun Jan 5 20:35:48 2014 +0800
+
+    Mute music by default.
+
+[33mcommit 751cec75902bd76171dff913ac6ea136a72919c4[m
+Author: dirty <darby.chang@gmail.com>
+Date:   Sun Jan 5 09:08:07 2014 +0800
+
+    english2
+
+[33mcommit 5535360b2767ddb86282499f075edd6f9c2f921f[m
+Author: dirty <darby.chang@gmail.com>
+Date:   Sun Jan 5 08:56:11 2014 +0800
+
+    chinese2
+
+[33mcommit a05a06fca8675e19b8d87d55290a0487af3a9638[m
+Author: dirty <darby.chang@gmail.com>
+Date:   Sun Jan 5 08:46:46 2014 +0800
+
+    cs2
+
+[33mcommit 8f6621d3971b7c90413fddb8ccd5068b080f975c[m
+Author: dirty <darby.chang@gmail.com>
+Date:   Sun Jan 5 08:19:56 2014 +0800
+
+    calculus2
+
+[33mcommit af4d4771205f715297fc22a2baed9c7152750bd1[m
+Author: dirty <darby.chang@gmail.com>
+Date:   Sun Jan 5 07:55:44 2014 +0800
+
+    physics2
+
+[33mcommit 2afdaf6aed7747f4cf09e94ddd29857395999296[m
+Author: xo6r4 <xo6r44@gmail.com>
+Date:   Fri Dec 6 16:59:03 2013 +0800
+
+    Use canvasengine ver1.3.0.
+
+[33mcommit 22e5b9cd52522a9058d75e58557844602a1cae66[m
+Author: xo6r4 <xo6r44@gmail.com>
+Date:   Sat Nov 2 18:39:14 2013 +0800
+
+    Modify property of player and fix bug of getting save data.
+
+[33mcommit 25f17609a5cf105302dbdaaf5d296dd6e1d4d942[m
+Author: xo6r4 <xo6r44@gmail.com>
+Date:   Sat Nov 2 16:13:03 2013 +0800
+
+    Fix load/save.
+
+[33mcommit a588ce4bcf9368225fbb71620dba45b5351b72e8[m
+Author: dirty <darby.chang@gmail.com>
+Date:   Thu Oct 24 20:56:07 2013 +0800
+
+    Hide #cfg at start.
+
+[33mcommit f99f767df78049e420519dcde9d38eb6c435cbbb[m
+Author: xo6r4 <xo6r44@gmail.com>
+Date:   Thu Oct 24 20:02:24 2013 +0800
+
+    Add village BGM  and sound effect.
+
+[33mcommit 2e61d139161427f00e89d5fd140a24a42b7c0643[m
+Author: xo6r4 <xo6r44@gmail.com>
+Date:   Mon Oct 21 22:29:28 2013 +0800
+
+    Fix bug of event trigger.
+
+[33mcommit ae351915f3589d9a52724b8c5f7ff11a1722fced[m
+Author: dirty <darby.chang@gmail.com>
+Date:   Mon Oct 21 22:05:59 2013 +0800
+
+    Fix typo in package.json.
+
+[33mcommit 0ba2c6f2dbf747c2c1214def462bbc2a5acd6da4[m
+Author: xo6r4 <xo6r44@gmail.com>
+Date:   Sun Oct 20 17:35:39 2013 +0800
+
+    Recover pagination.
+
+[33mcommit e810cae4bbab8146dc52da0f7b2a38d6b9525827[m
+Author: xo6r4 <xo6r44@gmail.com>
+Date:   Sun Oct 20 16:04:24 2013 +0800
+
+    Modify usage of map_convert.pl.
+
+[33mcommit 327ddb901b566e0e07e4de694d1f5e2af2824e9b[m
+Author: xo6r4 <xo6r44@gmail.com>
+Date:   Sun Oct 20 16:01:35 2013 +0800
+
+    Add terrain graph conversion.
+
+[33mcommit dc9290200a1ddc825fadbd858bf9919d515cdad3[m
+Merge: 8c875ee 5cf10ad
+Author: xo6r4 <xo6r44@gmail.com>
+Date:   Sun Oct 20 15:17:08 2013 +0800
+
+    Merge branch 'master' of github.com:mbilab/nckuee-village
+
+[33mcommit 8c875ee7405d2aadcc9072bea0999a073612d147[m
+Author: xo6r4 <xo6r44@gmail.com>
+Date:   Sun Oct 20 14:58:05 2013 +0800
+
+    Auto pagination. Close #4.
+
+[33mcommit 5cf10adedf0a4db6516520d6bf156a9b27cd74a2[m
+Author: xo6r4 <xo6r44@gmail.com>
+Date:   Sun Oct 20 14:58:05 2013 +0800
+
+    Auto pagination. close #4.
+
+[33mcommit 56f853b728f50215739ee2ff4f3257b97e7b2ae1[m
+Author: dirty <darby.chang@gmail.com>
+Date:   Sat Oct 19 16:14:12 2013 +0800
+
+    Move <noscript> of disqus into #cfg.
+
+[33mcommit c950e3cb3000933a095491ba6b9096046c7882bd[m
+Author: dirty <darby.chang@gmail.com>
+Date:   Sat Oct 19 12:15:20 2013 +0800
+
+    Rotate configuration button.
+
+[33mcommit 9bf16747d00b10d67681fdaa30223abe885c5ae5[m
+Author: dirty <darby.chang@gmail.com>
+Date:   Sat Oct 19 08:31:14 2013 +0800
+
+    Finish the right panel (which I named "configuration panel").
+
+[33mcommit f42b72e3f23f76d0cdbf3db74b48e963d29b9018[m
+Merge: c55c204 650ee2b
+Author: xo6r4 <xo6r44@gmail.com>
+Date:   Fri Oct 18 23:46:52 2013 +0800
+
+    Merge branch 'master' of github.com:mbilab/nckuee-village
+
+[33mcommit c55c204470a7a047afad4a1d0db751484eb02181[m
+Author: xo6r4 <xo6r44@gmail.com>
+Date:   Fri Oct 18 23:45:53 2013 +0800
+
+    Show i_semester.
+
+[33mcommit 650ee2be437eacc09e9a54ddbb5763ccb75585d5[m
+Author: dirty <darby.chang@gmail.com>
+Date:   Fri Oct 18 22:55:42 2013 +0800
+
+    More beautiful disqus.
+
+[33mcommit 7e714d4c4a64ff3ccbf984b64b591bca2c1b7566[m
+Author: dirty <darby.chang@gmail.com>
+Date:   Fri Oct 18 22:31:49 2013 +0800
+
+    Use stylus.
+
+[33mcommit b07fa80daa9f8ed454083d4d44ef3ed25428d9ce[m
+Author: dirty <darby.chang@gmail.com>
+Date:   Fri Oct 18 21:34:50 2013 +0800
+
+    Refine code of index.html.
+
+[33mcommit ac0e00b1d3c2a5a3a26e81e92cadcd7403af5930[m
+Author: xo6r4 <xo6r44@gmail.com>
+Date:   Fri Oct 18 11:04:14 2013 +0800
+
+    Close #1.
+
+[33mcommit 520f015c1bd8c46bdbba168f5d377f922a5504f9[m
+Author: momo <e2497636@mail.ncku.edu.tw>
+Date:   Fri Oct 18 10:24:53 2013 +0800
+
+    Move return command to Interpreter.js .
+
+[33mcommit 0cc68bc95e2fdbcb014784c53236e09131d68366[m
+Author: momo <e2497636@mail.ncku.edu.tw>
+Date:   Fri Oct 18 01:47:46 2013 +0800
+
+    Fix bug of tiled2rpgjs.
+
+[33mcommit 6fa2987cef3f92e3e53da2232cc6dc212a527bc9[m
+Author: momo <e2497636@mail.ncku.edu.tw>
+Date:   Fri Oct 18 01:23:10 2013 +0800
+
+    Set variable to 0 for initialization.
+
+[33mcommit 52d211cb14d8096797b26a6c7b3d72c62c019867[m
+Author: momo <e2497636@mail.ncku.edu.tw>
+Date:   Fri Oct 18 00:47:49 2013 +0800
+
+    Add RETURN command.
+
+[33mcommit 95d031fa8ce8ddd4270c2afa0f4aead1486bf8b4[m
+Author: momo <e2497636@mail.ncku.edu.tw>
+Date:   Thu Oct 17 23:48:36 2013 +0800
+
+    Set character illustration by id.
+
+[33mcommit 667292bb1e4a28502e070e00093186271f0973df[m
+Author: dirty <darby.chang@gmail.com>
+Date:   Thu Oct 17 22:48:45 2013 +0800
+
+    Move warp to lower end (Interpreter.js).
+
+[33mcommit 580e4a72f40f2a2a8ada6f474449573efd771fe5[m
+Author: dirty <darby.chang@gmail.com>
+Date:   Thu Oct 17 22:28:10 2013 +0800
+
+    Message of fail.
+
+[33mcommit 5dea5a75e174114a577fae0491c225365e0eae47[m
+Author: dirty <darby.chang@gmail.com>
+Date:   Thu Oct 17 15:19:05 2013 +0800
+
+    Refine logic of 99.js.
+
+[33mcommit b02647083a8dd72ce45816ac1b1a05e5aacc39e3[m
+Author: dirty <darby.chang@gmail.com>
+Date:   Thu Oct 17 09:05:34 2013 +0800
+
+    Add 99.js (not well tested).
+
+[33mcommit 726f38c9c8be83dcf03648dde18acdf9e7e74e10[m
+Author: dirty <darby.chang@gmail.com>
+Date:   Tue Oct 15 22:16:31 2013 +0800
+
+    Refine em1.
+
+[33mcommit dd89f93839fe94c24b6360b57e55ecdaa93ff62e[m
+Author: dirty <darby.chang@gmail.com>
+Date:   Tue Oct 15 22:12:14 2013 +0800
+
+    Auto wrap text.  Close #2.
+
+[33mcommit 1bb47a93b835f7fae61963c4a8d6a4f1ec78534c[m
+Author: dirty <darby.chang@gmail.com>
+Date:   Tue Oct 15 21:37:58 2013 +0800
+
+    All flatten (one-level) cmds.  Close #3.
+
+[33mcommit 2caf21c90966dc2dc2b1c455766ceee8f11decb6[m
+Author: dirty <darby.chang@gmail.com>
+Date:   Mon Oct 14 22:39:24 2013 +0800
+
+    Refine chinese1.
+
+[33mcommit b6eed4ab00b863143e2c51980c788be2ca1f0ecf[m
+Author: momo <e2497636@mail.ncku.edu.tw>
+Date:   Mon Oct 14 02:06:01 2013 +0800
+
+    Use rpgjs-built.js.
+
+[33mcommit f1a9decd03fe658e58d5bcb8be6863459842c1ce[m
+Author: momo <e2497636@mail.ncku.edu.tw>
+Date:   Mon Oct 14 01:31:15 2013 +0800
+
+    Click into canvas to lock screen.
+
+[33mcommit d4163c8a548c99c1671d0684602e5bd8fe389809[m
+Author: dirty <darby.chang@gmail.com>
+Date:   Sun Oct 13 23:44:00 2013 +0800
+
+    Add disqus.
+
+[33mcommit b408d603e374c356e8ca792ad3656d1d58e29160[m
+Author: dirty <darby.chang@gmail.com>
+Date:   Sun Oct 13 23:19:21 2013 +0800
+
+    Clean unnecessary files.
+
+[33mcommit 1d8a7f358d003ae0184cb9860254eb958c2e7e12[m
+Author: dirty <darby.chang@gmail.com>
+Date:   Sun Oct 13 23:04:40 2013 +0800
+
+    Refine em1, elecmachine and electriclab.
+
+[33mcommit 3bb838d61b99ea48e6cd591c9c486db82baa08b9[m
+Author: dirty <darby.chang@gmail.com>
+Date:   Sun Oct 13 22:43:40 2013 +0800
+
+    Refine cs1, chinese1, english1, sport1, electron1, circuit1 and english3.
+
+[33mcommit fd1d5a84926100cf27b3a5c53d8d8bbeb313d8aa[m
+Author: dirty <darby.chang@gmail.com>
+Date:   Sun Oct 13 21:28:05 2013 +0800
+
+    Refine calculus1.
+
+[33mcommit b0708af46de135c5a5c622529b307d4d23b88b9c[m
+Author: dirty <darby.chang@gmail.com>
+Date:   Sun Oct 13 19:52:08 2013 +0800
+
+    Use compiled ev-built.js.
+
+[33mcommit c43148eeb1114e7e3ffa420a67200d8c4ce2c14e[m
+Author: dirty <darby.chang@gmail.com>
+Date:   Sun Oct 13 17:50:49 2013 +0800
+
+    2.js used new Ev.js. The next step is other npcs.
+
+[33mcommit 5ee3938fb66683dfe9a517b203fb8ab7fa03ad57[m
+Author: dirty <darby.chang@gmail.com>
+Date:   Sun Oct 13 14:47:03 2013 +0800
+
+    Finish Ev class (in Ev.js).  The next step is to use it.
+
+[33mcommit c725c58587b408b306f5ce6eca4efc740ab3a157[m
+Author: dirty <darby.chang@gmail.com>
+Date:   Sun Oct 13 00:27:20 2013 +0800
+
+    Design ev interface in map_fall/_2.jg.
+
+[33mcommit 877f2ab7e97361b9d0a753cc8aae3a59e1e9a957[m
+Author: momo <e2497636@mail.ncku.edu.tw>
+Date:   Sat Oct 12 23:00:18 2013 +0800
+
+    Transfer Player.
+
+[33mcommit a3a3fab41d36f50899343b6f0c71b4147a875098[m
+Author: dirty <darby.chang@gmail.com>
+Date:   Fri Oct 11 23:08:36 2013 +0800
+
+    Start map_spring.
+
+[33mcommit 83f85184ce61e5a580b1730dcf2e57c6847ca923[m
+Author: dirty <darby.chang@gmail.com>
+Date:   Fri Oct 11 21:56:06 2013 +0800
+
+    Working on 1.js.
+
+[33mcommit 913c193654ed20d01d6d639ff73a620eee50491e[m
+Author: dirty <darby.chang@gmail.com>
+Date:   Fri Oct 11 21:55:31 2013 +0800
+
+    Add v0() and rename v0() to cmd_v0(), many js need to be modified.
+
+[33mcommit 3755813c8836d1d4774a5463424b867a19c0e144[m
+Author: dirty <darby.chang@gmail.com>
+Date:   Fri Oct 11 18:06:02 2013 +0800
+
+    Build environment for core/ to rpgjs.js.
+
+[33mcommit 011a71264be9e62b14fc1d57de26901608427369[m
+Author: dirty <darby.chang@gmail.com>
+Date:   Fri Oct 11 09:27:05 2013 +0800
+
+    elecmachine
+
+[33mcommit 36548205476e77fbf421ff093df5d38161a6a0d7[m
+Author: dirty <darby.chang@gmail.com>
+Date:   Fri Oct 11 09:10:26 2013 +0800
+
+    em1
+
+[33mcommit 0db4c63a658b885236255f3a6cb779b2d2793742[m
+Author: dirty <darby.chang@gmail.com>
+Date:   Fri Oct 11 09:09:48 2013 +0800
+
+    Add 8 characters.
+
+[33mcommit 56a340e69ceb7c4d59c147ec3381f32d8303050b[m
+Author: momo <e2497636@mail.ncku.edu.tw>
+Date:   Thu Oct 10 12:34:54 2013 +0800
+
+    Fix bug.
+
+[33mcommit 279d3d9907b15563ddbe16b577bf3d57f536601f[m
+Author: momo <e2497636@mail.ncku.edu.tw>
+Date:   Thu Oct 10 12:13:21 2013 +0800
+
+    Add map converter.
+
+[33mcommit ce749f74766ee9894e030a455d3c5e18b78afd35[m
+Author: dirty <darby.chang@gmail.com>
+Date:   Wed Oct 9 15:01:08 2013 +0800
+
+    Finish english3.
+
+[33mcommit 5eba99524352d782cd91141905ac88a6aeb820b7[m
+Author: dirty <darby.chang@gmail.com>
+Date:   Sun Oct 6 18:39:45 2013 +0800
+
+    partially english3
+
+[33mcommit a22f369e7d9ef629e94a53dae02fc18bb2b11f7c[m
+Author: dirty <darby.chang@gmail.com>
+Date:   Sun Oct 6 17:47:51 2013 +0800
+
+    Refine electron1.
+
+[33mcommit 9ca95ce5292da5e707ba01c2fe75ea40e6068c3a[m
+Author: dirty <darby.chang@gmail.com>
+Date:   Sun Oct 6 06:33:27 2013 +0800
+
+    circuit1
+
+[33mcommit 4b8dbc379565aaddfe0fde1ce9f20a80b663d8c3[m
+Author: dirty <darby.chang@gmail.com>
+Date:   Sun Oct 6 06:23:26 2013 +0800
+
+    cs1
+
+[33mcommit 6718f85a34400d6003047a49ae04cf288a2cb860[m
+Author: chiachia <ccdouplus@gmail.com>
+Date:   Sun Oct 6 03:17:15 2013 +0800
+
+    test map by douplus
+
+[33mcommit 9378c1691677bb3efc45f97ffcec29afc96cd67f[m
+Author: chiachia <ccdouplus@gmail.com>
+Date:   Sun Oct 6 03:14:50 2013 +0800
+
+    Justify the NPC & ev position
+     Please enter the commit message for your changes. Lines starting
+
+[33mcommit 1afa6226138f5195ac88363105aa18291e2f0ffa[m
+Author: chiachia <ccdouplus@gmail.com>
+Date:   Sun Oct 6 03:10:46 2013 +0800
+
+    edit map and justify NPC position
+
+[33mcommit 38453b32cd497e3a5131e77ec2db5e93801ddf19[m
+Author: momo <e2497636@mail.ncku.edu.tw>
+Date:   Sat Oct 5 20:45:55 2013 +0800
+
+    Add character illustration in text.
+
+[33mcommit 9e9b708b9118bcf0d39e3738afde85be3fc61b82[m
+Author: momo <e2497636@mail.ncku.edu.tw>
+Date:   Sat Oct 5 01:40:43 2013 +0800
+
+    Use alignment in 5.js.
+
+[33mcommit 19ab22ee42910058cc2abe6ff0b7caaa30699404[m
+Author: momo <e2497636@mail.ncku.edu.tw>
+Date:   Sat Oct 5 01:37:40 2013 +0800
+
+    Add image alignment.
+
+[33mcommit ff7cce82aeac1322161068df93ffba7a56af2bdb[m
+Author: momo <e2497636@mail.ncku.edu.tw>
+Date:   Thu Oct 3 10:28:30 2013 +0800
+
+    Fix set_type_move.
+
+[33mcommit 68ca403e73a641c2d54f5f8ff90666e474e904f2[m
+Author: dirty <darby.chang@gmail.com>
+Date:   Thu Oct 3 07:25:03 2013 +0800
+
+    Fix a typo.
+
+[33mcommit 5a8324436181123bc9741f2f42ee8a98db653133[m
+Author: momo <e2497636@mail.ncku.edu.tw>
+Date:   Thu Oct 3 01:42:15 2013 +0800
+
+    Stop npc moving when a dialogue is started.
+
+[33mcommit 0f5376ac0414f6a7c3a3b8132b0cce1f9d72550f[m
+Author: dirty <darby.chang@gmail.com>
+Date:   Wed Oct 2 19:39:36 2013 +0800
+
+    Make npc move.
+
+[33mcommit 2ee62194e9a3965311abc088c4008d713cdb414b[m
+Author: dirty <darby.chang@gmail.com>
+Date:   Wed Oct 2 19:25:14 2013 +0800
+
+    Different events use different graphics.
+
+[33mcommit 78bf39e77791c3d71065b2640452ecaf2942b4a5[m
+Author: momo <e2497636@mail.ncku.edu.tw>
+Date:   Mon Sep 30 15:11:53 2013 +0800
+
+    Add 5_4.jpg.
+
+[33mcommit 3ba26451e30e0325581d1abcc692cdcbea74aaba[m
+Author: momo <e2497636@mail.ncku.edu.tw>
+Date:   Sun Sep 29 18:12:45 2013 +0800
+
+    Refine num2year.
+
+[33mcommit 052cab99fb071a86a4aec615a27979d3b7df52d8[m
+Author: momo <e2497636@mail.ncku.edu.tw>
+Date:   Sun Sep 29 17:32:10 2013 +0800
+
+    Fix bug of skill list.
+
+[33mcommit 1da1a8a72429c3bd42383f80c2f8c1a0070d41ae[m
+Author: momo <e2497636@mail.ncku.edu.tw>
+Date:   Sun Sep 29 16:50:36 2013 +0800
+
+    Show pictures in the event of chinese1.
+
+[33mcommit bc00d79330f5b59b53532a899bf0b4f92f476dc0[m
+Author: momo <e2497636@mail.ncku.edu.tw>
+Date:   Sun Sep 29 16:04:47 2013 +0800
+
+    Add list of learned skills.
+
+[33mcommit e2028736a68b8231721f4ad18b4dd64e38e4514d[m
+Merge: d484e57 b24ed9d
+Author: momo <e2497636@mail.ncku.edu.tw>
+Date:   Sun Sep 29 15:52:07 2013 +0800
+
+    Merge branch 'master' of github.com:mbilab/nckuee-village
+    
+    Conflicts:
+    	rpgjs/index.html
+    
+    Merge.
+
+[33mcommit d484e57047fb690ea52241c0a917ed6353b05923[m
+Author: momo <e2497636@mail.ncku.edu.tw>
+Date:   Sun Sep 29 15:50:46 2013 +0800
+
+    Set information of player.
+
+[33mcommit b24ed9d2d73e39de86713cc5d623126add987a6a[m
+Author: dirty <darby.chang@gmail.com>
+Date:   Sun Sep 29 15:40:49 2013 +0800
+
+    electron1
+
+[33mcommit 42dc61e28798d082cae0dd0a3b2f8a2be5dd0369[m
+Author: dirty <darby.chang@gmail.com>
+Date:   Sun Sep 29 14:50:24 2013 +0800
+
+    sport1
+
+[33mcommit 3576ae280e22be4d86d5c576971c740b04d8d1ec[m
+Author: momo <e2497636@mail.ncku.edu.tw>
+Date:   Sun Sep 29 12:18:00 2013 +0800
+
+    Display HP.
+
+[33mcommit abad93004ab1a8477f1376c9233e3ed3f5adedd1[m
+Author: momo <e2497636@mail.ncku.edu.tw>
+Date:   Sun Sep 29 11:33:08 2013 +0800
+
+    Add title and menu.
+
+[33mcommit 363c7e0f61e317e35ce78d70a0d4b439648c76ad[m
+Author: dirty <darby.chang@gmail.com>
+Date:   Sun Sep 29 10:57:08 2013 +0800
+
+    english1
+
+[33mcommit ae9aecc92d51d22e92e57957506e73591c895b20[m
+Author: dirty <darby.chang@gmail.com>
+Date:   Sun Sep 29 10:39:42 2013 +0800
+
+    chinese1
+
+[33mcommit 7736ffce955fd5f0073905c5c6a5fc711d780e3c[m
+Author: dirty <darby.chang@gmail.com>
+Date:   Sun Sep 29 09:53:25 2013 +0800
+
+    cs1
+
+[33mcommit afcf082f48f397591d5a97bea13c0245ab6c8779[m
+Author: dirty <darby.chang@gmail.com>
+Date:   Sun Sep 29 00:46:33 2013 +0800
+
+    electriclab
+
+[33mcommit 0b2a1d654f7796aee2ef41c5f9192621c64e0f9e[m
+Author: dirty <darby.chang@gmail.com>
+Date:   Sun Sep 29 00:35:55 2013 +0800
+
+    calculus1
+
+[33mcommit b9bd62cbd5d7941e73aa963c6c8a007793001b43[m
+Author: dirty <darby.chang@gmail.com>
+Date:   Sun Sep 29 00:19:00 2013 +0800
+
+    hp of physics1.
+
+[33mcommit 674b3de50dfbb5951337ca37e9f695bb6eaf2e85[m
+Author: dirty <darby.chang@gmail.com>
+Date:   Sat Sep 28 08:15:39 2013 +0800
+
+    physics1
+
+[33mcommit 139ebbca46cd1892274e511037be0c6efba36df4[m
+Author: dirty <darby.chang@gmail.com>
+Date:   Fri Sep 27 23:44:57 2013 +0800
+
+    Design npc architecture and ev2 and ev2.
+
+[33mcommit 7119c29fdaafca330a763b66f1ffb46b12fc9ba7[m
+Author: dirty <darby.chang@gmail.com>
+Date:   Wed Sep 25 22:53:12 2013 +0800
+
+    Move logic to js (outside rpgjs).
+
+[33mcommit 77461be1b2e9cc5543f6d2b26d7ea077fbc53a08[m
+Merge: 8d905b0 133bd53
+Author: dirty <darby.chang@gmail.com>
+Date:   Wed Sep 25 20:17:56 2013 +0800
+
+    Solve conflict.
+
+[33mcommit 8d905b0e60848df158156b43575917ac5ebb718c[m
+Author: dirty <darby.chang@gmail.com>
+Date:   Wed Sep 25 20:17:02 2013 +0800
+
+    Indent EV-1 and -2.
+
+[33mcommit 133bd533bf2c622389b50fced8e9a956cc49e3bb[m
+Author: chiachia <ccdouplus@gmail.com>
+Date:   Wed Sep 25 19:21:29 2013 +0800
+
+    Just for test.
+
+[33mcommit f2f638ae37a05fd9173126562eb430505f4e8002[m
+Author: chiachia <ccdouplus@gmail.com>
+Date:   Wed Sep 25 18:30:18 2013 +0800
+
+    Add cray.png.
+
+[33mcommit bf53349ee96eab896742488317624de4ee3f92db[m
+Author: momo <e2497636@mail.ncku.edu.tw>
+Date:   Tue Sep 24 15:24:13 2013 +0800
+
+    Load configurations from json.
+
+[33mcommit f4aef7ab9c7f3c97f8c447d4ddd28ae6a05020a5[m
+Author: momo <e2497636@mail.ncku.edu.tw>
+Date:   Sat Sep 21 20:51:10 2013 +0800
+
+    Add event of traferring player.
+
+[33mcommit e07e63f1e9ca40f75516d3dc64b970b7f840052a[m
+Author: momo <e2497636@mail.ncku.edu.tw>
+Date:   Sat Sep 21 20:47:14 2013 +0800
+
+    Fix bug of RPGJS parseCommands.
+
+[33mcommit d657b5c6ee8ee4dde9a3cfc34976bd0f7c4a51c0[m
+Author: momo <e2497636@mail.ncku.edu.tw>
+Date:   Sat Sep 21 17:39:31 2013 +0800
+
+    Add NPCs, choices and skill learning.
+
+[33mcommit 444056332b9ccd65703dac483477375cf893fa12[m
+Author: momo <e2497636@mail.ncku.edu.tw>
+Date:   Fri Sep 20 17:53:01 2013 +0800
+
+    Change Map ID. Add new NPC.
+
+[33mcommit 3f952410d64d5d27e04b3a3e64c704aa83ca954a[m
+Merge: 1e47e93 64fb632
+Author: momo <e2497636@mail.ncku.edu.tw>
+Date:   Fri Sep 20 14:58:39 2013 +0800
+
+    Merge branch 'master' of github.com:mbilab/nckuee-village
+    
+    Conflicts:
+    	rpgjs/index.html
+
+[33mcommit 1e47e937d13a9220896a57b613fa302116296f69[m
+Author: momo <e2497636@mail.ncku.edu.tw>
+Date:   Fri Sep 20 14:40:05 2013 +0800
+
+    Add autotiles.
+
+[33mcommit 64fb632d03deabc07f4f2ee1d9bd7f256bc58f4d[m
+Author: dirty <darby.chang@gmail.com>
+Date:   Fri Sep 20 12:43:20 2013 +0800
+
+    Solve autotile bug.
+
+[33mcommit e7607558e54dd3c4b1a8eac734de401bb1846815[m
+Author: dirty <darby.chang@gmail.com>
+Date:   Fri Sep 20 12:24:46 2013 +0800
+
+    Move npc to fit MAP-3.
+
+[33mcommit c1c2a8c76fe5f21371bf6cfc9a4542447514e49b[m
+Merge: 67094e2 506afd7
+Author: dirty <darby.chang@gmail.com>
+Date:   Fri Sep 20 12:17:10 2013 +0800
+
+    Solve conflict.
+
+[33mcommit 67094e28bb7e259a89bffc54291d5d552676dea1[m
+Author: dirty <darby.chang@gmail.com>
+Date:   Fri Sep 20 12:14:36 2013 +0800
+
+    Add MAP-3.
+
+[33mcommit 506afd7d918f0ed682567e016f385e815deb11ce[m
+Author: momo <e2497636@mail.ncku.edu.tw>
+Date:   Fri Sep 20 11:50:25 2013 +0800
+
+    Add tileset propreties.
+
+[33mcommit 89e693b3e3979ba573dd8f372a9caec2c7827832[m
+Author: momo <e2497636@mail.ncku.edu.tw>
+Date:   Fri Sep 20 11:21:50 2013 +0800
+
+    Fix Map.
+
+[33mcommit ffdbcac99edb2ca265eae5c433df5a9dca1d46bd[m
+Merge: 8be1b2a 52cab46
+Author: momo <e2497636@mail.ncku.edu.tw>
+Date:   Fri Sep 20 10:56:29 2013 +0800
+
+    Merge branch 'master' of github.com:mbilab/nckuee-village
+    
+    Conflicts:
+    	rpgjs/index.html
+    
+    Merge.
+
+[33mcommit 8be1b2ae7f389d2a5ef85e136baa30a2a0162c9a[m
+Author: momo <e2497636@mail.ncku.edu.tw>
+Date:   Fri Sep 20 10:52:13 2013 +0800
+
+    Add Windowskin.
+
+[33mcommit 52cab46c32df1efd3273907b7c1e56640d061d46[m
+Author: dirty <darby.chang@gmail.com>
+Date:   Fri Sep 20 08:09:09 2013 +0800
+
+    Make trees and rocks not passable.
+
+[33mcommit d393b541b8cc4c88098711234618300301879dd1[m
+Author: dirty <darby.chang@gmail.com>
+Date:   Thu Sep 19 23:22:02 2013 +0800
+
+    Use MAP-2 and play three rocks at the top-left.
+
+[33mcommit aabdb25be2d0b04d011c46a83936d9b0b58e9e83[m
+Author: dirty <darby.chang@gmail.com>
+Date:   Thu Sep 19 23:00:05 2013 +0800
+
+    Just indent.
+
+[33mcommit 38e0f71c20a08d40f6653d2c4ffba1ce147ed8a1[m
+Author: momo <e2497636@mail.ncku.edu.tw>
+Date:   Thu Sep 19 16:33:32 2013 +0800
+
+    Add rpgjs version.
