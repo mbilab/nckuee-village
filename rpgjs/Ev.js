@@ -30,7 +30,7 @@ var game = {
 		},
 		escape: function(s){ return s.replace(/"/g,'\\"').replace(/\n/g,"\\n") },
 		next_semester: function(){
-			this.player.hp = this.semester.n_passed < 7 ? 100 : 120;
+			this.player.hp = this.semester.n_passed < 7 ? 100 : 120;//if player pass 7 courses, the next semester has the max hp
 			this.player.i_semester++;
 			this.reset_semester();
 		},
@@ -52,7 +52,7 @@ var game = {
 				n_passed: 0,
 			};
 		},
-		show_semester: function(n){ 
+		show_semester: function(n){ //the information of semester show in esc
 			var r;
 			var term = n%2;
 			n = parseInt(n/2);
@@ -91,7 +91,7 @@ var game = {
 	});
 
 	G.Ev = function( opt, cmds ){ // Ev class
-		$.extend( true, this, opt );
+		$.extend( true, this, opt );//set the course npc place
 		if ( !G.defined(this.graphic) ) this.graphic = this.id + 1; // 1 for the actor
 		if ( !G.defined(this.x) ) this.x = ( (this.id-1) % 5 ) * 2 + 5;
 		if ( !G.defined(this.y) ) this.y = Math.floor( (this.id-1) / 5 ) * 2 + 5;
