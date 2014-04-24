@@ -1,7 +1,7 @@
 var s = game.Ev.prototype.cmd.script, t = game.Ev.prototype.cmd.text, v0 = game.Ev.prototype.cmd.v0;
 var map = 1, id = 2, ev = 'game.ev['+map+']['+id+']', name = '普通物理學（一）';
 game.ev[map][id] = new game.Ev({
-	hp_cost: function() { return 10; },
+	hp_cost: function() { return 50; },
 	id: id,
 	map: map,
 	name: name,

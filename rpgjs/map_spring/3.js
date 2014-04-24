@@ -2,11 +2,10 @@ var s = game.Ev.prototype.cmd.script, t = game.Ev.prototype.cmd.text, v0 = game.
 var map = 2, id = 3, ev = 'game.ev['+map+']['+id+']', name = '微積分（二）';
 game.ev[map][id] = new game.Ev({
 can_take: function() {
-		if ( game.defined( game, 'ev', 1, 3, 'took' ) ) return true;
-//		RPGJS.Variables.data[0] = '需要先修 '+game.ev[2][1].name+' ！';
-		RPGJS.Variables.data[0] = '需要先修 微積分(一) ！';
-		return false;
+		if ( !game.defined( game, 'ev', 1, 3, 'is_passed' ) ) RPGJS.Variables.data[0] = game.ev[1][3].name+'要修過才可以選修本課！';
+		else RPGJS.Variables.data[0] = 1;
 	},
+	hp_cost: function() { return 10; },
 	hp_cost: function() { return 10; },
 	id: id,
 	map: map,
