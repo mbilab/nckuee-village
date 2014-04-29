@@ -92,7 +92,7 @@ var game = {
 
 	G.Ev = function( opt, cmds ){ // Ev class
 		$.extend( true, this, opt );//set the course npc place
-		if ( !G.defined(this.graphic) ) this.graphic = this.id + 1; // 1 for the actor
+		if ( !G.defined(this.graphic) ) this.graphic = this.id; // 1 for the actor
 		if ( !G.defined(this.x) ) this.x = ( (this.id-1) % 5 ) * 2 + 5;
 		if ( !G.defined(this.y) ) this.y = Math.floor( (this.id-1) / 5 ) * 2 + 5;
 		RPGJS.setEvent( this.map, this.id, [{
