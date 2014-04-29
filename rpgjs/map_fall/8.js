@@ -2,10 +2,8 @@ var s = game.Ev.prototype.cmd.script, t = game.Ev.prototype.cmd.text, v0 = game.
 var map = 1, id = 8, ev = 'game.ev['+map+']['+id+']', name = '電子（一）';
 game.ev[map][id] = new game.Ev({
 	can_take: function() {
-		if ( game.defined( game, 'ev', 2, 1, 'took' ) ) return true;
-//		RPGJS.Variables.data[0] = '需要先修 '+game.ev[2][1].name+' ！';
-		RPGJS.Variables.data[0] = '需要先修 普通物理學（二） ！';
-		return false;
+		if ( !game.defined( game, 'ev', 2, 2, 'is_passed' ) ) RPGJS.Variables.data[0] ='要通過' + game.ev[2][2].name+'才可以選修本課！';
+		else RPGJS.Variables.data[0] = 1;
 	},
 	hp_cost: function() { return 10; },
 	id: id,
@@ -17,20 +15,20 @@ game.ev[map][id] = new game.Ev({
 	t('你要修 '+name+' 嗎？'),
 	'CHOICES: ["是","否"]',
 	'CHOICE_0',
-		s(ev+'.is_took()'),
-		'IF: "0 == variable[0]"',
-			s(ev+'.can_take()'),
-			'IF: "1 == variable[0]"',
-				t('請問如果設計的電路是高頻電路，那麼該選用下列哪一個電子元件？'),
-				'CHOICES: ["ＣＭＯＳ","ＢＪＴ"]',
-				'CHOICE_0',
-					s(ev+'.fail("不對喔")'),
-				'CHOICE_1',
-					s(ev+'.take()'),
-				'ENDCHOICES',
-			'ENDIF',
-		'ENDIF',
-		t('%V[0]'),
+	s(ev+'.is_took()'),
+	'IF: "0 == variable[0]"',
+	s(ev+'.can_take()'),
+	'IF: "1 == variable[0]"',
+	t('請問如果設計的電路是高頻電路，那麼該選用下列哪一個電子元件？'),
+	'CHOICES: ["ＣＭＯＳ","ＢＪＴ"]',
+	'CHOICE_0',
+	s(ev+'.fail("不對喔")'),
+	'CHOICE_1',
+	s(ev+'.take()'),
+	'ENDCHOICES',
+	'ENDIF',
+	'ENDIF',
+	t('%V[0]'),
 	'CHOICE_1',
 	'ENDCHOICES',
 	s(ev+'.start()'),

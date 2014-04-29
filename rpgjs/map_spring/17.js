@@ -1,11 +1,6 @@
 var s = game.Ev.prototype.cmd.script, t = game.Ev.prototype.cmd.text, v0 = game.Ev.prototype.cmd.v0;
 var map = 2, id = 17, ev = 'game.ev['+map+']['+id+']', name = '訊號與系統';
 game.ev[map][id] = new game.Ev({
-	can_take: function() {
-		return RPGJS.Variables.data[0] = 1;
-		if ( G.player.hp < this.hp_cost() ) RPGJS.Variables.data[0] = '你的體力不夠修這門課囉！';
-		else RPGJS.Variables.data[0] = 1;
-	},
 	hp_cost: function() { return 12; },
 	id: id,
 	map: map,
@@ -22,7 +17,7 @@ game.ev[map][id] = new game.Ev({
 			'IF: "1 == variable[0]"',
 				t('傳說中瞭解一個系統的其中一種方式，可以輸入一種別稱叫做「一陽指」的訊號，就可以透過其響應(Response)來瞭解系統的特性。並可由此輸出推得其他訊號的響應。(註：限LTI系統)。請問這種訊號的響應稱為？(提示：能量集中於一點)'),
 				'CHOICES: ["我不知道金庸什麼的..","Unit Impulse Response(單位脈衝響應)","六脈神劍","Unit Step Response(單位步階響應)"]',
-				'CHOICE_0',
+				'CHOICE_0',	
 					s(ev+'.fail("答錯了！答案是b喔！")'),
 				'CHOICE_1',
 					s(ev+'.take("答對了！")'),
