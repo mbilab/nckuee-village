@@ -3,6 +3,7 @@ var map = 2, id = 2, ev = 'game.ev['+map+']['+id+']', name = '普通物理學（
 game.ev[map][id] = new game.Ev({
 	can_take: function() {
 		if ( !game.defined( game, 'ev', 1, 2, 'is_passed' ) ) RPGJS.Variables.data[0] ='要通過' + game.ev[1][2].name+'才可以選修本課！';
+		else if ( G.player.hp < this.hp_cost() ) RPGJS.Variables.data[0] = '你的體力不夠修這門課囉！';
 		else RPGJS.Variables.data[0] = 1;
 	},
 	hp_cost: function() { return 10; },

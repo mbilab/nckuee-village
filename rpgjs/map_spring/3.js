@@ -3,9 +3,10 @@ var map = 2, id = 3, ev = 'game.ev['+map+']['+id+']', name = '微積分（二）
 game.ev[map][id] = new game.Ev({
 can_take: function() {
 		if ( !game.defined( game, 'ev', 1, 3, 'is_passed' ) ) RPGJS.Variables.data[0] = game.ev[1][3].name+'要修過才可以選修本課！';
+		else if ( G.player.hp < this.hp_cost() ) RPGJS.Variables.data[0] = '你的體力不夠修這門課囉！';
 		else RPGJS.Variables.data[0] = 1;
+
 	},
-	hp_cost: function() { return 10; },
 	hp_cost: function() { return 10; },
 	id: id,
 	map: map,
