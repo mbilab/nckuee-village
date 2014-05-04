@@ -139,14 +139,12 @@ var game = {
 		is_took: function(){
 			if ( this.is_passed ) return RPGJS.Variables.data[0] = '你已經修過 '+this.name+' 了！';
 			if ( G.defined(G.semester.ev[this.id], 'failed') ) return RPGJS.Variables.data[0] = '你這學期已經被當過了，請等下一個學年再修。';
-			if ( G.player.hp < this.hp_cost() ) return RPGJS.Variables.data[0] = '你的體力不夠修這門課囉！';		
 			return RPGJS.Variables.data[0] = 0;
 		},
 		is_passed: false,
 		speed: 1,
 		take: function(t,hp_cost){
 			if ( !G.defined(hp_cost) ) hp_cost = this.hp_cost();
-		//	if ( G.player.hp < hp_cost ) return RPGJS.Variables.data[0] = '你的體力不夠修這門課囉！';
 			this.is_passed = true;
 			G.player.hp -= hp_cost;
 			G.player.n_passed++;
