@@ -2,11 +2,6 @@ var s = game.Ev.prototype.cmd.script, t = game.Ev.prototype.cmd.text, v0 = game.
 var map = 1, id = 19, ev = 'game.ev['+map+']['+id+']', name = '離散數學';
 game.ev[map][id] = new game.Ev({
 
-	    can_take: function() {
-					if ( G.player.hp < this.hp_cost() ) RPGJS.Variables.data[0] = '你的體力不夠修這門課囉！';
-					else RPGJS.Variables.data[0] = 1;
-									    },
-		
 	    hp_cost: function() { return 10; },
 	    id: id,
 	    map: map,
@@ -32,6 +27,9 @@ game.ev[map][id] = new game.Ev({
 				'CHOICE_3',
 					s(ev+'.fail("喔喔，這是complete graph的定義喔")'),
 				'ENDCHOICES',
+			'ENDIF',
+		'ENDIF',
+		t('%V[0]');
 	'CHOICE_1',
 	'ENDCHOICES',
 	s(ev+'.start()'),
