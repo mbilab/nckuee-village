@@ -7,10 +7,11 @@ game.ev[map][id] = new game.Ev({
 	name: name,
 }, [
 	s(ev+'.stop()'),
-    t('i你知道1+1其實不一定等於2嗎?'),	
+    t('你知道1+1其實不一定等於2嗎?'),	
     t('你要修 '+name+' 嗎？'),
-	'CHOICES: ["是","否"]',
+	'CHOICES: ["遇到神經病了，快走..","怎麼說呢？"]',
  	'CHOICE_0',
+	'CHOICE_1',
 		s(ev+'.is_took()'),
 		'IF: "0 == variable[0]"',
 			s(ev+'.can_take()'),
@@ -27,7 +28,6 @@ game.ev[map][id] = new game.Ev({
 			'ENDIF',
 		'ENDIF',
 		t('%V[0]'),
-	'CHOICE_1',
 	'ENDCHOICES',
 	s(ev+'.start()'),
 ]);
