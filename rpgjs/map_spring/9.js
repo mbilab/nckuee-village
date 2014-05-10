@@ -2,10 +2,10 @@ var s = game.Ev.prototype.cmd.script, t = game.Ev.prototype.cmd.text, v0 = game.
 var map = 2, id = 9, ev = 'game.ev['+map+']['+id+']', name = '電路學(二)';
 game.ev[map][id] = new game.Ev({
 	can_take: function() {
-		return RPGJS.Variables.data[0] = 1;
-		if ( !game.defined( game, 'ev', 1, 9, 'took' ) ) RPGJS.Variables.data[0] = '需要先修 '+game.ev[1][9].name+' ！';
-		else if ( G.player.hp < this.hp_cost() ) RPGJS.Variables.data[0] = '你的體力不夠修這門課囉！';
-		else RPGJS.Variables.data[0] = 1;
+		 if ( game.player.hp < this.hp_cost() ) return RPGJS.Variables.data[0] = '你的體力不夠修這門課囉！';
+		 if ( !game.defined( game, 'ev', 2, 9, 'is_passed' ) ) return RPGJS.Variables.data[0] ='要通過' + game.ev[2][9].name+ '才可以選修本課！';
+		 return RPGJS.Variables.data[0] = 1;
+
 	},
 	hp_cost: function() { return 20; },
 	id: id,
