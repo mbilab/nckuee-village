@@ -1,11 +1,7 @@
 var s = game.Ev.prototype.cmd.script, t = game.Ev.prototype.cmd.text, v0 = game.Ev.prototype.cmd.v0;
 var map = 2, id = 31, ev = 'game.ev['+map+']['+id+']', name = '社群網站設計';
 game.ev[map][id] = new game.Ev({
-	can_take: function() {
-		return RPGJS.Variables.data[0] = 1;
-		if ( G.player.hp < this.hp_cost() ) RPGJS.Variables.data[0] = '你的體力不夠修這門課囉！';
-		else RPGJS.Variables.data[0] = 1;
-	},
+
 	hp_cost: function() { return 20; },
 	id: id,
 	map: map,
@@ -23,13 +19,13 @@ game.ev[map][id] = new game.Ev({
 				t('你是小組員，組長與設計的人員發生了爭執，僵持不下，請問你打算如何解決？'),
 				'CHOICES: ["賞他們兩巴掌","沉默不語","提議投票表決","退選"]',
 				'CHOICE_0',
-					s(ev+'.fail("動手是不對的",10)'),
+					s(ev+'.fail("動手是不對的",30)'),
 				'CHOICE_1',
 					s(ev+'.fail("。。。。。。。。")'),
 				'CHOICE_',
-					s(ev+'.take("成功解決僵局",-5)'),
+					s(ev+'.take("成功解決僵局",15)'),
 				'CHOICE_3',
-					s(ev+'.fail("來日再修吧～",-10)'),
+					s(ev+'.fail("來日再修吧～",10)'),
 				'ENDCHOICES',
 			'ENDIF',
 		'ENDIF',

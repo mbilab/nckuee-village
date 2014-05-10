@@ -1,11 +1,7 @@
 var s = game.Ev.prototype.cmd.script, t = game.Ev.prototype.cmd.text, v0 = game.Ev.prototype.cmd.v0;
 var map = 2, id = 35, ev = 'game.ev['+map+']['+id+']', name = '普通物理學實驗(二)';
 game.ev[map][id] = new game.Ev({
-	can_take: function() {
-		return RPGJS.Variables.data[0] = 1;
-	    if ( G.player.hp < this.hp_cost() ) RPGJS.Variables.data[0] = '你的體力不夠修這門課囉！';
-		else RPGJS.Variables.data[0] = 1;
-	},
+
 	hp_cost: function() { return 10; },
 	id: id,
 	map: map,
