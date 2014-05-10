@@ -1,12 +1,8 @@
 var s = game.Ev.prototype.cmd.script, t = game.Ev.prototype.cmd.text, v0 = game.Ev.prototype.cmd.v0;
 var map = 2, id = 16, ev = 'game.ev['+map+']['+id+']', name = '超大型積體電路電腦輔助設計概論';
 game.ev[map][id] = new game.Ev({
-	can_take: function() {
-		return RPGJS.Variables.data[0] = 1;
-		if ( G.player.hp < this.hp_cost() ) RPGJS.Variables.data[0] = '你的體力不夠修這門課囉！';
-		else RPGJS.Variables.data[0] = 1;
-	},
-	hp_cost: function() { return 18; },
+	//大二三選修  所以是不是要讓大一不能修
+	hp_cost: function() { return 20; },
 	id: id,
 	map: map,
 	name: name,
