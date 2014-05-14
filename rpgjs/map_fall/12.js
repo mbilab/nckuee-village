@@ -2,11 +2,11 @@ var s = game.Ev.prototype.cmd.script, t = game.Ev.prototype.cmd.text, v0 = game.
 var map = 1, id = 12, ev = 'game.ev['+map+']['+id+']', name = '電子（三）';
 game.ev[map][id] = new game.Ev({
 	can_take: function() {
-		if ( game.defined( game, 'ev', 2, 10, 'took' ) ) return true;
-		//		RPGJS.Variables.data[0] = '需要先修 '+game.ev[2][1].name+' ！';
-		RPGJS.Variables.data[0] = '需要先修 電子（二） ！';
-		return false;
+	 	if ( game.player.hp < this.hp_cost() ) return RPGJS.Variables.data[0] = '你的體力不夠修這門課囉！';
+	    if ( !game.defined( game, 'ev', 2, 10, 'is_passed' ) ) return RPGJS.Variables.data[0] ='要通過' + game.ev[2][10].name+ '才可以選修本課！';
+		return RPGJS.Variables.data[0] = 1;
 	},
+
 	hp_cost: function() { return 15; },//reture 代表體力扣的數值
 	id: id,
 	map: map,
@@ -17,25 +17,24 @@ game.ev[map][id] = new game.Ev({
 	t('你要修 '+name+' 嗎？'),
 	'CHOICES: ["是","否"]',
 	'CHOICE_0',
-	s(ev+'.is_took()'),
-	'IF: "0 == variable[0]"',
-	s(ev+'.can_take()'),
-	'IF: "1 == variable[0]"',
-	t('一般而言，濾波器分成low-pass、high-pass、bandpass、bandstop四種，請問能使高於特定頻率之波形通過之濾波器為以上何種？'),
-	'CHOICES: ["low-pass","high-pass","band-pass","band-stop"]',
-	'CHOICE_0',
-	s(ev+'.fail("正確答案是high-pass才對喔!!")'),
-	'CHOICE_1',
-	t('答對了~~'),
-	s(ev+'.take()'),
-	'CHOICE_2',
-	s(ev+'.fail("正確答案是high-pass才對喔!!")'),
-	'CHOICE_3',
-	s(ev+'.fail("正確答案是high-pass才對喔!!")'),
-	'ENDCHOICES',
-	'ENDIF',
-	'ENDIF',
-	t('%V[0]'),
+		s(ev+'.is_took()'),
+		'IF: "0 == variable[0]"',
+			s(ev+'.can_take()'),
+			'IF: "1 == variable[0]"',
+				t('一般而言，濾波器分成low-pass、high-pass、bandpass、bandstop四種，請問能使高於特定頻率之波形通過之濾波器為以上何種？'),
+				'CHOICES: ["low-pass","high-pass","band-pass","band-stop"]',
+				'CHOICE_0',
+					s(ev+'.fail("正確答案是high-pass才對喔!!")'),
+				'CHOICE_1',
+					s(ev+'.take("答對了~~")'),
+				'CHOICE_2',
+					s(ev+'.fail("正確答案是high-pass才對喔!!")'),
+				'CHOICE_3',
+					s(ev+'.fail("正確答案是high-pass才對喔!!")'),
+				'ENDCHOICES',
+			'ENDIF',
+		'ENDIF',
+		t('%V[0]'),
 	'CHOICE_1',
 	'ENDCHOICES',
 	s(ev+'.start()'),

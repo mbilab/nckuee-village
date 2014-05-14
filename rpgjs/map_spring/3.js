@@ -1,9 +1,11 @@
 var s = game.Ev.prototype.cmd.script, t = game.Ev.prototype.cmd.text, v0 = game.Ev.prototype.cmd.v0;
 var map = 2, id = 3, ev = 'game.ev['+map+']['+id+']', name = '微積分（二）';
 game.ev[map][id] = new game.Ev({
-can_take: function() {
-		if ( !game.defined( game, 'ev', 1, 3, 'is_passed' ) ) RPGJS.Variables.data[0] = game.ev[1][3].name+'要修過才可以選修本課！';
-		else RPGJS.Variables.data[0] = 1;
+	can_take: function() {
+	 	if ( game.player.hp < this.hp_cost() ) return RPGJS.Variables.data[0] = '你的體力不夠修這門課囉！';
+	    if ( !game.defined( game, 'ev', 1, 3, 'is_passed' ) ) return RPGJS.Variables.data[0] ='要通過' + game.ev[1][3].name+ '才可以選修本課！';
+		return RPGJS.Variables.data[0] = 1;
+
 	},
 	hp_cost: function() { return 10; },
 	id: id,
@@ -29,7 +31,7 @@ can_take: function() {
 					s(ev+'.fail("答錯了！請邁向偉大的重修之路")'),
 				'ENDCHOICES',
 			"ENDIF",
-		"ENDIF",
+		"ENDIF",	
 		t('%V[0]'),
 	'CHOICE_1',
 	'ENDCHOICES',

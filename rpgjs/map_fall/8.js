@@ -2,6 +2,7 @@ var s = game.Ev.prototype.cmd.script, t = game.Ev.prototype.cmd.text, v0 = game.
 var map = 1, id = 8, ev = 'game.ev['+map+']['+id+']', name = '電子（一）';
 game.ev[map][id] = new game.Ev({
 	can_take: function() {
+		if ( game.player.hp < this.hp_cost() ) return RPGJS.Variables.data[0] = '你的體力不夠修這門課囉！';
 		if ( !game.defined( game, 'ev', 2, 2, 'is_passed' ) ) RPGJS.Variables.data[0] ='要通過' + game.ev[2][2].name+'才可以選修本課！';
 		else RPGJS.Variables.data[0] = 1;
 	},

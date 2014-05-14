@@ -1,11 +1,7 @@
 var s = game.Ev.prototype.cmd.script, t = game.Ev.prototype.cmd.text, v0 = game.Ev.prototype.cmd.v0;
 var map = 2, id = 38, ev = 'game.ev['+map+']['+id+']', name = '控制工程實驗';
 game.ev[map][id] = new game.Ev({
-	can_take: function() {
-		return RPGJS.Variables.data[0] = 1;
-		if ( G.player.hp < this.hp_cost() ) RPGJS.Variables.data[0] = '你的體力不夠修這門課囉！';
-		else RPGJS.Variables.data[0] = 1;
-	},
+
 	hp_cost: function() { return 10; },
 	id: id,
 	map: map,
@@ -31,6 +27,7 @@ game.ev[map][id] = new game.Ev({
 				'CHOICE_3',
 					s(ev+'.take("其實都存在喔～同學可以多加運用")'),
 				'ENDCHOICES',
+				t('<助教仁心宅厚，全數通過不當人＞'),
 			'ENDIF',
 		'ENDIF',
 		t('%V[0]'),

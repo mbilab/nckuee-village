@@ -2,8 +2,9 @@ var s = game.Ev.prototype.cmd.script, t = game.Ev.prototype.cmd.text, v0 = game.
 var map = 2, id = 2, ev = 'game.ev['+map+']['+id+']', name = '普通物理學（二）';
 game.ev[map][id] = new game.Ev({
 	can_take: function() {
+		if ( game.player.hp < this.hp_cost() ) return RPGJS.Variables.data[0] = '你的體力不夠修這門課囉！';
 		if ( !game.defined( game, 'ev', 1, 2, 'is_passed' ) ) return RPGJS.Variables.data[0] ='要通過' + game.ev[1][2].name+ '才可以選修本課！';
-		else RPGJS.Variables.data[0] = 1;
+		return RPGJS.Variables.data[0] = 1;
 	},
 	
 	hp_cost: function() { return 10; },

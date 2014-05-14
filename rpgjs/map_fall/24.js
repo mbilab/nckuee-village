@@ -44,12 +44,10 @@ game.ev[map][id] = new game.Ev({
 					s(ev+'.fail("好可惜，答錯了喔！！請再仔細想想！！")'),
 				'ENDCHOICES',
 			'ENDIF',
-		"ENDIF",
+		'ENDIF',
+		t('%V[0]'),
 	'CHOICE_1',
 	'ENDCHOICES',
-	'IF: "0 != variable[0]"',
-		t('%V[0]'),
-	"ENDIF",
 	s(ev+'.start()'),
 ]);
 

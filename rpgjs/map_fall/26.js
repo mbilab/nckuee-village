@@ -33,6 +33,8 @@ game.ev[map][id] = new game.Ev({
 				'CHOICE_3',
 					s(ev+'.fail("答錯了！老師已經大放水了，還錯就只好乖乖重修了")'),
 				'ENDCHOICES',
+			'ENDIF',
+		'ENDIF',
 	'CHOICE_1',
 	'ENDCHOICES',
 	s(ev+'.start()'),
