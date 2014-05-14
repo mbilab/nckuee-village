@@ -25,7 +25,7 @@ game.ev[map][id] = new game.Ev({
 					s(ev+'.fail("答錯了，隨著藍芽、Wi-Fi、ZigBee等的普及，無線傳輸可提供資料傳輸的便利性，資料的傳輸可以蒐集更多的資料，有助醫生的判讀。")'),
 				'ENDCHOICES',
 			'ENDIF',
-		"ENDIF",
+		'ENDIF',
 		t('%V[0]'),
 	'CHOICE_1',
 	'ENDCHOICES',

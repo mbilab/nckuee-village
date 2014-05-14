@@ -25,7 +25,7 @@ game.ev[map][id] = new game.Ev({
 					s(ev+'.take("答對了！這堂課就在廣泛探討它們在同一晶片中的相互干擾原因及防治方法！")'),
 				'ENDCHOICES',
 			'ENDIF',
-		"ENDIF",
+		'ENDIF',
 		t('%V[0]'),
 	'CHOICE_1',
 	'ENDCHOICES',

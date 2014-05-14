@@ -25,7 +25,7 @@ game.ev[map][id] = new game.Ev({
 					s(ev+'.fail("答錯了！正確答案是整流電路，斬波電路是ＤＣ－ＡＣ")'),
 				'ENDCHOICES',
 			'ENDIF',
-		"ENDIF",
+		'ENDIF',
 		t('%V[0]'),
 	'CHOICE_1',
 	'ENDCHOICES',
