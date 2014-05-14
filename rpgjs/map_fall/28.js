@@ -27,7 +27,7 @@ game.ev[map][id] = new game.Ev({
 					s(ev+'.fail("錯了！！HTML與CSS是寫網頁最基本的技術，後方的數字代表版本，但由於現在網頁技術的發展太快，現在已經決定無論以後技術如何改進，都不會把數字再加上去，現在的版本為HTML5與CSS3。")'),
 				'ENDCHOICES',
 			'ENDIF',
-		"ENDIF",
+		'ENDIF',
 		t('%V[0]'),
 	'CHOICE_1',
 	'ENDCHOICES',

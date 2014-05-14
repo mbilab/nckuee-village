@@ -26,7 +26,7 @@ game.ev[map][id] = new game.Ev({
 					s(ev+'.take("這是一種迫使對方屈服的戰術。你擁有不畏懼權威的領導力，這種能力可以影響很多人，可以促使一群人為你衝鋒陷陣，你也能讓周邊的人都振奮起來！")'),
 				'ENDCHOICES',
 			'ENDIF',
-		"ENDIF",
+		'ENDIF',
 		 t('%V[0]'),
 	'CHOICE_1',
 	'ENDCHOICES',
