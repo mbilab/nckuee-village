@@ -33,7 +33,7 @@ game.ev[map][id] = new game.Ev({
 					s(ev+'.take("恭喜答對了！相信有了基本概念，對於以後的學習一定有幫助，加油！")'),
 				'ENDCHOICES',
 			'ENDIF',
-		"ENDIF",
+		'ENDIF',
 		t('%V[0]'),
 	'CHOICE_1',
 	'ENDCHOICES',

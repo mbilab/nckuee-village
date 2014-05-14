@@ -27,7 +27,7 @@ game.ev[map][id] = new game.Ev({
 					s(ev+'.fail("答錯囉！光纖主要是利用全反射來傳導光線")'),
 				'ENDCHOICES',
 			'ENDIF',
-		"ENDIF",
+		'ENDIF',
 		t('%V[0]'),
 	'CHOICE_1',
 	'ENDCHOICES',
