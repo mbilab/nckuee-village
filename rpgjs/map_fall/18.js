@@ -1,14 +1,11 @@
 var s = game.Ev.prototype.cmd.script, t = game.Ev.prototype.cmd.text, v0 = game.Ev.prototype.cmd.v0;
 var map = 1, id = 18, ev = 'game.ev['+map+']['+id+']', name = '計算機組織';
 game.ev[map][id] = new game.Ev({
-<<<<<<< HEAD
-=======
 	can_take: function() {
 		if ( game.player.hp < this.hp_cost() ) return RPGJS.Variables.data[0] = '你的體力不夠修這門課囉！';
 		if ( !game.defined( game, 'ev', 2, 4, 'is_passed' ) ) return RPGJS.Variables.data[0] ='要通過' + game.ev[2][4].name+ '才可以選修本課！';
     	return RPGJS.Variables.data[0] = 1;
 	},
->>>>>>> edc0e87a92e42b6273c3baf85c54355096d2bdcc
 	hp_cost: function() { return 10; },
 	id: id,
 	map: map,
