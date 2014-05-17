@@ -36,7 +36,6 @@ game.ev[map][id] = new game.Ev({
 		t('%V[0]'),
 	'CHOICE_1',
 	'ENDCHOICES',
-	"ENDIF",
 	s(ev+'.start()'),
 ]);
 
