@@ -1,18 +1,21 @@
 var s = game.Ev.prototype.cmd.script, t = game.Ev.prototype.cmd.text, v0 = game.Ev.prototype.cmd.v0;
 var map = 1, id = 17, ev = 'game.ev['+map+']['+id+']', name = '普通化學';
+var x = 15, y = 3;
 game.ev[map][id] = new game.Ev({
 	hp_cost: function() { return 10; },
 	id: id,
 	map: map,
 	name: name,
+	x:x,
+	y:y,
 }, [
 	s(ev+'.stop()'),
+		s(ev+'.is_took()'),
+		'IF: "0 == variable[0]"',
 	t('化學學得好就恭喜你，化學學得不好就拿王水潑你！'),
 	t('你要修 '+name+' 嗎？'),
 	'CHOICES: ["是","否"]',
 	'CHOICE_0',
-		s(ev+'.is_took()'),
-		'IF: "0 == variable[0]"',
 			s(ev+'.can_take()'),
 			'IF: "1 == variable[0]"',
 				t('請問王水是如何配置的？'),
@@ -27,10 +30,12 @@ game.ev[map][id] = new game.Ev({
 					s(ev+'.fail("都放水成這樣你還選錯")'),
 				'ENDCHOICES',
 			'ENDIF',
-		"ENDIF",
-		t('%V[0]'),
 	'CHOICE_1',
 	'ENDCHOICES',
+	"ENDIF",
+	'IF: "0 != variable[0]"',
+		t('%V[0]'),
+	"ENDIF",
 	s(ev+'.start()'),
 ]);
 
