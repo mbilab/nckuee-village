@@ -2,8 +2,9 @@ var s = game.Ev.prototype.cmd.script, t = game.Ev.prototype.cmd.text, v0 = game.
 var map = 1, id = 9, ev = 'game.ev['+map+']['+id+']', name = '電路（一）';
 game.ev[map][id] = new game.Ev({
 	can_take: function() {
-		if ( !game.defined( game, 'ev', 2, 2, 'is_passed' ) ) RPGJS.Variables.data[0] ='要通過' + game.ev[2][2].name+'才可以選修本課！';
-		else RPGJS.Variables.data[0] = 1;
+		if ( game.player.hp < this.hp_cost() ) return RPGJS.Variables.data[0] = '你的體力不夠修這門課囉！';
+		if ( !game.defined( game, 'ev', 2, 2, 'is_passed' ) ) return RPGJS.Variables.data[0] ='要通過' + game.ev[2][2].name+ '才可以選修本課！';
+		return RPGJS.Variables.data[0] = 1;
 	},
 	hp_cost: function() { return 10; },
 	id: id,
@@ -20,7 +21,8 @@ game.ev[map][id] = new game.Ev({
 			s(ev+'.can_take()'),
 			'IF: "1 == variable[0]"',
 				t('克希荷夫定律分為克希荷夫電流定律與克希荷夫電壓定律，克希荷夫電流定律指的是「所有進入某節點的電流總和等於所以離開此節點的電流總和」，而克希荷夫電壓定律指的是「沿著閉合迴路所有元件兩端的電壓總和為零」，以上兩條定律乃電路學的兩大精隨，汝必謹記。'),
-				v0('＜玩家＞是的，吾必當謹記在心。'),
+				//v0('＜玩家＞是的，吾必當謹記在心。'),
+	s(ev+'.take()'),
 		'ENDIF',
 	'CHOICE_1',
 	'ENDCHOICES',
