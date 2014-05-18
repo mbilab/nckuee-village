@@ -131,7 +131,9 @@ var game = {
 			G.semester.n_failed++;
 			if (!G.defined(G.semester.ev[this.id])) G.semester.ev[this.id] = {};
 			G.semester.ev[this.id].failed = 1;
-			RPGJS.Variables.data[0] = t+'\n消耗 '+hp_cost+' 點體力，還剩 '+G.player.hp+' 點體力。';
+			if ( 'undefined' == typeof t ) t = '';
+			if ( '' !== t ) t += '\n';
+			RPGJS.Variables.data[0] = t+this.name+'被當囉!\n消耗 '+hp_cost+' 點體力，還剩 '+G.player.hp+' 點體力。';
 			RPGJS.System.sePlay(2);
 		},
 		frequence: 2,
@@ -150,7 +152,7 @@ var game = {
 			G.player.n_passed++;
 			G.semester.n_passed++;
 			if ( 'undefined' == typeof t ) t = '';
-			if ( '' !== t ) t += '\n\n';
+			if ( '' !== t ) t += '\n';
 			RPGJS.Variables.data[0] = t+'習得了 '+this.name+' ！\n消耗 '+hp_cost+' 點體力，還剩 '+G.player.hp+' 點體力。';
 			RPGJS.System.sePlay(1);
 		},
