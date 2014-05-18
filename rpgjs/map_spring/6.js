@@ -10,7 +10,6 @@ game.ev[map][id] = new game.Ev({
 	s(ev+'.stop()'),
 		s(ev+'.is_took()'),
 		'IF: "0 == variable[0]"',
-	t('＜開場介紹＞'),
 	t('你要修 '+name+' 嗎？'),
 	'CHOICES: ["是","否"]',
 	'CHOICE_0',
