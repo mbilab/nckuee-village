@@ -36,6 +36,7 @@ game.ev[map][id] = new game.Ev({
 						s('eng2_hp = 2'),
 							s(ev+'.fail("別灰心～能答對到第三題已經很棒了")'),
 						'CHOICE_2',
+						s('eng2_hp = 2'),
 							s(ev+'.take("恭喜答對了，全對真是太厲害了～")'),
 						'ENDCHOICES',
 					'CHOICE_2',
