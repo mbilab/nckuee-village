@@ -1,25 +1,23 @@
 var s = game.Ev.prototype.cmd.script, t = game.Ev.prototype.cmd.text, v0 = game.Ev.prototype.cmd.v0;
 var map = 1, id = 26, ev = 'game.ev['+map+']['+id+']', name = '類比通訊';
 game.ev[map][id] = new game.Ev({
-
-	    can_take: function() {
-					if ( !game.defined( game, 'ev', 2, 17, 'took' ) ) RPGJS.Variables.data[0] = '需要先修 '+game.ev[2][17].name+' ！';
-					else if ( G.player.hp < this.hp_cost() ) RPGJS.Variables.data[0] = '你的體力不夠修這門課囉！';
-					else RPGJS.Variables.data[0] = 1;
-									    },
-		
+	can_take: function() {
+		if ( game.player.hp < this.hp_cost() ) return RPGJS.Variables.data[0] = '你的體力不夠修這門課囉！';
+		if ( !game.defined( game, 'ev', 2, 17, 'is_passed' ) ) RPGJS.Variables.data[0] ='要通過' + game.ev[2][17].name+'才可以選修本課！';
+		else RPGJS.Variables.data[0] = 1;
+	},
 	    hp_cost: function() { return 15; },
 	    id: id,
 	    map: map,
 	    name: name,
 }, [
     s(ev+'.stop()'),
+		s(ev+'.is_took()'),
+		'IF: "0 == variable[0]"',
 	t('類比通信是指利用類比信號來做信息傳遞的一種通信方式，像是現行的電話、傳真、廣播、電視等等都是屬於類比通信系統，此系統具有較佳的傳真效果。 雖然類比通訊漸漸被數位通訊取代，但是有許多觀念都以類比通信為基礎，所以還是需要好好學習類比通訊的知識。'),
 	t('你要修 '+name+' 嗎？'),
 	'CHOICES: ["是","否"]',
 	'CHOICE_0',
-		s(ev+'.is_took()'),
-		'IF: "0 == variable[0]"',
 			s(ev+'.can_take()'),
 			'IF: "1 == variable[0]"',
 				t('下列敘述何者錯誤？'),
@@ -34,9 +32,12 @@ game.ev[map][id] = new game.Ev({
 					s(ev+'.fail("答錯了！老師已經大放水了，還錯就只好乖乖重修了")'),
 				'ENDCHOICES',
 			'ENDIF',
-		'ENDIF',
 	'CHOICE_1',
 	'ENDCHOICES',
+	"ENDIF",
+	'IF: "0 != variable[0]"',
+		t('%V[0]'),
+	"ENDIF",
 	s(ev+'.start()'),
 ]);
 
