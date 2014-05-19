@@ -3,11 +3,11 @@ var map = 1, id = 98, ev = 'game.ev['+map+']['+id+']', name = '教務處鄭先�
 game.ev[map][id] = new game.Ev({
 	can_graduate: function(){
 		if ( game.player.i_semester < 5 ) return RPGJS.Variables.data[0] = "至少要經過六個學期，才可以畢業喔！";
-		var req = this.check( [2,3,4,5,6,7,8,9,11,14,15], [2,3,4,5,6], 'passed' );
+		var req = this.check( [2,3,4,5,6,7,8,9,11,14,15], [2,3,4,5,6], 'is_passed' );
 		if ( req.n_no ) return RPGJS.Variables.data[0] = '尚缺以下 '+req.n_no+' 門必修課喔：\n'+req.no_list;
-		req = this.check( [44,45], [43,44], 'took' );
+		req = this.check( [44,45], [43,44], 'is_took' );
 		if ( req.n_no ) return RPGJS.Variables.data[0] = '尚缺以下 '+req.n_no+' 門必選課喔：\n'+req.no_list;
-		req = this.check( [], [], 'passed' );
+		req = this.check( [], [], 'is_passed' );
 //		if ( req.n_yes < 16 ) return RPGJS.Variables.data[0] = '尚缺 '+(16-req.n_yes)+' 門選修課，還有以下課程可以選擇：\n'+req.no_list;
 
 		RPGJS.System.fadeOutMusic(180);
