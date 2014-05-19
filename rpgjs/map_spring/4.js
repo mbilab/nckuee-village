@@ -3,7 +3,7 @@ var map = 2, id = 4, ev = 'game.ev['+map+']['+id+']', name = '計算機概論（
 game.ev[map][id] = new game.Ev({
 	can_take: function() {
 		if ( game.player.hp < this.hp_cost() ) return RPGJS.Variables.data[0] = '你的體力不夠修這門課囉！';
-    	if ( !game.defined( game, 'ev', 1, 2, 'is_passed' ) ) return RPGJS.Variables.data[0] ='要通過' + game.ev[1][2].name+ '才可以選修本課！';
+    	if ( !game.defined( game, 'ev', 1, 4, 'is_passed' ) ) return RPGJS.Variables.data[0] ='要通過' + game.ev[1][4].name+ '才可以選修本課！';
 		return RPGJS.Variables.data[0] = 1;
 	},
 	hp_cost: function() { return 20; },
