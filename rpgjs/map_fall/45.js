@@ -1,19 +1,18 @@
 var s = game.Ev.prototype.cmd.script, t = game.Ev.prototype.cmd.text, v0 = game.Ev.prototype.cmd.v0;
 var map = 1, id = 45, ev = 'game.ev['+map+']['+id+']', name = '資料結構概論';
 game.ev[map][id] = new game.Ev({
-		
 	    hp_cost: function() { return 10; },
 	    id: id,
 	    map: map,
 	    name: name,
 }, [
     s(ev+'.stop()'),
+		s(ev+'.is_took()'),
+		'IF: "0 == variable[0]"',
 	t('有適合的資料結構的話，程式的演算法會比較簡潔。因此在寫任何程式之前，資料結構設計是相當重要的一環。本門課介紹一些基本的資料結構，如Stack、Queue、Link List、Tree、Hash、Heap、Graph等，並有補充一些如2-3 Tree、Red-Black Tree等進階的結構。'),
 	t('你要修 '+name+' 嗎？'),
 	'CHOICES: ["是","否"]',
 	'CHOICE_0',
-		s(ev+'.is_took()'),
-		'IF: "0 == variable[0]"',
 			s(ev+'.can_take()'),
 			'IF: "1 == variable[0]"',
 				t('請問下列哪一項「不是」Heap的應用：'),
@@ -26,10 +25,12 @@ game.ev[map][id] = new game.Ev({
 					s(ev+'.take("沒錯，這個是Graph的應用")'),
 				'ENDCHOICES',
 			'ENDIF',
-		'ENDIF',
-		t('%V[0]'),
 	'CHOICE_1',
 	'ENDCHOICES',
+	"ENDIF",
+	'IF: "0 != variable[0]"',
+		t('%V[0]'),
+	"ENDIF",
 	s(ev+'.start()'),
 ]);
 

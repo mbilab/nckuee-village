@@ -1,19 +1,18 @@
 var s = game.Ev.prototype.cmd.script, t = game.Ev.prototype.cmd.text, v0 = game.Ev.prototype.cmd.v0;
 var map = 2, id = 26, ev = 'game.ev['+map+']['+id+']', name = '電子材料概論';
 game.ev[map][id] = new game.Ev({
-
 	hp_cost: function() { return 10; },
 	id: id,
 	map: map,
 	name: name,
 }, [
 	s(ev+'.stop()'),
+		s(ev+'.is_took()'),
+		'IF: "0 == variable[0]"',
 	t('電子材料百百種，想要一窺究竟嗎？那就快來修課吧！別猶豫了！'),
     t('你要修 '+name+' 嗎？'),
 	'CHOICES: ["是","否"]',
  	'CHOICE_0',
-		s(ev+'.is_took()'),
-		'IF: "0 == variable[0]"',
 			s(ev+'.can_take()'),
 			'IF: "1 == variable[0]"',
 				t('你覺得哪一個敘述是不合理的？'),
@@ -26,10 +25,12 @@ game.ev[map][id] = new game.Ev({
 					s(ev+'.take("答對了！恭喜！")'),
 				'ENDCHOICES',
 			'ENDIF',
-		'ENDIF',
-		t('%V[0]'),
 	'CHOICE_1',
 	'ENDCHOICES',
+	"ENDIF",
+	'IF: "0 != variable[0]"',
+		t('%V[0]'),
+	"ENDIF",
 	s(ev+'.start()'),
 ]);
 

@@ -6,19 +6,18 @@ game.ev[map][id] = new game.Ev({
 		 if ( !game.defined( game, 'ev', 1, 2, 'is_passed' ) ) return RPGJS.Variables.data[0] ='要通過' + game.ev[1][2].name+ '才可以選修本課！';
 		 return RPGJS.Variables.data[0] = 1;
 	},
-
 	hp_cost: function() { return 12; },
 	id: id,
 	map: map,
 	name: name,
 }, [
 	s(ev+'.stop()'),
+		s(ev+'.is_took()'),
+		'IF: "0 == variable[0]"',
 	t('數位元件設計簡介，ＭＯＳ與ＢＪＴ原理、製程與電路設計，各種不同技術的正反器，複製器與樞密特電路，半導體記憶器，標準電路元，閘陣列與其他可規劃邏輯元件與其他新技術介紹。'),
     t('你要修 '+name+' 嗎？'),
 	'CHOICES: ["是","否"]',
  	'CHOICE_0',
-		s(ev+'.is_took()'),
-		'IF: "0 == variable[0]"',
 			s(ev+'.can_take()'),
 			'IF: "1 == variable[0]"',
 				t('關於正反器的敘述何者錯誤？'),
@@ -33,10 +32,12 @@ game.ev[map][id] = new game.Ev({
 					s(ev+'.fail("本選項是對的呦～答錯了ＱＱ")'),
 				'ENDCHOICES',
 			'ENDIF',
-		'ENDIF',
-		t('%V[0]'),
 	'CHOICE_1',
 	'ENDCHOICES',
+	"ENDIF",
+	'IF: "0 != variable[0]"',
+		t('%V[0]'),
+	"ENDIF",
 	s(ev+'.start()'),
 ]);
 

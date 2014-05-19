@@ -1,19 +1,18 @@
 var s = game.Ev.prototype.cmd.script, t = game.Ev.prototype.cmd.text, v0 = game.Ev.prototype.cmd.v0;
 var map = 1, id = 43, ev = 'game.ev['+map+']['+id+']', name = '再生能源轉換器實驗';
 game.ev[map][id] = new game.Ev({
-		
 	    hp_cost: function() { return 10; },
 	    id: id,
 	    map: map,
 	    name: name,
 }, [
     s(ev+'.stop()'),
+		s(ev+'.is_took()'),
+		'IF: "0 == variable[0]"',
 	t('本課程是風力發電為基本的各種的實驗，對風力發電有興趣的同學，不修嗎?'),
 	t('你要修 '+name+' 嗎？'),
 	'CHOICES: ["是","否"]',
 	'CHOICE_0',
-		s(ev+'.is_took()'),
-		'IF: "0 == variable[0]"',
 			s(ev+'.can_take()'),
 			'IF: "1 == variable[0]"',
 				t('風力發電的優缺點對照下列何者錯誤？'),
@@ -26,10 +25,12 @@ game.ev[map][id] = new game.Ev({
 					s(ev+'.fail("答對了！但是要選錯誤的喔~")'),
 				'ENDCHOICES',
 			'ENDIF',
-		'ENDIF',
-		t('%V[0]'),
 	'CHOICE_1',
 	'ENDCHOICES',
+	"ENDIF",
+	'IF: "0 != variable[0]"',
+		t('%V[0]'),
+	"ENDIF",
 	s(ev+'.start()'),
 ]);
 
