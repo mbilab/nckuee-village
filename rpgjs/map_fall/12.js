@@ -3,7 +3,7 @@ var map = 1, id = 12, ev = 'game.ev['+map+']['+id+']', name = '電子（三）';
 game.ev[map][id] = new game.Ev({
 	can_take: function() {
 	 	if ( game.player.hp < this.hp_cost() ) return RPGJS.Variables.data[0] = '你的體力不夠修這門課囉！';
-	    if ( !game.defined( game, 'ev', 2, 10, 'is_passed' ) ) return RPGJS.Variables.data[0] ='要通過' + game.ev[2][10].name+ '才可以選修本課！';
+	    if ( !game.defined( game, 'ev', 2, 8, 'is_passed' ) ) return RPGJS.Variables.data[0] ='要通過' + game.ev[2][8].name+ '才可以選修本課！';
 		return RPGJS.Variables.data[0] = 1;
 	},
 	hp_cost: function() { return 15; },//reture 代表體力扣的數值
