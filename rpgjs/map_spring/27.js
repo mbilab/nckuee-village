@@ -1,5 +1,5 @@
 var s = game.Ev.prototype.cmd.script, t = game.Ev.prototype.cmd.text, v0 = game.Ev.prototype.cmd.v0;
-var map = 2, id = 27, ev = 'game.ev['+map+']['+id+']', name = '電力系統專論';
+var map = 2, id = 27, ev = 'game.ev['+map+']['+id+']', name = '電力系統導論';
 game.ev[map][id] = new game.Ev({
 	    hp_cost: function() { return 20; },
 	    id: id,
