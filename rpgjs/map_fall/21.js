@@ -25,7 +25,7 @@ game.ev[map][id] = new game.Ev({
 				'CHOICE_0',
 					s(ev+'.fail("答錯了! 傳導帶為電子可以自由移動的能帶。")'),
 				'CHOICE_1',
-					s(ev+'.fail("恭喜答對了!")'),
+					s(ev+'.take("恭喜答對了!")'),
 				'CHOICE_2',
 					s(ev+'.fail("答錯了! 能隙為價帶與傳導帶間之能量差。")'),
 				'ENDCHOICES',
