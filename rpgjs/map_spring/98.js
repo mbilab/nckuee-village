@@ -3,7 +3,7 @@ var map = 2, id = 98, ev = 'game.ev['+map+']['+id+']', name = '教務處鄭先�
 game.ev[map][id] = new game.Ev({
 	can_graduate: function(){
 		if ( game.player.i_semester < 5 ) return RPGJS.Variables.data[0] = "至少要經過六個學期，才可以畢業喔！";
-		var req = this.check( [2,3,4,5,6,7,8,9,11,12,13,14,15,39,40,41,42,43], [2,3,4,5,6,7,8,9,10,11,12,13,35,36,37,38,39,40,41,42], 'is_passed' );
+		var req = this.check( [2,3,4,5,6,7,8,9,11,12,13,14,15,39,40,41,42], [2,3,4,5,6,7,8,9,10,11,12,13,35,36,37,38,39], 'is_passed' );
 		if ( req.n_no ) return RPGJS.Variables.data[0] = '尚缺以下 '+req.n_no+' 門必修課喔：\n'+req.no_list;
 		req = this.check( [44,45], [43,44], 'is_took' );
 		if ( req.n_no ) return RPGJS.Variables.data[0] = '尚缺以下 '+req.n_no+' 門必選課喔：\n'+req.no_list;
