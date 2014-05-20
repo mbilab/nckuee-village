@@ -1,5 +1,5 @@
 var s = game.Ev.prototype.cmd.script, t = game.Ev.prototype.cmd.text, v0 = game.Ev.prototype.cmd.v0;
-var map = 1, id = 98, ev = 'game.ev['+map+']['+id+']', name = '教務處鄭先生';
+var map = 2, id = 98, ev = 'game.ev['+map+']['+id+']', name = '教務處鄭先生';
 game.ev[map][id] = new game.Ev({
 	can_graduate: function(){
 		if ( game.player.i_semester < 5 ) return RPGJS.Variables.data[0] = "至少要經過六個學期，才可以畢業喔！";
