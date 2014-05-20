@@ -5,7 +5,7 @@ game.ev[map][id] = new game.Ev({
 		if ( .5<=game.semester.n_passed/(game.semester.n_failed+game.semester.n_passed) || 0==game.player.n_21 || 5<=game.player.hp ) return RPGJS.Variables.data[0] = 0;
 		RPGJS.Variables.data[0] = '這是你第二次被２１了，你的體力也不足，無法再修課了，非常遺憾，你被退學了！';
 	},
-	graphic: 2,
+//	graphic: 2,
 	id: id,
 	map: map,
 	name: name,
@@ -31,7 +31,7 @@ game.ev[map][id] = new game.Ev({
 	took_enough: function(){ RPGJS.Variables.data[0] = (game.semester.n_failed+game.semester.n_passed) >= 4 ? 1 : '至少要修習過 4 門課才可以到下一個學期喔～' },
 	type: 'fixed',
 	x: 5,
-	y: 4,
+	y: 3,
 }, [
 	s(ev+'.stop()'),
 	t('每個學期至少要修４門課才可以進入下一個學期，如果你可以在一個學期內，修習並通過７門課，那麼你下學期可以比別人多有２０點的體力，你想要進入下一個學期了嗎？'),

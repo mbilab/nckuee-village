@@ -81,7 +81,7 @@ game.ev[map][id] = new game.Ev({
 	took_enough: function(){ RPGJS.Variables.data[0] = (game.semester.n_failed+game.semester.n_passed) >= 4 ? 1 : '至少要修習過 4 門課才可以到下一個學期喔～' },
 	type: 'fixed',
 	x: 7,
-	y: 4,
+	y: 3,
 }, [
 	s(ev+'.stop()'),
 	t('想要畢業了嗎？'),
