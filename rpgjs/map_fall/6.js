@@ -1,6 +1,10 @@
 var s = game.Ev.prototype.cmd.script, t = game.Ev.prototype.cmd.text, v0 = game.Ev.prototype.cmd.v0;
 var map = 1, id = 6, ev = 'game.ev['+map+']['+id+']', name = '大一英文(一)';
 game.ev[map][id] = new game.Ev({
+	can_take: function() {
+		if ( game.player.hp < 8 ) return RPGJS.Variables.data[0] = '你的體力不夠修這門課囉！';
+		else RPGJS.Variables.data[0] = 1;
+	},
 	hp_cost: function() { return game.eng_14_15 ? 8 : 0; },
 	id: id,
 	map: map,

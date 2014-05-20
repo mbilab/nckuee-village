@@ -2,6 +2,10 @@ var s = game.Ev.prototype.cmd.script, t = game.Ev.prototype.cmd.text, v0 = game.
 var map = 2, id = 13, ev = 'game.ev['+map+']['+id+']', name = '大二英文(二)';
 var eng2_hp;
 game.ev[map][id] = new game.Ev({
+	can_take: function() {
+		if ( game.player.hp < 8 ) return RPGJS.Variables.data[0] = '你的體力不夠修這門課囉！';
+		else RPGJS.Variables.data[0] = 1;
+	},
 	hp_cost: function() { return eng2_hp; },
 	id: id,
 	map: map,
