@@ -19,19 +19,19 @@ game.ev[map][id] = new game.Ev({
 			RPGJS.scene.call('Scene_Gameover');
 		});
 
-		req = this.check( [18,24,28,37], [20,31], 'passed' );
+		req = this.check( [18,24,28,37], [20,31], 'is_passed' );
 		if ( 4 <= req.n_yes ) return game.player.gameover = { bg: 'library', msg: '恭喜順利畢業，因為你有選修 '+req.yes_list+' 等課程，推薦你可以往電通所發展' }
-		req = this.check( [17,21,23,33], [14,23,26,30], 'passed' );
+		req = this.check( [17,21,23,33], [14,23,26,30], 'is_passed' );
 		if ( 4 <= req.n_yes ) return game.player.gameover = { bg: 'library', msg: '恭喜順利畢業，因為你有選修 '+req.yes_list+' 等課程，推薦你可以往電機所材料組發展' }
-		req = this.check( [19,20,26,30], [14,23,26,30], 'passed' );
+		req = this.check( [19,20,26,30], [14,23,26,30], 'is_passed' );
 		if ( 4 <= req.n_yes ) return game.player.gameover = { bg: 'library', msg: '恭喜順利畢業，因為你有選修 '+req.yes_list+' 等課程，推薦你可以往電機所通信組發展' }
-		req = this.check( [23], [], 'passed' );
+		req = this.check( [23], [], 'is_passed' );
 		if ( 1 == req.n_yes ) return game.player.gameover = { bg: 'library', msg: '恭喜順利畢業，因為你有選修 '+req.yes_list+' 等課程，推薦你可以往電機所控制組發展' }
-		req = this.check( [26,28,37], [], 'passed' );
+		req = this.check( [26,28,37], [], 'is_passed' );
 		if ( 3 == req.n_yes ) return game.player.gameover = { bg: 'library', msg: '恭喜順利畢業，因為你有選修 '+req.yes_list+' 等課程，推薦你可以往電機所儀器系統與晶片組發展' }
-		req = this.check( [35,36], [16,19], 'passed' );
+		req = this.check( [35,36], [16,19], 'is_passed' );
 		if ( 4 == req.n_yes ) return game.player.gameover = { bg: 'library', msg: '恭喜順利畢業，因為你有選修 '+req.yes_list+' 等課程，推薦你可以往電機所ＶＬＳＩ／ＣＡＤ組發展' }
-		req = this.check( [30,33,39,43,44], [27,30], 'passed' );
+		req = this.check( [30,33,39,43,44], [27,30], 'is_passed' );
 		if ( 3 <= req.n_yes ) return game.player.gameover = { bg: 'library', msg: '恭喜順利畢業，因為你有選修 '+req.yes_list+' 等課程，推薦你可以往電機所電力組發展' }
 		game.player.gameover = { bg: 'library', msg: '恭喜順利畢業，推薦你可以往微電子所發展' }
 	},
@@ -55,7 +55,7 @@ game.ev[map][id] = new game.Ev({
 		if (ret.n_yes) ret.yes_list = ret.yes_list.substring(0, ret.yes_list.length-1);
 		return ret;
 	},
-	graphic: 2,
+	//graphic: 2,
 	id: id,
 	map: map,
 	name: name,
