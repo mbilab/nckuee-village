@@ -21,7 +21,7 @@ game.ev[map][id] = new game.Ev({
 					s(ev+'.fail("動手是不對的",30)'),
 				'CHOICE_1',
 					s(ev+'.fail("。。。。。。。。")'),
-				'CHOICE_',
+				'CHOICE_2',
 					s(ev+'.take("成功解決僵局",15)'),
 				'CHOICE_3',
 					s(ev+'.fail("來日再修吧～",10)'),
