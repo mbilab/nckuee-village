@@ -17,7 +17,7 @@ game.ev[map][id] = new game.Ev({
 		//'IF: "0 == variable[0]"',
 		s(ev+'.can_take()'),
 			'IF: "1 == variable[0]"',
-				t('請問下列程式碼的輸出為何？\nint a=1,b=2; a+=3; b++;\nprintf("%d %d",a,b)'),
+				t('請問下列程式碼的輸出為何？\nint a=1,b=2; a+=3; b++;\nprintf("%d %d",a,b);'),
 				'CHOICES: ["4, 3","3, 4","4, 4"]',
 				'CHOICE_0',
 					s(ev+'.take()'),
