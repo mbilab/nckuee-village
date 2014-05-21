@@ -22,7 +22,7 @@ game.ev[map][id] = new game.Ev({
 				'CHOICE_1',
 					s(ev+'.fail("說過了！實驗室不准吃東西！當掉！")'),
 				'CHOICE_2',
-					s(ev+'.fail("精神可嘉！不過太醜嚇到助教了，體力多扣５！",5)'),
+					s(ev+'.take("精神可嘉！不過太醜嚇到助教了，體力多扣５！")'),
 				'CHOICE_3',
 					s(ev+'.take("同學好罩！順利通過！")'),
 				'ENDCHOICES',
