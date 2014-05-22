@@ -17,7 +17,7 @@ game.ev[map][id] = new game.Ev({
 			s(ev+'.can_take()'),
 			'IF: "1 == variable[0]"',
 				t('世界上有10種人，看得懂二進位和看不懂二進位的請問你知道二進位的10101換成十進位是多少嗎?'),
-				'CHOICES: ["41","6","32"]',
+				'CHOICES: ["21","6","32"]',
 				'CHOICE_0',
 					s(ev+'.take("答對了!")'),
 				'CHOICE_1',
