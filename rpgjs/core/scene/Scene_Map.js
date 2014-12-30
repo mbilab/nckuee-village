@@ -253,7 +253,10 @@ RPGJS_Canvas.Scene.New({
 		RPGJS.Plugin.call("Sprite", "sceneMapRender", [this]);
 		
 		stage.refresh();
-		if (this.data.system.gamepad != "_no" && typeof(Gamepad) !== 'undefined') this.gamepad.update();
+		if (this.data.system.gamepad != "_no" && typeof(Gamepad) !== 'undefined'){
+			return;
+			this.gamepad.update();
+		};
 
 	},
 	
